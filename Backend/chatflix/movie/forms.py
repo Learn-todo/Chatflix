@@ -22,11 +22,19 @@ class RegistrationForm(forms.ModelForm):
         self.fields['first_name'].widget.attrs.update({
             'placeholder': 'Full name', 'class': 'form-control'
         })
-
+        self.fields['email'].widget.attrs.update({
+            'placeholder': 'Email', 'class': 'form-control'
+        })
+        self.fields['password'].widget.attrs.update({
+            'placeholder': 'Password', 'class': 'form-control'
+        })
+        self.fields['password2'].widget.attrs.update({
+            'placeholder': 'Confirm Password', 'class': 'form-control'
+        })
 
     def clean_username(self):
         clean = self.cleaned_data['username'].lower()
-        whiten = User.object.filter(username=clean)
+        whiten = User.objects.filter(username=clean)
         if whiten.count():
             raise ValidationError('Username must be a valid username')
         return clean

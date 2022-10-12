@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import RegistrationForm
+from . import forms
 from django.contrib.auth.models import User
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
@@ -8,12 +8,12 @@ from django.utils.encoding import force_bytes
 
 # Create your views here.
 def register(request):
-    register_form = RegistrationForm()
-    context = {
-        'form': register_form
-    }
+    #register_form = forms.RegistrationForm()
+    #context = {
+    #    'form': register_form
+    #}
     if request.method == 'POST':
-        register_form = RegistrationForm(request.POST)
+        register_form = forms.RegistrationForm(request.POST)
         if register_form.is_valid():
             user=register_form.save(commit=False)
             user.username=user.username.lower()
@@ -38,5 +38,5 @@ def register(request):
 
     # else:
     #    register_form=RegistrationForm()
-    return render(request, 'test.html', context)
+    return render(request, 'test.html',{'form': register_form})
 
