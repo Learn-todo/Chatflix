@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/185b90827b.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Login Page</title>
+  </head>
+  <body>
+    <header>
+
+      <!--logo and the logo text-->
+      <div class="logo-brand">
+
+        <!--logo-->
+        <span class="logo">
+          <img src="images/Chatflix Logo Alone.png" alt="chatflix logo" />
+        </span>
+
+        <!--logo text-->
+        <span class="logo-text">
+          <img src="images/Chatflix.png" alt="chatflix" />
+        </span>
+      </div>
+    </header>
+
+    <main>
+      <!--container containing the whole input and link form-->
+      <div class="login-form">
+
+        <!--the X icon for exiting the input form-->
+        <div class="exit">
+          <img src="images/add.png" alt="cancel logo" />
+        </div>
+
+        <!--the inner contain which holds the inputs and links-->
+        <div class="inner-form">
+
+          <!--heading-->
+          <div class="heading">
+            <h1>Welcome to<span> Chat</span>flix</h1>
+          </div>
+
+          <!--sign up links-->
+          <div class="btns">
+            <button class="btn-1">
+              <div>
+                <img
+                  src="images/flat-color-icons_google.png"
+                  alt="google icon"
+                />
+              </div>
+              <div>
+                <p>Sign up with Google</p>
+              </div>
+            </button>
+            <button class="btn-2">
+              <div>
+                <img src="images/Vector.png" alt="apple icon" />
+              </div>
+              <div>
+                <p>Sign up with Apple</p>
+              </div>
+            </button>
+          </div>
+
+          <!--center demarcation-->
+          <div class="demarcation">
+            <p class="linesides">or</p>
+          </div>
+
+          <!--Email and password inputs-->
+          <div class="main-input">
+
+            <!--Email and password wrapped in a form-->
+            <form action="#">
+              <label class="email" for="email">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder=" Email"
+                />
+              </label>
+              <div class="password">
+                <label for="password">
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder=" Password"
+                  />
+                </label>
+                <a href="#" class="f-password">
+                  <p>Forget password?</p>
+                </a>
+              </div>
+
+              <!--checkbox to keep you logged in-->
+              <div class="checkbox">
+                <label for="logged-in">
+                  <input type="checkbox" name="logged-in" id="logged-in" > Keep me logged in
+                </label>
+              </div>
+            </form>
+
+            <!--Sign up if you don't have an account-->
+            <span class="sign-up">
+              <p>Already have an account?<a href="#"> Sign up.</a></p>
+            </span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
