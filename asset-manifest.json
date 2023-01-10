@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/chatflix/static/css/main.c21ebbbf.css",
+    "main.js": "/chatflix/static/js/main.44bc2270.js",
+    "static/js/787.0bfccc2a.chunk.js": "/chatflix/static/js/787.0bfccc2a.chunk.js",
+    "index.html": "/chatflix/index.html",
+    "main.c21ebbbf.css.map": "/chatflix/static/css/main.c21ebbbf.css.map",
+    "main.44bc2270.js.map": "/chatflix/static/js/main.44bc2270.js.map",
+    "787.0bfccc2a.chunk.js.map": "/chatflix/static/js/787.0bfccc2a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c21ebbbf.css",
+    "static/js/main.44bc2270.js"
+  ]
+}
