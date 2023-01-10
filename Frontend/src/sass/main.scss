@@ -1,0 +1,32 @@
+// custom variables
+
+// import the functions and variables
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+
+
+$custom-theme-colors: (
+   "background": #030B19,
+   "backgroundTwo": #010205,
+   "backgroundThree": #1c1c1c,
+   "arrow": #F0F6FE,
+   "cancel": #BBC2CD,
+   "text-color": #8E9AAC,
+   "text-color2": #D9E8FD,
+   "btn-color": #206CDF,
+   "chat": #FAC403,
+   "cards": #181B1F,
+   "reaction":#FC4247,
+   "ratings":#1CA1EC,
+   "share":#7E51FE,
+   "captions":#179EB0,
+   "categories":#D56906,
+   "accordion": #647081,
+   "faq": #D2D7DE
+   );
+
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+
+// import bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap';
