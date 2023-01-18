@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -136,6 +138,6 @@ EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = os.environ.get('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')
+EMAIL_HOST_PASSWORD = os.environ.get('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')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
