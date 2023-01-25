@@ -6,7 +6,7 @@ Getting Started
 Make sure you have nodejs installed by running the following command:
 
 node --version
-If the output is not the version of your nodejs installation, install nodejs from here
+If the output is not the version of your nodejs installation, install nodejs from https://nodejs.org/en/download/
 
 Then install the dependencies after cloning the project please use npm:
 
