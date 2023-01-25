@@ -1,11 +1,13 @@
-import "./sass/main.scss"
+import Button from "./components/Button";
+import "./index.css";
 
 function App() {
   return (
-    <div className="App bg-cancel">
-      <h1 className="text-btn-color text-center">Chatflix</h1>
-    {/* <button className="btn primary">Submit</button> */}
-    {/* <button className="login-btn btn btn-outline-btn-color px-5">Log in</button> */}
+    <div className={`w-full flex flex-col items-center p-8 gap-4 h-screen`}>
+      <Button text={`Primary Button`} type={`primary`} size={`big`} />
+      <Button text={`Secondary Button`} type={`secondary`} size={`big`} />
+      <Button text={`Sign up`} type={`primary`} size={`small`} />
+      <Button text={`Log in`} type={`secondary`} size={`small`} />
     </div>
   );
 }
