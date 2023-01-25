@@ -1,13 +1,18 @@
-import "./sass/main.scss"
+import React from "react";
+import "./sass/main.scss";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Main from "../src/pages/landing page/Main";
+import ResetPassword from "../src/pages/reset password/Main"
 
-function App() {
-  return (
-    <div className="App bg-cancel">
-      <h1 className="text-btn-color text-center">Chatflix</h1>
-    {/* <button className="btn primary">Submit</button> */}
-    {/* <button className="login-btn btn btn-outline-btn-color px-5">Log in</button> */}
-    </div>
+const App = () => {
+  return(
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element = {<Main /> }></Route>
+        <Route path="/reset password" element = {<ResetPassword />} ></Route>
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
