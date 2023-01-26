@@ -1,9 +1,10 @@
-import "./index.css";
-import Button from "./components/buttons/Button";
-import SignUpButton from "./components/buttons/SignUpButton";
-import Input from "./components/Input";
+import "../../index.css";
+import Button from "../../static/components/buttons/Button";
+import SignUpButton from "../../static/components/buttons/SignUpButton";
+import Input from "../../static/components/Input";
+import React from "react";
 
-function App() {
+function ComponentShowcase() {
   return (
     <div
       className={`w-full flex flex-col items-center p-8 gap-4 h-screen bg-white-700`}
@@ -25,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default ComponentShowcase;

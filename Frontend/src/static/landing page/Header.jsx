@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./style.module.css";
 import Logo from "./images/Chatflix Logo.svg";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -14,7 +14,13 @@ const Header = () => {
           <div>
             <button
               className={`${style._login_btn} btn btn-outline-btn-color px-5`}
-            ><Link to="/reset password" className="text-decoration-none text-white">Log in</Link>
+            >
+              <Link
+                to="/reset password"
+                className="text-decoration-none text-white"
+              >
+                Log in
+              </Link>
             </button>
           </div>
         </div>
