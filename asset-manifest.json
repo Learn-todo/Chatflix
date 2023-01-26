@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/chatflix/static/css/main.b258bd98.css",
-    "main.js": "/chatflix/static/js/main.2165583e.js",
-    "static/js/787.cda612ba.chunk.js": "/chatflix/static/js/787.cda612ba.chunk.js",
-    "static/media/Image.svg": "/chatflix/static/media/Image.f5a2047caf25fd4c324abcb3863e662a.svg",
-    "static/media/Group 6.svg": "/chatflix/static/media/Group 6.d4928e7d8ea2d0500d2e6cbc04faaba9.svg",
-    "static/media/Group 17.svg": "/chatflix/static/media/Group 17.fe750c47080d5c9684f464ee109e68a0.svg",
-    "static/media/Chatflix Logo.svg": "/chatflix/static/media/Chatflix Logo.d322bdd74c9997d13d79898e74b6698b.svg",
-    "index.html": "/chatflix/index.html",
-    "main.b258bd98.css.map": "/chatflix/static/css/main.b258bd98.css.map",
-    "main.2165583e.js.map": "/chatflix/static/js/main.2165583e.js.map",
-    "787.cda612ba.chunk.js.map": "/chatflix/static/js/787.cda612ba.chunk.js.map"
+    "main.css": "/Chatflix/static/css/main.b258bd98.css",
+    "main.js": "/Chatflix/static/js/main.40a33e21.js",
+    "static/js/787.cda612ba.chunk.js": "/Chatflix/static/js/787.cda612ba.chunk.js",
+    "static/media/Image.svg": "/Chatflix/static/media/Image.f5a2047caf25fd4c324abcb3863e662a.svg",
+    "static/media/Group 6.svg": "/Chatflix/static/media/Group 6.d4928e7d8ea2d0500d2e6cbc04faaba9.svg",
+    "static/media/Group 17.svg": "/Chatflix/static/media/Group 17.fe750c47080d5c9684f464ee109e68a0.svg",
+    "static/media/Chatflix Logo.svg": "/Chatflix/static/media/Chatflix Logo.d322bdd74c9997d13d79898e74b6698b.svg",
+    "index.html": "/Chatflix/index.html",
+    "main.b258bd98.css.map": "/Chatflix/static/css/main.b258bd98.css.map",
+    "main.40a33e21.js.map": "/Chatflix/static/js/main.40a33e21.js.map",
+    "787.cda612ba.chunk.js.map": "/Chatflix/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b258bd98.css",
-    "static/js/main.2165583e.js"
+    "static/js/main.40a33e21.js"
   ]
 }
