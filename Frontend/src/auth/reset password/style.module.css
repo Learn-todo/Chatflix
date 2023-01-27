@@ -18,7 +18,43 @@
    ._btn:hover {
      background-color: #1151b1;
    }
-   
+   ._content {
+  height: 100vh;
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(rgba(1, 2, 5, 0.795), rgba(1, 2, 5, 0.596));
+}
+
+._container {
+  width: 350px;
+  height: 80%;
+  max-width: 270px;
+  margin: 0 auto;
+}
+
+._btn:hover {
+  background-color: #1151b1;
+}
+
+@media screen and (min-width: 768px) {
+  ._container {
+    width: 100%;
+    max-width: 90%;
+    justify-content: right !important;
+  }
+
+  ._form_div {
+    width: 450px;
+  }
+
+  ._main {
+    padding: 1.7rem !important;
+  }
+}
+
    @media screen and (min-width: 768px) {
 
      ._container{
