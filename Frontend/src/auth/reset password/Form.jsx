@@ -14,7 +14,7 @@ const Form = () => {
       <div
         className={`${style._container} d-flex justify-content-end align-items-center`}
       >
-        <div className={`bg-background rounded`}>
+        <div className={`${style._form_div} bg-background rounded`}>
           <div className="mx-3 py-3 d-flex justify-content-between">
             <div className="fs-5 fw-normal text-cancel cursor-pointer">
               <IoIosArrowBack />
@@ -25,7 +25,7 @@ const Form = () => {
             </div>
           </div>
 
-          <div className={`mx-auto my-5`}>
+          <div className={`${style._main} mx-auto my-5`}>
             <div className="d-flex justify-content-center align-items-center w-25 mx-auto">
               <img className="w-50" src={Mail} alt="message icon" />
             </div>
