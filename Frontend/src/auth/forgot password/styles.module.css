@@ -1,0 +1,26 @@
+._form_img {
+  left: 25px;
+  width: 20px;
+  height: 20px;
+}
+
+._input_div ._input_text {
+  position: absolute;
+  pointer-events: none;
+  left: 40px;
+  top: 8.5px;
+  transition: 0.7s;
+}
+
+._input_div ._input_element:focus {
+  border: 1px solid #206cdf !important;
+}
+
+._input_div ._input_element:valid ._input_text,
+._div_input:focus ._input_text {
+  color: #206cdf !important;
+  transform: translateX(-25px) translateY(-30px) !important;
+  padding: 0 0.4rem;
+  background-color: #030b19;
+  transition: 0.7s;
+}
