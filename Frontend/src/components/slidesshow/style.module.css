@@ -1,0 +1,5 @@
+._slideshow {
+     height: 100vh;
+     position: relative;
+     object-fit: cover;
+   }

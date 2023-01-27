@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "homepage": "https://learn-todo.github.io/chatflix",
+  "homepage": "https://learn-todo.github.io/Chatflix",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 const Header = () => {
   return (
-    <header className={`${style._header} z-3`}>
+      <header className={`${style._header} z-3`}>
       <nav className="mx-3 pt-2">
         <div className={`${style._nav_con} d-flex justify-content-between p-5`}>
           <div className={`${style._logo}`}>
