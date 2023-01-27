@@ -3,7 +3,6 @@ import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import style from "./style.module.css";
 import slideshowData from "./slideshowData";
-import Header from './Header';
 
 const Slideshow = () => {
   
@@ -24,7 +23,6 @@ const properties = {
           </div>
         ))}
       </Fade>
-      <Header />
     </div>
   );
 };

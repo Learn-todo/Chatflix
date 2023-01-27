@@ -6,7 +6,7 @@ import ResetPassword from "./pages/reset password/Main"
 
 const App = () => {
   return(
-    <BrowserRouter basename={window.location.pathname || ''>
+    <BrowserRouter basename={window.location.pathname || ''}>
       <Routes>
         <Route exact path="/" element = {<Main /> }></Route>
         <Route path="/reset password" element = {<ResetPassword />} ></Route>
