@@ -15,10 +15,7 @@ const Header = () => {
             <button
               className={`${style._login_btn} btn btn-outline-btn-color px-5`}
             >
-              <Link
-                to="/reset password"
-                className="text-decoration-none text-white"
-              >
+              <Link to="/component" className="text-decoration-none text-white">
                 Log in
               </Link>
             </button>

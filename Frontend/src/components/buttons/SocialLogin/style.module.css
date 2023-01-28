@@ -1,0 +1,33 @@
+._button {
+	background-color: white;
+	display: flex;
+	width: 100%;
+	max-width: 24rem;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	border-radius: 5px;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	outline-width: 1px;
+	outline-offset: 1px;
+	transition-property: all;
+	transition-duration: 300ms;
+	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+._button:hover {
+	box-shadow: 0 10px 15px -4px rgb(255 255 255 / 0.5),
+		0 2px 15px 1px rgb(255 255 255 / 0.2), 0 10px 15px -4px rgb(0 0 0 / 0.1),
+		0 10px 15px -4px rgb(0 0 0 / 0.1);
+}
+
+._email {
+	fill: #02060d;
+}
+
+._text {
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+	font-weight: 500;
+}

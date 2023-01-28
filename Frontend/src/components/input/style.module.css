@@ -1,0 +1,92 @@
+/* input container */
+._container {
+	position: relative;
+	display: flex;
+	width: 100%;
+	max-width: 24rem;
+}
+
+/* input */
+._input {
+	width: 100%;
+	border-radius: 0.25rem;
+	border-width: 2px;
+	border-color: rgb(187 194 205 / 1);
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+	padding-left: 3.5rem;
+	padding-right: 1rem;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	color: rgb(198 220 253 / 1);
+	outline: 2px solid transparent;
+	outline-offset: 2px;
+}
+._input::placeholder {
+	color: transparent;
+}
+._input:focus {
+	border-color: rgb(37 99 235 / 1);
+}
+._input:enabled {
+	background-color: transparent;
+}
+._input:autofill {
+	background-color: rgb(3 9 21 / 1);
+}
+
+/* input icons */
+._icon {
+	position: absolute;
+	z-index: 10;
+	stroke: #f0f6fe;
+	top: 0.75rem;
+}
+._input:focus ~ ._icon {
+	stroke: #2563eb;
+}
+._email {
+	fill: #f0f6fe;
+	position: absolute;
+	z-index: 10;
+	top: 0.75rem;
+}
+._input:focus ~ ._email {
+	fill: #2563eb;
+}
+._left {
+	left: 0.75rem;
+	pointer-events: none;
+}
+._right {
+	right: 0.75rem;
+}
+
+/* input label */
+._label {
+	position: absolute;
+	top: -0.75rem;
+	left: 1rem;
+	background-color: rgb(2 6 13 / 1);
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	color: rgb(240 246 254 / 1);
+	transition-property: all;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+	pointer-events: none;
+}
+._input:placeholder-shown ~ ._label {
+	left: 3.75rem;
+	top: 0.875rem;
+	background-color: transparent;
+	padding: 0;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	color: rgb(187 194 205 / 1);
+}
+._input:focus ~ ._label {
+	color: rgb(37 99 235 / 1);
+}

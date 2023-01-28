@@ -1,10 +1,10 @@
 import React from "react";
 import "./sass/main.scss";
 
-import ComponentShowcase from "./pages/component-showcase/Main";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ComponentShowcase from "./pages/component-showcase/Components";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Main from "./pages/landing page/Main";
-import ResetPassword from "./pages/reset password/Main"
+import ResetPassword from "./pages/reset password/Main";
 
 const App = () => {
   return (

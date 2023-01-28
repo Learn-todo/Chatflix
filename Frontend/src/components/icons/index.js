@@ -1,0 +1,9 @@
+export { default as AppleIcon } from "./apple-icon";
+export { default as GoogleIcon } from "./google-icon";
+export { default as EmailIcon } from "./email-icon";
+export { default as LockIcon } from "./lock-icon";
+export { default as EyeIcon } from "./eye-icon";
+export { default as EyeSlashIcon } from "./eye-slash-icon";
+export { default as UserIcon } from "./user-icon";
+export { default as CategoryIcon } from "./category-icon";
+export { default as HomeIcon } from "./home-icon";

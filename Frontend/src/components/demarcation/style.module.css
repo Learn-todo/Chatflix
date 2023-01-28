@@ -1,0 +1,18 @@
+._demarcationContainer {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	max-width: 24rem;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+._demarcationLine {
+	height: 1px;
+	width: 100%;
+	background-color: rgb(210 215 222);
+}
+
+._demarcationText {
+	color: rgb(210 215 222);
+}
