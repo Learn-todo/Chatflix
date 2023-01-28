@@ -5,13 +5,23 @@ export { Demarcation } from "./demarcation";
 export { CreateAccountButtons, ForgotPasswordForm, LoginForm } from "./forms";
 
 export {
+	ActivityIcon,
 	AppleIcon,
-	GoogleIcon,
+	CategoryIcon,
+	ChatsIcon,
+	CommunityIcon,
+	DownloadsIcon,
 	EmailIcon,
 	EyeIcon,
 	EyeSlashIcon,
-	LockIcon,
-	UserIcon,
-	CategoryIcon,
+	GoogleIcon,
 	HomeIcon,
+	LockIcon,
+	ProfileIcon,
+	SettingsIcon,
+	TopRatedIcon,
+	UpcomingMoviesIcon,
+	UserIcon,
+	WatchHistoryIcon,
+	WatchListIcon,
 } from "./icons";
