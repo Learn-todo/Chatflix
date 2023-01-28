@@ -12,26 +12,29 @@ import {
 	CommunityIcon,
 	DownloadsIcon,
 	HomeIcon,
+	LogoutIcon,
 	ProfileIcon,
 	SettingsIcon,
 	TopRatedIcon,
 	UpcomingMoviesIcon,
 	WatchHistoryIcon,
 	WatchListIcon,
+	NavBarButton,
 } from "../../components";
 
 const IconList = [
-	ActivityIcon,
-	ChatsIcon,
-	CommunityIcon,
-	DownloadsIcon,
-	HomeIcon,
-	ProfileIcon,
-	SettingsIcon,
-	TopRatedIcon,
-	UpcomingMoviesIcon,
-	WatchHistoryIcon,
-	WatchListIcon,
+	{ icon: ActivityIcon, title: "Activity" },
+	{ icon: ChatsIcon, title: "Chats" },
+	{ icon: CommunityIcon, title: "Community" },
+	{ icon: DownloadsIcon, title: "Downloads" },
+	{ icon: HomeIcon, title: "Home" },
+	{ icon: LogoutIcon, title: "Logout" },
+	{ icon: ProfileIcon, title: "Profile" },
+	{ icon: SettingsIcon, title: "Settings" },
+	{ icon: TopRatedIcon, title: "Top Rated" },
+	{ icon: UpcomingMoviesIcon, title: "Upcoming Movies" },
+	{ icon: WatchHistoryIcon, title: "Watch History" },
+	{ icon: WatchListIcon, title: "Watch List" },
 ];
 
 function ComponentShowcase() {
@@ -79,11 +82,26 @@ function ComponentShowcase() {
 			<div className="flex flex-col gap-4 w-full bg-black-600 max-w-lg p-8">
 				<p className="text-white text-center">NavBar Icons</p>
 				<div className="flex flex-wrap gap-7">
-					{IconList.map((icon) => {
+					{IconList.map((Icon) => {
 						return (
 							<div className="flex gap-4 border rounded p-2">
-								{icon({ type: "fill" })}
-								{icon({ type: "outline" })}
+								<Icon.icon className={`fill-primary-600`} />
+								<Icon.icon className={`stroke-white`} />
+							</div>
+						);
+					})}
+				</div>
+			</div>
+			<div className="flex flex-col gap-4 w-full bg-black-600 max-w-lg p-8">
+				<p className="text-white text-center">NavBar Buttons</p>
+				<div className="flex flex-col w-full">
+					{IconList.map((Icon) => {
+						return (
+							<div className="w-full">
+								<NavBarButton
+									Icon={Icon.icon}
+									title={Icon.title}
+								/>
 							</div>
 						);
 					})}

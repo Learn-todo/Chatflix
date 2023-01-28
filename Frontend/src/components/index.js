@@ -3,6 +3,7 @@ export { Button, SocialLogin } from "./buttons";
 export { Demarcation } from "./demarcation";
 
 export { CreateAccountButtons, ForgotPasswordForm, LoginForm } from "./forms";
+export { NavBarButton } from "./nav-bar/nav-bar-buttons";
 
 export {
 	ActivityIcon,
@@ -17,6 +18,7 @@ export {
 	GoogleIcon,
 	HomeIcon,
 	LockIcon,
+	LogoutIcon,
 	ProfileIcon,
 	SettingsIcon,
 	TopRatedIcon,

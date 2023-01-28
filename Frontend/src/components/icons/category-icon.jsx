@@ -1,13 +1,11 @@
-const CategoryIcon = ({ type }) => {
+const CategoryIcon = ({ className }) => {
 	return (
 		<svg
 			width="24"
 			height="25"
 			viewBox="0 0 24 25"
 			fill="none"
-			className={`${type === "fill" && "fill-primary"} ${
-				type === "outline" && "stroke-white"
-			}`}
+			className={className}
 			xmlns="http://www.w3.org/2000/svg"
 		>
 			<path d="M18.6695 2.76465H16.7695C14.5895 2.76465 13.4395 3.91465 13.4395 6.09465V7.99465C13.4395 10.1746 14.5895 11.3246 16.7695 11.3246H18.6695C20.8495 11.3246 21.9995 10.1746 21.9995 7.99465V6.09465C21.9995 3.91465 20.8495 2.76465 18.6695 2.76465Z" />

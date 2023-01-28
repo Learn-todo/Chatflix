@@ -1,13 +1,11 @@
-const CommunityIcon = ({ type }) => {
+const CommunityIcon = ({ className }) => {
 	return (
 		<svg
 			width="24"
 			height="25"
 			viewBox="0 0 24 25"
 			fill="none"
-			className={`${type === "fill" && "fill-primary"} ${
-				type === "outline" && "stroke-white"
-			}`}
+			className={className}
 			xmlns="http://www.w3.org/2000/svg"
 		>
 			<path d="M9 2.76465C6.38 2.76465 4.25 4.89465 4.25 7.51465C4.25 10.0846 6.26 12.1646 8.88 12.2546C8.96 12.2446 9.04 12.2446 9.1 12.2546C9.12 12.2546 9.13 12.2546 9.15 12.2546C9.16 12.2546 9.16 12.2546 9.17 12.2546C11.73 12.1646 13.74 10.0846 13.75 7.51465C13.75 4.89465 11.62 2.76465 9 2.76465Z" />

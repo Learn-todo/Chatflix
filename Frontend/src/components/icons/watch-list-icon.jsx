@@ -1,4 +1,4 @@
-const WatchListIcon = ({ type }) => {
+const WatchListIcon = ({ className }) => {
 	return (
 		<svg
 			width="24"
@@ -6,9 +6,7 @@ const WatchListIcon = ({ type }) => {
 			viewBox="0 0 24 25"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			className={`${type === "fill" && "fill-primary"} ${
-				type === "outline" && "stroke-white"
-			}`}
+			className={className}
 		>
 			<path d="M6.36 8.54468H2V12.0147H6.36V8.54468Z" />
 			<path d="M6.36039 7.05453V2.89453C4.08039 3.31453 2.59039 4.78453 2.15039 7.04453H6.33039C6.34039 7.04453 6.35039 7.05453 6.36039 7.05453Z" />
