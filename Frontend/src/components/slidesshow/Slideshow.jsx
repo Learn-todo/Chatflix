@@ -19,7 +19,7 @@ const properties = {
       <Fade {...properties}>
         {slideshowData.map((fadeImage, index) => (
           <div key={index}>
-            <img style={{ width: '100%' }} className={`${style._slideshow}`} src={fadeImage.url} alt="." />
+            <img style={{ width: '100%' }}  className={`${style._slideshow}`} src={fadeImage.url} alt="." />
           </div>
         ))}
       </Fade>

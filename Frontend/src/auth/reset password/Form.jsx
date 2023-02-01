@@ -25,7 +25,7 @@ const Form = () => {
             </div>
           </div>
 
-          <div className={`${style._main} mx-auto my-5`}>
+          <div className={`${style._main} mx-auto my-3`}>
             <div className="d-flex justify-content-center align-items-center w-25 mx-auto">
               <img className="w-50" src={Mail} alt="message icon" />
             </div>
