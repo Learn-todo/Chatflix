@@ -2,7 +2,7 @@ import React from 'react';
 import { Fade } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import style from "./style.module.css";
-import slideshowData from "./slideshowData";
+import slideshowData from "../../components/slidesshow/slideshowData";
 
 const Slideshow = () => {
   

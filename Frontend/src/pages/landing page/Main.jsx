@@ -6,7 +6,7 @@ import Cards from "../../static/landing page/Cards";
 import Faqs from "../../static/landing page/Faqs";
 import Features from "../../static/landing page/Features";
 import Footer from "../../static/landing page/Footer";
-import Slideshow from "../../components/slidesshow/Slideshow";
+import Slideshow from "../../static/landing page/Slideshow";
 import Header from "../../static/landing page/Header";
 
 const Main = () => {
