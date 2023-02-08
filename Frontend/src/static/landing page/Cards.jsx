@@ -40,7 +40,7 @@ const Cards = () => {
                       className={`${style._card} p-4 text-start rounded-1 bg-cards`}
                     >
                       <img
-                        src={`./img/${card.img}`}
+                        src={`${card.img}`}
                         className={`${style._card_img_top}`}
                         alt=""
                       />
