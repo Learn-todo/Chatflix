@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./style.module.css";
-import Logo from "./images/Chatflix Logo.svg";
+import Logo from "../../components/logo/ChatflixLogo"
 import { Link } from "react-router-dom"
 
 const Header = () => {
@@ -9,7 +9,7 @@ const Header = () => {
       <nav className="mx-3 pt-2">
         <div className={`${style._nav_con} d-flex justify-content-between p-5`}>
           <div className={`${style._logo}`}>
-            <img src={Logo} alt="" />
+            <Logo />
           </div>
           <div>
             <button

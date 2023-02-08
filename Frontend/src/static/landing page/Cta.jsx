@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "./images/Chatflix Logo.svg";
+import Logo from "../../components/logo/ChatflixLogo";
 import style from "./style.module.css";
 
 const Cta = () => {
@@ -8,7 +8,7 @@ const Cta = () => {
       <div className="w-75 mx-auto">
         <div className="m-4 p-3">
           <div className="d-flex justify-content-center">
-            <img src={Logo} alt="" />
+            <Logo />
           </div>
         </div>
 

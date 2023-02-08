@@ -2,10 +2,11 @@ import React from "react";
 // import { useState } from "react";
 import styles from "./styles.module.css";
 import style from "../reset password/style.module.css";
-import Logo from "./images/Chatflix Logo.svg";
-import Sms from "./images/sms.svg";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosClose } from "react-icons/io";
+import { Image } from "cloudinary-react";
+import Logo from "../../components/logo/ChatflixLogo";
+
 
 const ForgotPassword = () => {
   // const inputStyle = {
@@ -15,11 +16,12 @@ const ForgotPassword = () => {
   //      padding: "0 .4rem",
   //      backgroundColor: "#030B19",
   // }
+  
 
   return (
     <section className={`${style._content}`}>
       <div className="logo w-50 z-1 m-4">
-        <img className="" src={Logo} alt="chatflix logo" />
+        <Logo />
       </div>
       <div
         className={`${style._container} d-flex justify-content-end align-items-center`}
@@ -53,10 +55,10 @@ const ForgotPassword = () => {
                     id=""
                     required="required"
                   />
-                  <img
-                    className={`${styles._form_img} position-absolute top-50 translate-middle`}
-                    src={Sms}
-                    alt=""
+                  <Image 
+                  cloudName="dfsclcxhm" 
+                  publicId="Chatflix/sms1_gto7kq.png"
+                  className={`${styles._form_img} position-absolute top-50 translate-middle text-cancel`} 
                   />
                   <span className={`${styles._input_text} text-cancel`}>
                     {" "}

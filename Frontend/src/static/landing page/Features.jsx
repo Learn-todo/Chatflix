@@ -1,8 +1,6 @@
 import React from "react";
 import style from "./style.module.css";
-import Img1 from "./images/Image.svg";
-import Img2 from "./images/Group 17.svg";
-import Img3 from "./images/Group 6.svg";
+import { Image } from "cloudinary-react";
 
 const Features = () => {
   return (
@@ -24,7 +22,10 @@ const Features = () => {
               </span>
             </div>
             <div className={`${style._features_img} container-sm w-75`}>
-              <img className="w-100" src={Img1} alt="" />
+              <Image
+              className="w-100"
+              cloudName="dfsclcxhm" 
+              publicId="Chatflix/features_rpmzvb.png" />
             </div>
           </div>
 
@@ -38,12 +39,15 @@ const Features = () => {
               </span>
             </div>
             <div className={`${style._features_img} w-75`}>
-              <img className="w-75" src={Img2} alt="" />
+              <Image
+              className="w-75"
+              cloudName="dfsclcxhm" 
+              publicId="Chatflix/Group_17_pe1hgb.png" />
             </div>
           </div>
 
           <div
-            className={`${style._features} d-flex justify-content-between align-items-center flex-row-reverse mb-5`}
+            className={`${style._features} d-flex justify-content-between align-items-center  mb-5`}
           >
             <div className={`${style._features_text} container`}>
               <span className="text-text-color2">
@@ -52,7 +56,10 @@ const Features = () => {
               </span>
             </div>
             <div className={`${style._features_img} container w-75`}>
-              <img className="w-100" src={Img3} alt="" />
+            <Image
+              className="w-100"
+              cloudName="dfsclcxhm" 
+              publicId="Chatflix/Group_6_xyj56e.png" />
             </div>
           </div>
         </div>
