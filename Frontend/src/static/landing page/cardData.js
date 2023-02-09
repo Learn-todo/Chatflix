@@ -1,7 +1,7 @@
 const cardData = [
   {
     id: 1,
-    img: "https://res.cloudinary.com/dfsclcxhm/image/upload/v1675873810/Chatflix/Group_12_miimmr.png",
+    img: "https://res.cloudinary.com/dfsclcxhm/image/upload/v1675873674/Chatflix/Group_7_dp1tmz.png",
     title: "Chat",
     description:
       "While hyped up or an interesting, suspense scene is shown, that exciting feeling to talk about that moment is not missed as you can talk about that special scene right there and in the same place.",

@@ -9,14 +9,6 @@ import Logo from "../../components/logo/ChatflixLogo";
 
 
 const ForgotPassword = () => {
-  // const inputStyle = {
-  //      color: "#206CDF",
-  //      transform: "translateX(-25px) translateY(-20px)",
-  //      transition: ".7s",
-  //      padding: "0 .4rem",
-  //      backgroundColor: "#030B19",
-  // }
-  
 
   return (
     <section className={`${style._content}`}>
@@ -49,23 +41,20 @@ const ForgotPassword = () => {
               <div className="">
                 <div className={`${styles._input_div} position-relative mb-4`}>
                   <input
-                    className={`${styles._input_element}  position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
+                    className={`${styles._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
                     type="email"
                     name=""
                     id=""
-                    required="required"
                   />
                   <Image 
                   cloudName="dfsclcxhm" 
                   publicId="Chatflix/sms1_gto7kq.png"
                   className={`${styles._form_img} position-absolute top-50 translate-middle text-cancel`} 
                   />
-                  <span className={`${styles._input_text} text-cancel`}>
-                    {" "}
+                  <span className={`${styles._input_text} text-cancel position-absolute`} tabIndex={1}>
                     Email
                   </span>
                 </div>
-
                 <button className="btn btn-primary p-2 w-100">Continue</button>
               </div>
             </form>

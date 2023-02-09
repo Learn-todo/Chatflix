@@ -4,7 +4,7 @@
   height: 20px;
 }
 
-._input_div ._input_text {
+._input_text {
   position: absolute;
   pointer-events: none;
   left: 40px;
@@ -12,14 +12,13 @@
   transition: 0.7s;
 }
 
-._input_div ._input_element:focus {
+._input_element:focus {
   border: 1px solid #206cdf !important;
 }
 
-._input_div ._input_element:valid ._input_text,
-._div_input:focus ._input_text {
+._input_element:focus ~ ._input_text {
   color: #206cdf !important;
-  transform: translateX(-25px) translateY(-30px) !important;
+  transform: translateX(-25px) translateY(-25px) !important;
   padding: 0 0.4rem;
   background-color: #030b19;
   transition: 0.7s;

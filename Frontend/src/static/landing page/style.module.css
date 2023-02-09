@@ -53,12 +53,14 @@
 }
 ._content {
   display: none;
+  transition: all 0.7s  !important;
+  transition-delay: 0.5s !important;
 }
 
 ._content_show {
   display: block;
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  transition-delay: 0.7s;
+  transition: all 0.7s  !important;
+  transition-delay: 0.5s !important;
 }
 
 @media screen and (max-width: 768px) {
