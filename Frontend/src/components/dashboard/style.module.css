@@ -1,0 +1,106 @@
+._main,
+._grid_container {
+  height: 100vh;
+}
+
+._sidebar {
+  border-right: 0.1rem solid #a5aebc !important;
+}
+
+._toggle {
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+
+._menu_list {
+  margin-bottom: 1.5rem;
+  padding-left: 0.7rem;
+}
+
+._menu_list > div {
+  margin-bottom: 0.7rem;
+}
+
+._menu_heading {
+  font-size: 0.6rem;
+  color: #a5aebc;
+}
+._menu_list a {
+  text-decoration: none;
+  color: #fff;
+  display: none;
+}
+
+._menu_icons {
+  width: 15px;
+  height: 15px;
+}
+
+._menu_list_show a {
+  text-decoration: none;
+  color: #f0f6fe;
+  display: block;
+  margin-left: 0.5rem;
+  font-size: 0.6rem;
+}
+._active:hover,
+._active:active {
+  border-right: 5px solid blue;
+}
+
+._active:hover svg,
+._active:active,
+._menu_list_show:hover a,
+._menu_list_show:active a {
+  color: blue;
+  cursor: pointer;
+}
+
+._search {
+  font-size: 0.5rem;
+}
+
+._search input {
+  border-radius: 4px;
+  outline: none;
+}
+
+._search svg {
+  left: 10px;
+  top: 9px;
+}
+
+._profile {
+  width: 45px !important;
+  height: 45px;
+}
+
+._profile div {
+  width: 20px !important;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* MEDIA QUERIES AND RESPONSIVENESS */
+
+@media screen and (min-width: 768px) {
+  ._search {
+    padding: 0.6rem 2rem !important;
+  }
+
+  ._input_container {
+    width: 300px !important;
+    height: 30px;
+  }
+
+  ._profile {
+    width: 90px !important;
+    height: 80px;
+  }
+
+  ._profile div {
+    width: 30px !important;
+    height: 30px;
+  }
+}

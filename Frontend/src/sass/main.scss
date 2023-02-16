@@ -1,8 +1,8 @@
-// custom variables
-
 // import the functions and variables
+// custom variables
 @import '../node_modules/bootstrap/scss/functions';
 @import '../node_modules/bootstrap/scss/variables';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 
 $custom-theme-colors: (
@@ -22,7 +22,10 @@ $custom-theme-colors: (
    "captions":#179EB0,
    "categories":#D56906,
    "accordion": #647081,
-   "faq": #D2D7DE
+   "faq": #D2D7DE,
+   "menu-heading": #A5AEBC,
+   "input": #282D34,
+   "input-text": #BCC3CD,
    );
 
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);
@@ -30,3 +33,7 @@ $theme-colors: map-merge($custom-theme-colors, $theme-colors);
 
 // import bootstrap
 @import '../node_modules/bootstrap/scss/bootstrap';
+
+*{
+  font-family: 'Roboto', sans-serif;
+}
