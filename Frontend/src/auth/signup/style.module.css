@@ -1,0 +1,11 @@
+._content {
+     /* height: 100vh !important; */
+     width: 80%;
+     position: absolute;
+     z-index: 99;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0 !important;
+     background-image: linear-gradient(rgba(1, 2, 5, 0.795), rgba(1, 2, 5, 0.596));
+}
