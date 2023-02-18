@@ -19,7 +19,7 @@
 }
 
 ._menu_list > div {
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.9rem;
 }
 
 ._menu_heading {
@@ -55,6 +55,10 @@
 ._menu_list_show:active a {
   color: blue;
   cursor: pointer;
+}
+
+._logout{
+  margin-top: auto!important;
 }
 
 ._search {

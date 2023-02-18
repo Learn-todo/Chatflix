@@ -38,6 +38,7 @@ const Dashboard = () => {
               : `${style._sidebar} p-0 ps-2 bg-backgroundTwo col-2 col-md-1 position-relative`
           }
         >
+          <div className="d-flex flex-column h-100">
           <div className="pe-2 d-flex justify-content-between align-items-center py-4 mb-5">
             {toggle ? (
               <Image
@@ -189,7 +190,7 @@ const Dashboard = () => {
               <a href=".">Settings</a>
             </div>
           </div>
-          <div className={`${style._menu_list} position-absolute bottom-0`}>
+          <div className={`${style._menu_list} ${style._logout}`}>
             <div
               className={
                 toggle
@@ -200,6 +201,7 @@ const Dashboard = () => {
               <BsBoxArrowLeft className={`${style._menu_icons}`} />
               <a href=".">Logout</a>
             </div>
+          </div>
           </div>
         </div>
         <div
