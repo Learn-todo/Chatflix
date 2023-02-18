@@ -39,7 +39,7 @@ const Header = () => {
 
           <div className={`${style._hero_div} mx-auto`}>
             <button className="mt-4 btn btn-btn-color w-100 p-2 mb-5">
-              <Link to="/forgot password"  className="text-decoration-none text-white">Create a free account</Link>
+              <Link to="/signup"  className="text-decoration-none text-white">Create a free account</Link>
             </button>
           </div>
         </div>
