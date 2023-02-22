@@ -7,15 +7,15 @@ import { IoIosClose } from "react-icons/io";
 
 const Form = () => {
   return (
-    <section className={`${style._content}`}>
-      <div className="logo w-50 z-1 m-4">
+    <section className={`${style._content} d-flex justify-content-evenly flex-column`}>
+      <div className="logo w-50 z-1 m-4 position-fixed top-0">
         <Logo />
       </div>
       <div
         className={`${style._container} d-flex justify-content-end align-items-center`}
       >
         <div className={`${style._form_div} bg-background rounded`}>
-          <div className="mx-3 py-3 d-flex justify-content-between">
+          <div className="mx-3 py-3 d-flex justify-content-between align-items-center">
             <div className="fs-5 fw-normal text-cancel cursor-pointer">
               <IoIosArrowBack />
             </div>

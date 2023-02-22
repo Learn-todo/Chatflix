@@ -14,12 +14,13 @@ const properties = {
     prevArrow: <button style={{ ...buttonStyle }}></button>,
     nextArrow: <button style={{ ...buttonStyle }}></button>
 };
+
   return (
-    <div className={`${style._slideshow}`}>
-      <Fade {...properties}>
+    <div className={`${style._slideshow} `}>
+      <Fade {...properties} >
         {slideshowData.map((fadeImage, index) => (
-          <div key={index}>
-            <img style={{ width: '100%' }}  className={`${style._slideshow}`} src={fadeImage.url} alt="." />
+          <div key={index} className={`${style._container} ${style._overlay}`}>
+            <img className={`${style._slideshow}`} src={fadeImage.url} alt="." />
           </div>
         ))}
       </Fade>
