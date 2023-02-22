@@ -1,5 +1,15 @@
+._overlay {
+    background: linear-gradient(rgba(1, 2, 5, 0.795), rgba(1, 2, 5, 0.596)) !important;
+}
+
 ._slideshow {
      height: 100vh;
-     position: relative;
+     width: 100%;
+     position: fixed;
      object-fit: cover;
+     z-index: -99;
+   }
+
+   ._container{
+    height: 100vh;
    }
