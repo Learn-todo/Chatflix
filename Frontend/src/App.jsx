@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./sass/main.scss";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -7,7 +8,8 @@ import ForgotPassword from "./pages/forgot password/Main";
 import Dashboard from "./components/dashboard/Dashboard";
 import Step1 from "./pages/authentication/Step1";
 import Step2 from "./pages/authentication/Step2";
-
+import Step3 from "./pages/authentication/Step3";
+import Step4 from "./pages/authentication/Step4";
 
 
 const App = () => {
@@ -20,7 +22,8 @@ const App = () => {
         <Route path="/forgot password" element = {<ForgotPassword />} ></Route>
         <Route path="/Step1" element = {<Step1 />} ></Route>
         <Route path="/Step2" element = {<Step2 />} ></Route>
-
+        <Route path="/Step3" element = {<Step3 />} ></Route>
+        <Route path="/Step4" element = {<Step4 />} ></Route>
 
       </Routes>
     </BrowserRouter>

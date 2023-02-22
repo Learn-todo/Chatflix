@@ -37,6 +37,35 @@
   border-radius: 1px;
 }
 
+._input_icon {
+  left: 28px;
+}
+
+._input_text {
+  position: absolute;
+  pointer-events: none;
+  left: 45px;
+  top: 8.5px;
+  transition: 0.7s;
+}
+
+._input_element:focus {
+  border: 1px solid #206cdf !important;
+}
+
+._input_element:focus~._input_text {
+  color: #206cdf !important;
+  transform: translateX(-25px) translateY(-20px) !important;
+  padding: 0 0.4rem;
+  background-color: #030b19;
+  transition: 0.7s;
+}
+
+._password_info > p {
+  font-size: .8rem;
+  margin-bottom: .4rem;
+}
+
 /* MEDIA QUERIES AND RESPONSIVENESS */
 
 @media screen and (min-width: 768px) {
@@ -45,14 +74,14 @@
     justify-content: end;
   }
   ._form_div {
-    width: 500px;
+    width: 450px;
   }
 
   ._form_content{
-    padding: 0 4rem !important;
+    padding: 0 5rem !important;
   }
 
   ._btn_div svg {
-    left: 25%;
+    left: 18.1%;
   }
 }

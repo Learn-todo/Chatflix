@@ -39,7 +39,7 @@ const Step3 = () => {
 
               <form className="mb-4" action="">
                 <div className={`mb-5`}>
-                  <div className={`${style._input_div} position-relative mb-4`}>
+                  <div className={`${style._input_div} position-relative mt-3 mb-1`}>
                   <input
                     className={`${style._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
                     type="email"
@@ -53,7 +53,7 @@ const Step3 = () => {
                     Username
                   </span>
                   </div>
-                  <div classname={`${style._password_info} text-text-color`}>
+                  <div className={`${style._password_info} mb-5 text-text-color`}>
                     <p>Username can only contain special characters e.g _, - or .</p>
                     <p>username can contain numbers</p>
                     <p>Username must not exceed 16 characters</p>

@@ -3,17 +3,12 @@ import Logo from "../../components/logo/ChatflixLogo";
 import style from "./style.module.css";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosClose } from "react-icons/io";
-import { FcGoogle } from "react-icons/fc";
-import { FaApple } from "react-icons/fa";
 import Slideshow from "../../components/slidesshow/Slideshow";
 import { BsEnvelope } from "react-icons/bs";
+import { BsPerson } from "react-icons/bs";
+import { Link } from "react-router-dom"
 
 const Step2 = () => {
-  const [nextStep, setNextStep] = useState(false)
-
-  const handleSubmit = () => {
-    setNextStep(prevStep => !prevStep)
-  }
   return (
     <section className={``}>
       <Slideshow />
@@ -30,7 +25,7 @@ const Step2 = () => {
                 <IoIosArrowBack />
               </div>
 
-              <div className="fs-1 fw-normal text-cancel cursor-pointer">
+              <div className="fs-2 fw-normal text-cancel cursor-pointer">
                 <IoIosClose />
               </div>
             </div>
@@ -44,31 +39,42 @@ const Step2 = () => {
                 </p>
               </div>
 
-              <form className="" action="">
-                <div>
-                  <div className={`${styles._input_div} position-relative mb-4`}>
+              <form className="mb-4" action="">
+                <div className={`mb-5`}>
+                  <div className={`${style._input_div} position-relative mb-4`}>
                   <input
-                    className={`${styles._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
+                    className={`${style._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
                     type="email"
                     name=""
                     id=""
                   />
-                  <Image 
-                  cloudName="dfsclcxhm" 
-                  publicId="Chatflix/sms1_gto7kq.png"
-                  className={`${styles._form_img} position-absolute top-50 translate-middle text-cancel`} 
-                  />
-                  <span className={`${styles._input_text} text-cancel position-absolute`} tabIndex={1}>
+                    <BsPerson
+                      className={`${style._input_icon} position-absolute top-50 translate-middle text-cancel`}
+                    />
+                  <span className={`${style._input_text} text-cancel position-absolute`} tabIndex={1}>
                     Full name
+                  </span>
+                  </div>
+                  <div className={`${style._input_div} position-relative mb-4`}>
+                  <input
+                    className={`${style._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
+                    type="email"
+                    name=""
+                    id=""
+                  />
+                    <BsEnvelope
+                      className={`${style._input_icon} position-absolute top-50 translate-middle text-cancel`}
+                    />
+                  <span className={`${style._input_text} text-cancel position-absolute`} tabIndex={1}>
+                    Email
                   </span>
                 </div>
                 </div>
-                <div className={`${style._btn_div} position-relative mb-4`}>
+                <div className={`${style._btn_div} position-relative mb-5`}>
                   <button
-                    onSubmit={handleSubmit}
-                    className={`bg-btn-color text-arrow fw-semibold py-3 border-0 w-100 rounded`}
+                    className={`bg-btn-color py-2 border-0 w-100 rounded`}
                   >
-                    Next
+                    <Link to="/step3" className={`text-decoration-none text-arrow`}>Next</Link>
                   </button>
                 </div>
               </form>
