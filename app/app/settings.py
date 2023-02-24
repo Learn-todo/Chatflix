@@ -134,6 +134,19 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = "core.User"
 
+# SMTP Email Settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = '78.142.47.33'  # replace with your Scala SMTP server hostname
+EMAIL_PORT = 465  # replace with your Scala SMTP server port number
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'landingpage@jaromtravels.com'  # replace with your Scala SMTP server username
+EMAIL_HOST_PASSWORD = 'ilovejaromtravels'  # replace with your Scala SMTP server password
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': "drf_spectacular.openapi.AutoSchema",
+}
+
+
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': "drf_spectacular.openapi.AutoSchema",
 }
