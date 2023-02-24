@@ -1,5 +1,6 @@
 import secrets
 
+from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
 from django.db import models
 from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager, PermissionsMixin)
@@ -10,7 +11,7 @@ from django.urls import reverse
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, password=None, **extra_fields):
+    def create_user(self, request, email, password=None, **extra_fields):
         if not email:
             raise ValueError('User must have an email Address')
         user = self.model(email=self.normalize_email(email), **extra_fields)
@@ -24,8 +25,12 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         activation_link = reverse('user:activate', kwargs={'token': token})
         email_subject = 'Activate your account'
-        email_body = f'Please click the following link to activate your account: {activation_link}'
-        email = EmailMessage(subject=email_subject, body=email_body, to=[email], from_email='landingpage@jaromtravels.com')
+        current_site = get_current_site(request)
+        email_body = f'Please click the following link to activate your account: http://{current_site.domain}{activation_link}'
+        activation_link = f"http://{current_site.domain}{reverse('user:activate', kwargs={'token': user.activation_token})}"
+
+        email = EmailMessage(subject=email_subject, body=email_body, to=[email],
+                             from_email='landingpage@jaromtravels.com')
         print(activation_link)
         email.send()
 
@@ -63,4 +68,3 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
-
