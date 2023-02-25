@@ -27,8 +27,6 @@ class UserManager(BaseUserManager):
         email_subject = 'Activate your account'
         current_site = get_current_site(request)
         email_body = f'Please click the following link to activate your account: http://{current_site.domain}{activation_link}'
-        activation_link = f"http://{current_site.domain}{reverse('user:activate', kwargs={'token': user.activation_token})}"
-
         email = EmailMessage(subject=email_subject, body=email_body, to=[email],
                              from_email='landingpage@jaromtravels.com')
         print(activation_link)
