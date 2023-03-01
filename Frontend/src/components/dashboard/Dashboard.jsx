@@ -154,7 +154,7 @@ const Dashboard = () => {
               }
             >
               <FiFilm className={`${style._menu_icons}`} />
-              <a href=".">Watchlist</a>
+              <a href="/watchlist">Watchlist</a>
             </div>
             <div
               className={`${
