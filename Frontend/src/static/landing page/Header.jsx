@@ -1,9 +1,16 @@
 import React from "react";
 import style from "./style.module.css";
-import Logo from "../../components/logo/ChatflixLogo"
-import { Link } from "react-router-dom"
+import Logo from "../../components/logo/ChatflixLogo";
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  let navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/step1');
+  }
+  const handleLogin = () => {
+    navigate('/signin');
+  }
   return (
       <header className={`${style._header} z-3`}>
       <nav className="pt-2">
@@ -13,8 +20,9 @@ const Header = () => {
           </div>
           <div>
             <button
-              className={`${style._login_btn} btn btn-outline-btn-color px-5`}
-            ><Link to="/signin" className="text-decoration-none text-white">Log in</Link>
+              className={`${style._login_btn} btn btn-outline-btn-color px-5 text-arrow`}
+              onClick={handleLogin}
+            >Log in
             </button>
           </div>
         </div>
@@ -38,8 +46,7 @@ const Header = () => {
           </div>
 
           <div className={`${style._hero_div} mx-auto`}>
-            <button className="mt-4 btn btn-btn-color w-100 p-2 mb-5">
-              <Link to="/step1"  className="text-decoration-none text-white">Create a free account</Link>
+            <button className="mt-4 btn btn-btn-color w-100 p-2 mb-5 text-arrow" onClick={handleClick}>Create a free account
             </button>
           </div>
         </div>

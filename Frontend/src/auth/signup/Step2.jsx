@@ -8,7 +8,7 @@ import { BsEnvelope } from "react-icons/bs";
 import { BsPerson } from "react-icons/bs";
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import axios from "axios";
+// import axios from "axios";
 
 const Step2 = () => {
   let navigate = useNavigate();
@@ -30,13 +30,14 @@ const Step2 = () => {
     } else if (email === ""){
       error("Email cannot be empty");
     } else {
-      axios.post(`https://userservice-popc.onrender.com/api/user/create/`)
-        .then(data => {
-          console.log(data);
-        navigate('/step1');
-        }).catch(error => {
-          console.log(error)
-        })
+      // axios.post(`https://userservice-popc.onrender.com/api/user/create/`)
+      //   .then(data => {
+      //     console.log(data);
+      //   navigate('/step3');
+      //   }).catch(error => {
+      //     console.log(error)
+      //   })
+      navigate("/step3")
     }
   }
   const handlePrev = () => {
@@ -111,8 +112,7 @@ const Step2 = () => {
                 <div className={`${style._btn_div} position-relative mb-5 mt-3`}>
                   <button
                     className={`bg-btn-color py-2 border-0 w-100 rounded text-arrow`}
-                  >
-                    Next
+                  >Next
                   </button>
                 </div>
               </form>

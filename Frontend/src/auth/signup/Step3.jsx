@@ -5,7 +5,6 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosClose } from "react-icons/io";
 import Slideshow from "../../components/slidesshow/Slideshow";
 import { MdOutlineLock } from "react-icons/md";
-import { Link } from "react-router-dom";
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
@@ -32,7 +31,7 @@ const Step3 = () => {
       navigate("/step4")
     }
   }
-  const handleBack = () => {
+  const handlePrev = () => {
     navigate('/step2');
   };
   const handleClose = () => {
@@ -51,7 +50,7 @@ const Step3 = () => {
         <div className={`${style._form_container} mx-auto`}>
           {<div className={`${style._form_div} bg-background rounded`}>
             <div className="mx-3 py-3 d-flex justify-content-between align-items-center">
-              <div className="fs-5 fw-normal text-cancel cursor-pointer" onClick={handleBack}>
+              <div className="fs-5 fw-normal text-cancel cursor-pointer" onClick={handlePrev}>
                 <IoIosArrowBack />
               </div>
 

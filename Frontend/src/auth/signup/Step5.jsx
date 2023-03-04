@@ -6,8 +6,19 @@ import { IoIosClose } from "react-icons/io";
 import Slideshow from "../../components/slidesshow/Slideshow";
 import { Link } from "react-router-dom";
 import { Image } from "cloudinary-react";
+import { useNavigate } from 'react-router-dom';
 
 const Step5 = () => {
+  let navigate = useNavigate();
+  const handleNext = () => {
+    navigate('/verified account');
+  }
+  const handlePrev = () => {
+    navigate('/step4');
+  };
+  const handleClose = () => {
+    navigate('/');
+  };
   return (
     <section className={``}>
       <Slideshow />
@@ -20,11 +31,11 @@ const Step5 = () => {
         <div className={`${style._form_container} mx-auto`}>
           {<div className={`${style._form_div} bg-background rounded`}>
             <div className="mx-3 py-3 d-flex justify-content-between align-items-center">
-              <div className="fs-5 fw-normal text-cancel cursor-pointer">
+              <div className="fs-5 fw-normal text-cancel cursor-pointer" onClick={handlePrev}>
                 <IoIosArrowBack />
               </div>
 
-              <div className="fs-2 fw-normal text-cancel cursor-pointer">
+              <div className="fs-2 fw-normal text-cancel cursor-pointer" onClick={handleClose}>
                 <IoIosClose />
               </div>
             </div>
@@ -43,16 +54,15 @@ const Step5 = () => {
                 </p>
               </div>
 
-              <form className="mb-4" action="">
+              <form className="mb-4" action="" onSubmit={handleNext}>
                 <div className={`${style._btn_div} position-relative mb-5`}>
                   <button
-                    className={`bg-btn-color py-2 border-0 w-100 rounded`}
-                  >
-                    <Link to="/verified account" className={`text-decoration-none text-arrow`}>Open your email app</Link>
+                    className={`bg-btn-color py-2 border-0 w-100 rounded text-arrow`}
+                  >Open your email app
                   </button>
                 </div>
                 <div className={`mb-5 text-arrow`}>
-                  <p>Didn't receive any email? <a href="." className={`text-decoration-none text-btn-color`}>Resend link.</a></p>
+                  <p>Didn't receive any email? <Link to="" className={`text-decoration-none text-btn-color`}>Resend link.</Link></p>
                 </div>
               </form>
             </div>

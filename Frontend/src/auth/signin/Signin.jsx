@@ -1,6 +1,5 @@
 import React from "react";
 import Logo from "../../components/logo/ChatflixLogo";
-import styles from "./styles.module.css";
 import style from "../signup/style.module.css";
 import { IoIosClose } from "react-icons/io";
 import Slideshow from "../../components/slidesshow/Slideshow";
@@ -9,8 +8,16 @@ import { MdOutlineLock } from "react-icons/md";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const Signin = () => {
+  let navigate = useNavigate();
+  const handleSignin = () => {
+    navigate('/dashboard');
+  }
+  const handleClose = () => {
+    navigate('/');
+  };
   return (
     <section className={``}>
       <Slideshow />
@@ -26,7 +33,7 @@ const Signin = () => {
               <div className="mx-3 py-3 d-flex justify-content-between align-items-center">
                 <div className="fs-5 fw-normal text-cancel cursor-pointer "></div>
 
-                <div className="fs-2 fw-normal text-cancel cursor-pointer">
+                <div className="fs-2 fw-normal text-cancel cursor-pointer" onClick={handleClose}>
                   <IoIosClose />
                 </div>
               </div>
@@ -39,7 +46,7 @@ const Signin = () => {
                   </h3>
                 </div>
 
-                <form className="mb-4" action="">
+                <form className="mb-4" action="" onSubmit={handleSignin}>
                   <div className={`mb-2`}>
                     <div className={`${style._btn_div} position-relative mb-4`}>
                       <button
@@ -88,7 +95,7 @@ const Signin = () => {
                     >
                       <input
                         className={`${style._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
-                        type="email"
+                        type="password"
                         name=""
                         id=""
                       />
@@ -104,7 +111,7 @@ const Signin = () => {
                     </div>
                   </div>
                   <div
-                    className={`${styles._checkbox_container} d-flex justify-content-between align-items-center my-4`}
+                    className={`${style._checkbox_container} d-flex justify-content-between align-items-center my-4`}
                   >
                     <div className={`text-signin`}>
                       <input
@@ -126,18 +133,13 @@ const Signin = () => {
                   </div>
                   <div className={`${style._btn_div} position-relative mb-5`}>
                     <button
-                      className={`bg-btn-color py-2 border-0 w-100 rounded`}
+                      className={`bg-btn-color py-2 border-0 w-100 rounded text-arrow`}
                     >
-                      <Link
-                        to="/dashboard"
-                        className={`text-decoration-none text-arrow`}
-                      >
                         Signin
-                      </Link>
                     </button>
                   </div>
                   <div
-                    className={`${styles._checkbox_container} text-signin mb-4`}
+                    className={`${style._checkbox_container} text-signin mb-4`}
                   >
                     <p>
                       You do not have an account?{" "}

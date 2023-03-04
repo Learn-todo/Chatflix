@@ -5,9 +5,16 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosClose } from "react-icons/io";
 import Slideshow from "../../components/slidesshow/Slideshow";
 import { BsEnvelope } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const ForgotPassword = () => {
+  let navigate = useNavigate();
+  const handleForgotPassword = () => {
+    navigate('/reset password');
+  }
+  const handlePrev = () => {
+    navigate('/signin');
+  };
   return (
     <section className={``}>
       <Slideshow />
@@ -20,11 +27,11 @@ const ForgotPassword = () => {
         <div className={`${style._form_container} mx-auto`}>
           {<div className={`${style._form_div} bg-background rounded`}>
             <div className="mx-3 py-3 d-flex justify-content-between align-items-center">
-              <div className="fs-5 fw-normal text-cancel cursor-pointer">
+              <div className="fs-5 fw-normal text-cancel cursor-pointer" onClick={handlePrev}>
                 <IoIosArrowBack />
               </div>
 
-              <div className="fs-2 fw-normal text-cancel cursor-pointer">
+              <div className="fs-2 fw-normal text-cancel cursor-pointer" onClick={handlePrev}>
                 <IoIosClose />
               </div>
             </div>
@@ -37,7 +44,7 @@ const ForgotPassword = () => {
                 </p>
               </div>
 
-              <form className="mb-4" action="">
+              <form className="mb-4" action="" onSubmit={handleForgotPassword}>
                 <div className={`mb-5`}>
                   <div className={`${style._input_div} position-relative mb-4`}>
                   <input
@@ -56,9 +63,8 @@ const ForgotPassword = () => {
                 </div>
                 <div className={`${style._btn_div} position-relative mb-5 mt-3`}>
                   <button
-                    className={`bg-btn-color py-2 border-0 w-100 rounded`}
-                  >
-                    <Link to="/reset password" className={`text-decoration-none text-arrow`}>Continue</Link>
+                    className={`bg-btn-color py-2 border-0 w-100 rounded text-arrow`}
+                  >Continue
                   </button>
                 </div>
               </form>

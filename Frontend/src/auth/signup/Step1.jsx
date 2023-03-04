@@ -14,6 +14,9 @@ const Step1 = () => {
   const handleClose = () => {
     navigate('/');
   };
+  const handleSignup = () => {
+    navigate('/step2');
+  };
 
   return (
     <section className={``}>
@@ -70,9 +73,9 @@ const Step1 = () => {
                 </div>
                 <div className={`${style._btn_div} position-relative mb-4`}>
                   <button
-                    className={`py-3 border-0 w-100 rounded`}
-                  >
-                    <Link to="/step2" className={`text-decoration-none text-backgroundTwo fw-semibold`}>Signup with Email</Link>
+                    className={`py-3 border-0 w-100 rounded text-backgroundTwo fw-semibold`}
+                    onClick={handleSignup}
+                  >Signup with Email
                   </button>
                   <BsEnvelope className={`position-absolute`} />
                 </div>

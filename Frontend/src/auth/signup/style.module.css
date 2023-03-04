@@ -89,6 +89,9 @@
   visibility: hidden;
   width: 2px;
 }
+._checkbox_container {
+  font-size: .8rem;
+}
 
 /* MEDIA QUERIES AND RESPONSIVENESS */
 

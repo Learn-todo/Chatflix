@@ -5,10 +5,20 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosClose } from "react-icons/io";
 import { MdOutlineLock } from "react-icons/md";
 import Slideshow from "../../components/slidesshow/Slideshow";
-import { Link } from "react-router-dom";
 import { Image } from "cloudinary-react";
+import { useNavigate } from "react-router-dom";
 
 const SetNewPassword = () => {
+  let navigate = useNavigate();
+  const handleSetNewPassword = () => {
+    navigate('/reset success');
+  }
+  const handlePrev = () => {
+    navigate('/reset password');
+  };
+  const handleClose = () => {
+    navigate('/');
+  };
   return (
     <section className={``}>
       <Slideshow />
@@ -21,11 +31,11 @@ const SetNewPassword = () => {
         <div className={`${style._form_container} mx-auto`}>
           {<div className={`${style._form_div} bg-background rounded`}>
             <div className="mx-3 py-3 d-flex justify-content-between align-items-center">
-              <div className="fs-5 fw-normal text-cancel cursor-pointer">
+              <div className="fs-5 fw-normal text-cancel cursor-pointer" onClick={handlePrev}>
                 <IoIosArrowBack />
               </div>
 
-              <div className="fs-2 fw-normal text-cancel cursor-pointer">
+              <div className="fs-2 fw-normal text-cancel cursor-pointer" onClick={handleClose}>
                 <IoIosClose />
               </div>
             </div>
@@ -44,12 +54,12 @@ const SetNewPassword = () => {
                 </p>
               </div>
 
-              <form className="mb-4" action="">
+              <form className="mb-4" action="" onSubmit={handleSetNewPassword}>
                 <div className={`mb-4`}>
                   <div className={`${style._input_div} position-relative mt-3 mb-1`}>
                   <input
                     className={`${style._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
-                    type="email"
+                    type="password"
                     name=""
                     id=""
                   />
@@ -69,7 +79,7 @@ const SetNewPassword = () => {
                   <div className={`${style._input_div} position-relative mb-5`}>
                   <input
                     className={`${style._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
-                    type="email"
+                    type="password"
                     name=""
                     id=""
                   />
@@ -84,9 +94,8 @@ const SetNewPassword = () => {
                 </div>
                 <div className={`${style._btn_div} position-relative mb-5 mt-3`}>
                   <button
-                    className={`bg-btn-color py-2 border-0 w-100 rounded`}
-                  >
-                    <Link to="/reset success" className={`text-decoration-none text-arrow`}>Reset Password</Link>
+                    className={`bg-btn-color py-2 border-0 w-100 rounded text-arrow`}
+                  >Reset Password
                   </button>
                 </div>
               </form>
