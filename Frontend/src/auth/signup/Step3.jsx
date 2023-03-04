@@ -14,12 +14,12 @@ const Step3 = () => {
   const error = (message) => toast.error(message);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
   useEffect(() => {
     localStorage.setItem('password', JSON.stringify(password));
-  }, [password]);
-  useEffect(() => {
     localStorage.setItem('confirmPassword', JSON.stringify(confirmPassword));
-  }, [confirmPassword]);
+  }, [password, confirmPassword]);
+
   const handleNext = (e) => {
     e.preventDefault();
     if (password === "" && confirmPassword === ""){
@@ -38,6 +38,7 @@ const Step3 = () => {
   const handleClose = () => {
     navigate('/');
   };
+  localStorage.clear();
   return (
     <section className={``}>
       <Slideshow />
