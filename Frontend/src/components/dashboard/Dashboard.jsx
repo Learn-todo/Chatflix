@@ -68,8 +68,8 @@ const Dashboard = () => {
                   : `${style._active}`
               }
             >
-              <MdHomeFilled className={`${style._menu_icons}`} />
-              <a href=".">Home</a>
+              <Link to="/" className={`d-block m-0`}><MdHomeFilled className={`${style._menu_icons}`} /></Link>
+              <Link to="/">Home</Link>
             </div>
             <div
               className={
@@ -78,8 +78,10 @@ const Dashboard = () => {
                   : `${style._active}`
               }
             >
-              <BsUiChecksGrid className={`${style._menu_icons}`} />
-              <a href=".">Categories</a>
+              <Link to="" className={`d-block m-0`}>
+                <BsUiChecksGrid className={`${style._menu_icons}`} />
+              </Link>
+              <Link to="">Categories</Link>
             </div>
             <div
               className={
@@ -88,8 +90,10 @@ const Dashboard = () => {
                   : `${style._active}`
               }
             >
-              <BiMoviePlay className={`${style._menu_icons}`} />
-              <a href=".">Upcoming Movies</a>
+                <Link to="" className={`d-block m-0`}>
+                  <BiMoviePlay className={`${style._menu_icons}`} />
+                </Link>
+              <Link to="" className={``}>Upcoming Movies</Link>
             </div>
             <div
               className={`${
@@ -98,8 +102,10 @@ const Dashboard = () => {
                   : `${style._active}`
               } mb-3`}
             >
-              <BsClock className={`${style._menu_icons}`} />
-              <a href=".">Watch History</a>
+                <Link to="" className={`d-block m-0`}>
+                  <BsClock className={`${style._menu_icons}`} />
+                </Link>
+              <Link to="">Watch History</Link>
             </div>
           </div>
           <div className={`${style._menu_list}`}>
@@ -111,8 +117,10 @@ const Dashboard = () => {
                   : `${style._active}`
               }
             >
-              <IoChatbubblesOutline className={`${style._menu_icons}`} />
-              <a href=".">Chat</a>
+                <Link to="" className={`d-block m-0`}>
+                  <IoChatbubblesOutline className={`${style._menu_icons}`} />
+                </Link>
+              <Link to="">Chat</Link>
             </div>
             <div
               className={`${
@@ -121,8 +129,10 @@ const Dashboard = () => {
                   : `${style._active}`
               } mb-3`}
             >
-              <HiOutlineUsers className={`${style._menu_icons}`} />
-              <a href=".">Community</a>
+                <Link to="" className={`d-block m-0`}>
+                  <HiOutlineUsers className={`${style._menu_icons}`} />
+                </Link>
+              <Link to="">Community</Link>
             </div>
           </div>
           <div className={`${style._menu_list}`}>
@@ -134,8 +144,10 @@ const Dashboard = () => {
                   : `${style._active}`
               }
             >
-              <TbActivity className={`${style._menu_icons}`} />
-              <a href=".">Activity</a>
+                <Link to="" className={`d-block m-0`}>
+                  <TbActivity className={`${style._menu_icons}`} />
+              </Link>
+              <Link to="">Activity</Link>
             </div>
             <div
               className={
@@ -144,8 +156,10 @@ const Dashboard = () => {
                   : `${style._active}`
               }
             >
-              <HiOutlineSparkles className={`${style._menu_icons}`} />
-              <a href=".">Top Rated</a>
+              <Link to="" className={`d-block m-0`}>
+                <HiOutlineSparkles className={`${style._menu_icons}`} />
+              </Link>
+              <Link to="">Top Rated</Link>
             </div>
             <div
               className={
@@ -154,8 +168,10 @@ const Dashboard = () => {
                   : `${style._active}`
               }
             >
-              <FiFilm className={`${style._menu_icons}`} />
-              <a href=".">Watchlist</a>
+                <Link to="" className={`d-block m-0`}>
+                  <FiFilm className={`${style._menu_icons}`} />
+              </Link>
+              <Link to="">Watchlist</Link>
             </div>
             <div
               className={`${
@@ -164,8 +180,10 @@ const Dashboard = () => {
                   : `${style._active}`
               } mb-3`}
             >
-              <BsBoxArrowInDown className={`${style._menu_icons}`} />
-              <a href=".">Downloads</a>
+                <Link to="" className={`d-block m-0`}>
+                  <BsBoxArrowInDown className={`${style._menu_icons}`} />
+                </Link>
+              <Link to="">Downloads</Link>
             </div>
           </div>
           <div className={`${style._menu_list}`}>
@@ -177,8 +195,10 @@ const Dashboard = () => {
                   : `${style._active}`
               }
             >
-              <CiUser className={`${style._menu_icons}`} />
-              <a href=".">Profile</a>
+                <Link to="" className={`d-block m-0`}>
+                  <CiUser className={`${style._menu_icons}`} />
+              </Link>
+              <Link to="">Profile</Link>
             </div>
             <div
               className={`${
@@ -187,8 +207,10 @@ const Dashboard = () => {
                   : `${style._active}`
               } mb-3`}
             >
-              <BsGear className={`${style._menu_icons}`} />
-              <a href=".">Settings</a>
+              <Link to="" className={`d-block m-0`}>
+                <BsGear className={`${style._menu_icons}`} />
+              </Link>
+              <Link to="">Settings</Link>
             </div>
           </div>
           <div className={`${style._menu_list} ${style._logout}`}>
@@ -199,7 +221,9 @@ const Dashboard = () => {
                   : `${style._active}`
               }
             >
-              <BsBoxArrowLeft className={`${style._menu_icons}`} />
+              <Link to="/signout" className={`d-block m-0`}>
+                <BsBoxArrowLeft className={`${style._menu_icons}`} />
+              </Link>
               <Link to="/signout">Logout</Link>
             </div>
           </div>
@@ -243,6 +267,9 @@ const Dashboard = () => {
                 />
               </div>
             </div>
+          </div>
+          <div>
+            {/* CONTENT GOES HERE */}
           </div>
         </div>
       </div>
