@@ -1,15 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import Logo from "../../components/logo/ChatflixLogo";
 import style from "./style.module.css";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import { IoIosClose } from "react-icons/io";
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 import Slideshow from "../../components/slidesshow/Slideshow";
 import { BsEnvelope } from "react-icons/bs";
-// import Step2 from "./Step2";
+import { useNavigate } from 'react-router-dom';
 
 const Step1 = () => {
+  let navigate = useNavigate();
+  const handleClose = () => {
+    navigate('/');
+  };
+
   return (
     <section className={``}>
       <Slideshow />
@@ -23,17 +28,16 @@ const Step1 = () => {
           {<div className={`${style._form_div} bg-background rounded`}>
             <div className="mx-3 py-3 d-flex justify-content-between align-items-center">
               <div className="fs-5 fw-normal text-cancel cursor-pointer">
-                {/* <IoIosArrowBack /> */}
               </div>
 
-              <div className="fs-1 fw-normal text-cancel cursor-pointer">
+              <div className="fs-1 fw-normal text-cancel cursor-pointer" onClick={handleClose}>
                 <IoIosClose />
               </div>
             </div>
 
             <div className={`${style._form_content} mx-auto my-3 px-4`}>
-              <div className={`mb-4 text-center`}>
-                <h3 className={`text-arrow mb-2 fs-4`}>Create Your Account</h3>
+              <div className={`mb-5 text-center`}>
+                <h3 className={`text-arrow mb-2 fs-3 lh-4`}>Create Your Account</h3>
                 <p className={`text-text-color`}>
                   Create a free account to start chatting with friends while
                   watching movies.
@@ -102,12 +106,10 @@ const Step1 = () => {
                 <div className={`mb-5 text-arrow`}>
                   <p>
                     Have an account already?{" "}
-                    <a
-                      href="."
+                    <Link
+                      to="/signin"
                       className={`text-btn-color text-decoration-none`}
-                    >
-                      Login.
-                    </a>
+                    >Login</Link>
                   </p>
                 </div>
               </form>

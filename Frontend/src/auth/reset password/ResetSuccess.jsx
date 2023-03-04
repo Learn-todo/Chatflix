@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Logo from "../../components/logo/ChatflixLogo";
 import style from "../signup/style.module.css";
 import { IoIosArrowBack } from "react-icons/io";

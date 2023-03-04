@@ -1,5 +1,6 @@
 import React from "react";
 import { Image } from "cloudinary-react";
+import { Link } from "react-router-dom"
 import Gloria from "./img/Gloria.jpg";
 import { CgChevronLeftR } from "react-icons/cg";
 import { HiOutlineSparkles } from "react-icons/hi";
@@ -199,7 +200,7 @@ const Dashboard = () => {
               }
             >
               <BsBoxArrowLeft className={`${style._menu_icons}`} />
-              <a href=".">Logout</a>
+              <Link to="/signout">Logout</Link>
             </div>
           </div>
           </div>

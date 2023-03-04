@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Logo from "../../components/logo/ChatflixLogo";
 import style from "../signup/style.module.css";
 import { IoIosArrowBack } from "react-icons/io";
@@ -7,7 +7,6 @@ import { MdOutlineLock } from "react-icons/md";
 import Slideshow from "../../components/slidesshow/Slideshow";
 import { Link } from "react-router-dom";
 import { Image } from "cloudinary-react";
-
 
 const SetNewPassword = () => {
   return (

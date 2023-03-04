@@ -5,9 +5,19 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosClose } from "react-icons/io";
 import Slideshow from "../../components/slidesshow/Slideshow";
 import { BsPerson } from "react-icons/bs";
-import { Link } from "react-router-dom"
+import { BsCamera } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
-const Step3 = () => {
+const Step4 = () => {
+  const [selectFile, setSelectFile] = useState();
+  const [uploadFile, setUploadFile] = useState(false);
+
+  const handleChange = (e) => {
+    const url = URL.createObjectURL(e.target.files[0]);
+		setSelectFile(url);
+    setUploadFile(true);
+  };
+  
   return (
     <section className={``}>
       <Slideshow />
@@ -30,14 +40,31 @@ const Step3 = () => {
             </div>
 
             <div className={`${style._form_content} mx-auto my-3 px-4`}>
-              <div className={`mb-4 text-center`}>
-                <h3 className={`text-arrow mb-2 fs-4`}>Create Your Account</h3>
+              <div className={`mb-5 text-center`}>
+                <h3 className={`text-arrow mb-2 fs-3 lh-4`}>Create Your Account</h3>
                 <p className={`text-text-color`}>
                   Choose your favorite header picture and set a unique username.
                 </p>
               </div>
 
               <form className="mb-4" action="">
+                <div className={`d-flex justify-content-start align-items-center mb-4`}>
+                  <div className={`${style._avatar} bg-cards rounded-circle d-flex justify-content-center align-items-center`}>
+                    { uploadFile ? <img src={selectFile} alt="" /> : <BsCamera
+                    className={`text-cancel`}
+                  />}
+                  </div>
+                  <label
+                    htmlFor="file"
+                    className={`${style._label} bg-btn-color text-arrow p-2 ms-3 text-center`}
+                  >Choose Avatar</label>
+                  <input 
+                  className={`${style._avatar_input}`}
+                  type="file"
+                  id="file"
+                  onChange={handleChange}
+                  />
+                </div>
                 <div className={`mb-5`}>
                   <div className={`${style._input_div} position-relative mt-3 mb-1`}>
                   <input
@@ -63,7 +90,7 @@ const Step3 = () => {
                   <button
                     className={`bg-btn-color py-2 border-0 w-100 rounded`}
                   >
-                    <Link to="/step3" className={`text-decoration-none text-arrow`}>Finish</Link>
+                    <Link to="/step5" className={`text-decoration-none text-arrow`}>Finish</Link>
                   </button>
                 </div>
               </form>
@@ -74,4 +101,4 @@ const Step3 = () => {
     </section>
   );
 };
-export default Step3;
+export default Step4;
