@@ -25,7 +25,7 @@ const Cta = () => {
 
         <div className="d-flex justify-content-center mb-5">
           <button className="btn btn-btn-color p-2 px-3 rounded-1">
-            <Link to="/dashboard" className="text-text-color2 text-decoration-none">Get Started</Link>
+            <Link to="/step1" className="text-text-color2 text-decoration-none">Get Started</Link>
           </button>
         </div>
       </div>
