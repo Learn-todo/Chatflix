@@ -34,7 +34,6 @@ const Cards = () => {
           <div className="row mb-5">
             {cardData.map((card, i) => {
               return (
-                <>
                   <div className={`${style._card_columns} col-4 mb-4`} key={card.id}>
                     <div
                       className={`${style._card} p-4 text-start rounded-1 bg-cards`}
@@ -52,7 +51,6 @@ const Cards = () => {
                       </div>
                     </div>
                   </div>
-                </>
               );
             })}
           </div>
