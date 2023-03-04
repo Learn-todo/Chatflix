@@ -16,14 +16,14 @@ const cardData = [
   {
     id: 3,
     img: "https://res.cloudinary.com/dfsclcxhm/image/upload/v1675873676/Chatflix/Group_9_vvpa1c.png",
-    title: "Description, ratings and comments",
+    title: "Description, Ratings and Comments",
     description:
       "Read description, ratings and comments of a movie to know more about a movie before watching.",
   },
   {
     id: 4,
     img: "https://res.cloudinary.com/dfsclcxhm/image/upload/v1675873692/Chatflix/Group_10_rvghh1.png",
-    title: "Stream, download & share",
+    title: "Stream, Download & Share",
     description:
       "Decide to stream your movies online or download them for offline watching and share them to friends.",
   },
