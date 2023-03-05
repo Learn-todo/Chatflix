@@ -10,7 +10,7 @@ import Step1 from "./pages/authentication/Step1";
 import Step2 from "./pages/authentication/Step2";
 import Step3 from "./pages/authentication/Step3";
 import Step4 from "./pages/authentication/Step4";
-import Watchlist from "./pages/Watchlist";
+import Watchlist from "./pages/watchlist/Watchlist";
 
 
 const App = () => {
