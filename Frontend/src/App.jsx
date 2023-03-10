@@ -18,14 +18,13 @@ import Signout from "./pages/authentication/Signout";
 
 const App = () => {
   return(
-    
       <Routes>
         <Route exact path="/" element = {<LandingPage /> }></Route>
         <Route path="/dashboard" element = {<Dashboard />} ></Route>
         <Route path="/reset password" element = {<ResetPassword />} ></Route>
         <Route path="/forgot password" element = {<ForgotPassword />} ></Route>
         <Route path="/step1" element = {<Step1 />} ></Route>
-        <Route path="/step2" element = {<Step2 />} ></Route>
+        <Route path="/step2" element={<Step2 />} ></Route>
         <Route path="/step3" element = {<Step3 />} ></Route>
         <Route path="/step4" element = {<Step4 />} ></Route>
         <Route path="/step5" element = {<Step5 />} ></Route>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Logo from "../../components/logo/ChatflixLogo";
 import style from "./style.module.css";
 import { IoIosArrowBack } from "react-icons/io";
@@ -13,21 +13,21 @@ const Step3 = () => {
   const error = (message) => toast.error(message);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
-  useEffect(() => {
-    localStorage.setItem('password', JSON.stringify(password));
-    localStorage.setItem('confirmPassword', JSON.stringify(confirmPassword));
-  }, [password, confirmPassword]);
+  const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&^_-]{8,}$/
 
   const handleNext = (e) => {
     e.preventDefault();
-    if (password === "" && confirmPassword === ""){
+    if (password === "" && confirmPassword === "") {
       error("Password cannot be empty");
-    } else if (password.length < 8 && confirmPassword.length < 8){
+    } else if (password.length < 8 && confirmPassword.length < 8) {
       error("Password must be greater than 8 characters")
     } else if (confirmPassword !== password) {
       error("Passwords do not match");
+    } else if (!regex.test(password) && !regex.test(confirmPassword)) {
+      error("Password must have a number, an uppercase and a special character")
     } else {
+      localStorage.setItem("password", password);
+      localStorage.setItem("confirmPassword", confirmPassword);
       navigate("/step4")
     }
   }
@@ -37,7 +37,7 @@ const Step3 = () => {
   const handleClose = () => {
     navigate('/');
   };
-  localStorage.clear();
+  
   return (
     <section className={``}>
       <Slideshow />
@@ -73,8 +73,8 @@ const Step3 = () => {
                   <input
                     className={`${style._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
                     type="password"
-                    name=""
-                    id=""
+                    name="password"
+                    id="password"
                     onChange={(e) => setPassword(e.target.value)}
                   />
                     <MdOutlineLock
@@ -94,8 +94,8 @@ const Step3 = () => {
                   <input
                     className={`${style._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
                     type="password"
-                    name=""
-                    id=""
+                    name="confirmPassword"
+                    id="confirmPassword"
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   />
                     <MdOutlineLock
