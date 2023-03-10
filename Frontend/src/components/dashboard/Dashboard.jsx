@@ -20,7 +20,7 @@ import { BsBell } from "react-icons/bs";
 import { BsBoxArrowLeft } from "react-icons/bs";
 import style from "./style.module.css";
 import { useState } from "react";
-
+import Cards from "../../static/landing page/Cards"
 const Dashboard = () => {
   const [toggle, setToggle] = useState(false);
 
@@ -31,12 +31,12 @@ const Dashboard = () => {
   };
   return (
     <main className={`${style._main} bg-backgroundTwo text-white p-0 m-0`}>
-      <div className={`${style._grid_container} row w-100 m-0`}>
+      <div className={`${style._grid_container} w-100 m-0 d-flex`}>
         <div
           className={
             toggle
-              ? `${style._sidebar} p-0 ps-2 bg-backgroundTwo col-4 col-md-2 position-relative`
-              : `${style._sidebar} p-0 ps-2 bg-backgroundTwo col-2 col-md-1 position-relative`
+              ? `${style._sidebar} p-0 ps-2 bg-backgroundTwo`
+              : `${style._sidebar} p-0 ps-2 bg-backgroundTwo`
           }
         >
           <div className="d-flex flex-column h-100">
@@ -232,14 +232,15 @@ const Dashboard = () => {
         <div
           className={
             toggle
-              ? `col-8 col-md-10 p-0 border-0 bg-backgroundTwo`
-              : `col-10 col-md-11 p-0 border-0 bg-backgroundTwo`
+              ? `${style._main_content} w-100 p-0 border-0 bg-backgroundTwo d-flex flex-column`
+              : `${style._main_content} w-100 p-0 border-0 bg-backgroundTwo d-flex flex-column`
           }
         >
+          <div className={`${style._header} position-fixed bg-backgroundTwo`}>
           <div
             className={`${style._search} p-2 py-3 border-bottom border-menu-heading d-flex justify-content-between align-items-center`}
           >
-            <div className={`${style._input_container} position-relative w-75`}>
+            <div className={`${style._input_container} position-relative w-25`}>
               <input
                 className={`text-input-text px-4 py-2 w-100 bg-input border-0`}
                 type="text"
@@ -267,9 +268,15 @@ const Dashboard = () => {
                 />
               </div>
             </div>
-          </div>
-          <div>
+            </div>
+            </div>
+          <div className={`bg-backgroundTwo`}>
             {/* CONTENT GOES HERE */}
+            <Cards />
+            <Cards />
+            <Cards />
+            <Cards />
+
           </div>
         </div>
       </div>

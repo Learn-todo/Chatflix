@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../../components/logo/ChatflixLogo";
 import style from "./style.module.css";
 import { IoIosArrowBack } from "react-icons/io";
@@ -8,10 +8,12 @@ import { BsPerson } from "react-icons/bs";
 import { BsCamera } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from 'react-hot-toast';
+import axios from "axios";
 
 const Step4 = () => {
   let navigate = useNavigate();
   const error = (message) => toast.error(message);
+  const success = (message) => toast.success(message);
   const [selectFile, setSelectFile] = useState(null);
   const [uploadFile, setUploadFile] = useState(false);
   const [userName, setUserName] = useState("");
@@ -22,14 +24,35 @@ const Step4 = () => {
     setUploadFile(true);
   };
 
-  const handleNext = (e) => {
+   useEffect(() => {
+    localStorage.setItem('username', JSON.stringify(userName));
+  }, [userName]);
+  const name = localStorage.getItem("fullName");
+  const email = localStorage.getItem("email");
+  const password = localStorage.getItem("password");
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (userName === ""){
       error("Username cannot be empty");
-    } else if (userName.length < 6 ){
+    } else if (userName.length < 5 ){
       error("Username must be greater than 5 characters")
     } else {
-      navigate("/step5")
+      axios.post(`https://userservice-popc.onrender.com/api/user/create/`, {
+        name,
+        email,
+        password,
+      })
+        .then(res => {
+          console.log(res);
+          success("Congratulations! sign up successful")
+          setTimeout(() => {
+            navigate("/step5")
+          }, 2000)
+        }).catch(err => {
+          console.log(err.response)
+          error(err.data.email[0])
+        })
     }
   }
 
@@ -69,7 +92,7 @@ const Step4 = () => {
                 </p>
               </div>
 
-              <form className="mb-4" action="" onSubmit={handleNext}>
+              <form className="mb-4" action="" onSubmit={handleSubmit}>
                 <div className={`d-flex justify-content-start align-items-center mb-4`}>
                   <div className={`${style._avatar} bg-cards rounded-circle d-flex justify-content-center align-items-center`}>
                     { uploadFile ? <img src={selectFile} alt="" /> : <BsCamera
