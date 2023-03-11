@@ -8,22 +8,27 @@ import { BsEnvelope } from "react-icons/bs";
 import { BsPerson } from "react-icons/bs";
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-
+import Progressbar from "./Progressbar";
 
 const Step2 = () => {
   let navigate = useNavigate();
   const error = (message) => toast.error(message);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
+  const [index, setIndex] = useState(1);
+  const [inputError, setInputError] = useState(false);
 
   const handleNext = (e) => {
     e.preventDefault();
     if (fullName === "") {
       error("Name is required!");
+      setInputError(prevState => !prevState);
     } else if (email === ""){
-      error("Email is required!")
+      error("Email is required!");
+      setInputError(prevState => !prevState);
     } else if (fullName.length < 5) {
-      error("Name must be greater than 5 characters")
+      error("Name must be greater than 5 characters");
+      setInputError(prevState => !prevState);
     } else {
       localStorage.setItem("fullName", fullName);
       localStorage.setItem("email", email);
@@ -54,7 +59,7 @@ const Step2 = () => {
                 <div className="fs-5 fw-normal text-cancel cursor-pointer" onClick={handlePrev}>
                   <IoIosArrowBack />
                 </div>
-
+                <div className={`w-75 px-4`}><Progressbar className={``} step={index} /></div>
                 <div className="fs-2 fw-normal text-cancel cursor-pointer" onClick={handleClose}>
                   <IoIosClose />
                 </div>
@@ -73,31 +78,31 @@ const Step2 = () => {
                   <div className={`mb-5`}>
                     <div className={`${style._input_div} position-relative mb-4`}>
                       <input
-                        className={`${style._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
+                        className={`${style._input_element} position-relative w-100 bg-background border  rounded-1 p-2 ps-5 form-control shadow-none text-cancel ${inputError ? `${style._error} border-reaction` : `${style._input_element} border-cancel`}`}
                         type="text"
                         id="name"
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
                       />
                       <BsPerson
-                        className={`${style._input_icon} position-absolute top-50 translate-middle text-cancel`}
+                        className={`${style._input_icon} position-absolute top-50 translate-middle ${inputError ? `text-reaction` : `text-cancel`}`}
                       />
-                      <span className={`${style._input_text} text-cancel position-absolute`} tabIndex={1}>
+                      <span className={`${style._input_text} position-absolute ${inputError ? `text-reaction` : `text-cancel`}`} tabIndex={1}>
                         Full name
                       </span>
                     </div>
                     <div className={`${style._input_div} position-relative mb-4`}>
                       <input
-                        className={`${style._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
+                        className={`${style._input_element} position-relative w-100 bg-background border  rounded-1 p-2 ps-5 form-control shadow-none text-cancel ${inputError ? `${style._error} border-reaction` : `border-cancel`}`}
                         type="email"
                         id="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                       />
                       <BsEnvelope
-                        className={`${style._input_icon} position-absolute top-50 translate-middle text-cancel`}
+                        className={`${style._input_icon} position-absolute top-50 translate-middle ${inputError ? `text-reaction` : `text-cancel`}`}
                       />
-                      <span className={`${style._input_text} text-cancel position-absolute`} tabIndex={1}>
+                      <span className={`${style._input_text} position-absolute ${inputError ? `text-reaction` : `text-cancel`}`} tabIndex={1}>
                         Email
                       </span>
                     </div>
