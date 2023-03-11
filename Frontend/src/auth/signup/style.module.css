@@ -16,6 +16,17 @@
   width: 320px;
 }
 
+._progressbar_num{
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+}
+
+._progressbar_num p {
+  font-size: .6rem;
+  font-weight: 500;
+}
+
 ._btn_div button {
   text-align: center !important;
   display: flex;
@@ -59,6 +70,14 @@
   padding: 0 0.4rem;
   background-color: #030b19;
   transition: 0.7s;
+}
+
+._error:focus{
+  border: 1px solid #FC4247 !important;
+}
+
+._error:focus~._input_text {
+  color: #FC4247 !important;
 }
 
 ._password_info > p {

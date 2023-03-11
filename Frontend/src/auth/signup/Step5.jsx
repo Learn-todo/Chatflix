@@ -10,7 +10,6 @@ import { useNavigate } from 'react-router-dom';
 
 const Step5 = () => {
   let navigate = useNavigate();
-  const email = localStorage.getItem("email");
   const handlePrev = () => {
     navigate('/step4');
   };
@@ -55,7 +54,7 @@ const Step5 = () => {
               <form className="mb-4" action="">
                 <div className={`${style._btn_div} position-relative mb-5`}>
                   <button
-                  onClick={() => window.location = `mailto: ${email}`}
+                  onClick={() => window.location = `mailto:`}
                     className={`bg-btn-color py-2 border-0 w-100 rounded text-arrow`}
                   >Open your mail app
                   </button>

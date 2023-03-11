@@ -9,6 +9,7 @@ import { BsCamera } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from 'react-hot-toast';
 import axios from "axios";
+import Progressbar from "./Progressbar";
 
 const Step4 = () => {
   let navigate = useNavigate();
@@ -17,6 +18,8 @@ const Step4 = () => {
   const [selectFile, setSelectFile] = useState(null);
   const [uploadFile, setUploadFile] = useState(false);
   const [userName, setUserName] = useState("");
+  const [index, setIndex] = useState(3);
+  const [inputError, setInputError] = useState(false);
 
   const handleChange = (e) => {
     const url = URL.createObjectURL(e.target.files[0]);
@@ -35,8 +38,10 @@ const Step4 = () => {
     e.preventDefault();
     if (userName === ""){
       error("Username cannot be empty");
+      setInputError(prevState => !prevState);
     } else if (userName.length < 5 ){
-      error("Username must be greater than 5 characters")
+      error("Username must be greater than 5 characters");
+      setInputError(prevState => !prevState);
     } else {
       axios.post(`https://userservice-popc.onrender.com/api/user/create/`, {
         name,
@@ -78,7 +83,7 @@ const Step4 = () => {
               <div className="fs-5 fw-normal text-cancel cursor-pointer" onClick={handlePrev}>
                 <IoIosArrowBack />
               </div>
-
+              <div className={`w-75 px-4`}><Progressbar className={``} step={index} /></div>
               <div className="fs-2 fw-normal text-cancel cursor-pointer" onClick={handleClose}>
                 <IoIosClose />
               </div>
@@ -113,16 +118,16 @@ const Step4 = () => {
                 <div className={`mb-5`}>
                   <div className={`${style._input_div} position-relative mt-3 mb-1`}>
                   <input
-                    className={`${style._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
+                    className={`${style._input_element} position-relative w-100 bg-background border  rounded-1 p-2 ps-5 form-control shadow-none text-cancel ${inputError ? `${style._error} border-reaction` : `${style._input_element} border-cancel`}`}
                     type="text"
                     name=""
                     id=""
                     onChange={(e) => setUserName(e.target.value)}
                   />
                     <BsPerson
-                      className={`${style._input_icon} position-absolute top-50 translate-middle text-cancel`}
+                      className={`${style._input_icon} position-absolute top-50 translate-middle ${inputError ? `text-reaction` : `text-cancel`}`}
                     />
-                  <span className={`${style._input_text} text-cancel position-absolute`} tabIndex={1}>
+                  <span className={`${style._input_text} position-absolute ${inputError ? `text-reaction` : `text-cancel`}`} tabIndex={1}>
                     Username
                   </span>
                   </div>
