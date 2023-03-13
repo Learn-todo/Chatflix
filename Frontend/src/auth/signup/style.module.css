@@ -53,7 +53,7 @@
 }
 
 ._input_text {
-  position: absolute;
+  position: absolute !important;
   pointer-events: none;
   left: 45px;
   top: 8.5px;
