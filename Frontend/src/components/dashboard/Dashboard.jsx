@@ -1,4 +1,5 @@
 import React from "react";
+import style from "./style.module.css";
 import { Image } from "cloudinary-react";
 import { Link } from "react-router-dom"
 import Gloria from "./img/Gloria.jpg";
@@ -18,11 +19,11 @@ import { BsClock } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 import { BsBell } from "react-icons/bs";
 import { BsBoxArrowLeft } from "react-icons/bs";
-import style from "./style.module.css";
 import { useState } from "react";
 import Cards from "../../static/landing page/Cards"
+
 const Dashboard = () => {
-  const [toggle, setToggle] = useState(false);
+   const [toggle, setToggle] = useState(false);
 
   const handleClick = () => {
     setToggle((prevState) => {
@@ -30,14 +31,46 @@ const Dashboard = () => {
     });
   };
   return (
-    <main className={`${style._main} bg-backgroundTwo text-white p-0 m-0`}>
-      <div className={`${style._grid_container} w-100 m-0 d-flex`}>
-        <div
-          className={
-            toggle
-              ? `${style._sidebar} p-0 ps-2 bg-backgroundTwo`
-              : `${style._sidebar} p-0 ps-2 bg-backgroundTwo`
-          }
+    <section className={`bg-backgroundTwo text-white p-0 m-0`}>
+      <div className="">
+        <div className={`${style._header} bg-backgroundTwo ${toggle ? `${style._header_resize}` : `${style._header}`}`}>
+          <div
+            className={`${style._search} p-3 py-3 border-bottom border-menu-heading d-flex justify-content-between align-items-center`}
+          >
+            <div className={`${style._input_container} position-relative w-50`}>
+              <input
+                className={`text-input-text px-4 py-2 w-100 bg-input border-0`}
+                type="text"
+                placeholder="Search for friends and movies..."
+              />
+              <BsSearch
+                className={`text-input-text position-absolute text-menu-heading`}
+              />
+            </div>
+            <div
+              className={`${style._profile} d-flex justify-content-between align-items-center `}
+            >
+              <div
+                className={`bg-input rounded-circle d-flex justify-content-center align-items-center`}
+              >
+                <BsBell />
+              </div>
+              <div
+                className={`bg-input rounded-circle d-flex w- justify-content-center align-items-center`}
+              >
+                <img
+                  src={Gloria}
+                  alt=""
+                  className="overflow-hidden object-fit-contain rounded-circle"
+                />
+              </div>
+            </div>
+            </div>
+            </div>
+        <div className={`${style._sidebar} p-0 bg-backgroundTwo ${toggle ? `${style._sidebar_resize}` : `${style._sidebar}`}`}>
+          <aside className={`h-100`}>
+            <div
+          className={`p-0 ps-1 h-100`}
         >
           <div className="d-flex flex-column h-100">
           <div className="pe-2 d-flex justify-content-between align-items-center py-4 mb-5">
@@ -55,7 +88,7 @@ const Dashboard = () => {
               />
             )}
             <CgChevronLeftR
-              className={`${style._toggle}`}
+              className={`${style._toggle} text-text-color`}
               onClick={handleClick}
             />
           </div>
@@ -229,48 +262,10 @@ const Dashboard = () => {
           </div>
           </div>
         </div>
-        <div
-          className={
-            toggle
-              ? `${style._main_content} w-100 p-0 border-0 bg-backgroundTwo d-flex flex-column`
-              : `${style._main_content} w-100 p-0 border-0 bg-backgroundTwo d-flex flex-column`
-          }
-        >
-          <div className={`${style._header} position-fixed bg-backgroundTwo`}>
-          <div
-            className={`${style._search} p-2 py-3 border-bottom border-menu-heading d-flex justify-content-between align-items-center`}
-          >
-            <div className={`${style._input_container} position-relative w-25`}>
-              <input
-                className={`text-input-text px-4 py-2 w-100 bg-input border-0`}
-                type="text"
-                placeholder="Search for friends and movies..."
-              />
-              <BsSearch
-                className={`text-input-text position-absolute text-menu-heading`}
-              />
-            </div>
-            <div
-              className={`${style._profile} d-flex justify-content-between align-items-center `}
-            >
-              <div
-                className={`bg-input rounded-circle d-flex justify-content-center align-items-center`}
-              >
-                <BsBell />
-              </div>
-              <div
-                className={`bg-input rounded-circle d-flex w- justify-content-center align-items-center`}
-              >
-                <img
-                  src={Gloria}
-                  alt=""
-                  className="overflow-hidden object-fit-contain rounded-circle"
-                />
-              </div>
-            </div>
-            </div>
-            </div>
-          <div className={`bg-backgroundTwo`}>
+          </aside>
+        </div>
+        <main className={`${style._main} bg-backgroundTwo ${toggle ? `${style._main_resize}` : `${style._main}`}`}>
+         <div className={`bg-backgroundTwo`}>
             {/* CONTENT GOES HERE */}
             <Cards />
             <Cards />
@@ -278,10 +273,10 @@ const Dashboard = () => {
             <Cards />
 
           </div>
-        </div>
+        </main>
       </div>
-    </main>
-  );
-};
+    </section>
+  )
+}
 
 export default Dashboard;

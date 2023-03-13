@@ -15,7 +15,7 @@ const Step4 = () => {
   let navigate = useNavigate();
   const error = (message) => toast.error(message);
   const success = (message) => toast.success(message);
-  const [selectFile, setSelectFile] = useState(null);
+  const [selectFile, setSelectFile] = useState("");
   const [uploadFile, setUploadFile] = useState(false);
   const [userName, setUserName] = useState("");
   const [index, setIndex] = useState(3);
@@ -43,10 +43,11 @@ const Step4 = () => {
       error("Username must be greater than 5 characters");
       setInputError(prevState => !prevState);
     } else {
-      axios.post(`https://userservice-popc.onrender.com/api/user/create/`, {
+      axios.post(`https://chatflix-service.onrender.com/api/user/create/`, {
         name,
         email,
         password,
+        selectFile,
       })
         .then(res => {
           console.log(res);
@@ -120,18 +121,19 @@ const Step4 = () => {
                   <input
                     className={`${style._input_element} position-relative w-100 bg-background border  rounded-1 p-2 ps-5 form-control shadow-none text-cancel ${inputError ? `${style._error} border-reaction` : `${style._input_element} border-cancel`}`}
                     type="text"
-                    name=""
-                    id=""
+                    value={userName}
+                    id="username"
+                    placeholder=" "
                     onChange={(e) => setUserName(e.target.value)}
                   />
                     <BsPerson
                       className={`${style._input_icon} position-absolute top-50 translate-middle ${inputError ? `text-reaction` : `text-cancel`}`}
                     />
-                  <span className={`${style._input_text} position-absolute ${inputError ? `text-reaction` : `text-cancel`}`} tabIndex={1}>
+                  <label htmlFor="username" className={`${style._input_text} ${inputError ? `${style._error}` : `text-cancel`}`} tabIndex={1}>
                     Username
-                  </span>
+                  </label>
                   </div>
-                  <div className={`${style._password_info} mb-5 text-text-color`}>
+                  <div className={`${style._password_info} mb-5 text-text-color ${inputError ? `text-reaction` : `text-text-color`}`}>
                     <p>Username can only contain special characters e.g _, - or .</p>
                     <p>username can contain numbers</p>
                     <p>Username must not exceed 16 characters</p>

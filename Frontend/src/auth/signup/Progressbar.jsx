@@ -25,10 +25,10 @@ const Progressbar = (props) => {
             className={`${
               style._progressbar_num
             } d-flex justify-content-between align-items-center ${
-              accomplished ? `bg-primary` : "bg-text-color"
+              accomplished ? `bg-primary` : `bg-text-color`
             }`}
           >
-            <p className={`text-white mx-auto mb-0`}>2</p>
+            <p className={`text-text-color mx-auto mb-0 ${accomplished ? `text-white` : `text-text-color`}`}>2</p>
           </div>
         )}
       </Step>
@@ -38,10 +38,10 @@ const Progressbar = (props) => {
             className={`${
               style._progressbar_num
             } d-flex justify-content-between align-items-center ${
-              accomplished ? `bg-primary` : "bg-text-color"
+              accomplished ? `bg-primary` : `bg-text-color`
             }`}
           >
-            <p className={`text-white mx-auto mb-0`}>3</p>
+            <p className={`text-text-color mx-auto mb-0 ${accomplished ? `text-white` : `text-text-color`}`}>3</p>
           </div>
         )}
       </Step>

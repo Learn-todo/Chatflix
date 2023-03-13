@@ -80,16 +80,17 @@ const Step3 = () => {
                   <input
                     className={`${style._input_element} position-relative w-100 bg-background border  rounded-1 p-2 ps-5 form-control shadow-none text-cancel ${inputError ? `${style._error} border-reaction` : `${style._input_element} border-cancel`}`}
                     type="password"
-                    name="password"
+                    value={password}
                     id="password"
+                    placeholder=" "
                     onChange={(e) => setPassword(e.target.value)}
                   />
                     <MdOutlineLock
                       className={`${style._input_icon} position-absolute top-50 translate-middle ${inputError ? `text-reaction` : `text-cancel`}`}
                     />
-                  <span className={`${style._input_text} position-absolute ${inputError ? `text-reaction` : `text-cancel`}`} tabIndex={1}>
+                  <label htmlFor="password" className={`${style._input_text} ${inputError ? `${style._error}` : `text-cancel`}`} tabIndex={1}>
                     Password
-                  </span>
+                  </label>
                   </div>
                   <div className={`${style._password_info} mb-4 ${inputError ? `text-reaction` : `text-text-color`}`}>
                     <p>At least 8 characters long</p>
@@ -101,16 +102,17 @@ const Step3 = () => {
                   <input
                     className={`${style._input_element} position-relative w-100 bg-background border  rounded-1 p-2 ps-5 form-control shadow-none text-cancel ${inputError ? `${style._error} border-reaction` : `${style._input_element} border-cancel`}`}
                     type="password"
-                    name="confirmPassword"
+                    value={confirmPassword}
                     id="confirmPassword"
+                    placeholder=" "
                     onChange={(e) => setConfirmPassword(e.target.value)}
                   />
                     <MdOutlineLock
                       className={`${style._input_icon} position-absolute top-50 translate-middle ${inputError ? `text-reaction` : `text-cancel`}`}
                     />
-                  <span className={`${style._input_text} position-absolute ${inputError ? `text-reaction` : `text-cancel`}`} tabIndex={1}>
+                  <label htmlFor="confirmPassword" className={`${style._input_text} ${inputError ? `${style._error}` : `text-cancel`}`} tabIndex={1}>
                     Confirm password
-                  </span>
+                  </label>
                   </div>
                   
                 </div>

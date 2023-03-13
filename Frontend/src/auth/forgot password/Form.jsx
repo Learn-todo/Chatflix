@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../components/logo/ChatflixLogo";
 import style from "../signup/style.module.css";
 import { IoIosArrowBack } from "react-icons/io";
@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 const ForgotPassword = () => {
   let navigate = useNavigate();
+  const [inputError, setInputError] = useState(false);
   const handleForgotPassword = () => {
     navigate('/reset password');
   }
@@ -48,17 +49,18 @@ const ForgotPassword = () => {
                 <div className={`mb-5`}>
                   <div className={`${style._input_div} position-relative mb-4`}>
                   <input
-                    className={`${style._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
+                    className={`${style._input_element} position-relative w-100 bg-background border  rounded-1 p-2 ps-5 form-control shadow-none text-cancel ${inputError ? `${style._error} border-reaction` : `${style._input_element} border-cancel`}`}
                     type="email"
-                    name=""
-                    id=""
+                    // value=""
+                      id="email"
+                      placeholder=" "
                   />
                     <BsEnvelope
-                      className={`${style._input_icon} position-absolute top-50 translate-middle text-cancel`}
+                      className={`${style._input_icon} position-absolute top-50 translate-middle ${inputError ? `text-reaction` : `text-cancel`}`}
                     />
-                  <span className={`${style._input_text} text-cancel position-absolute`} tabIndex={1}>
+                    <label htmlFor="email" className={`${style._input_text} ${inputError ? `${style._error}` : `text-cancel`}`} tabIndex={1}>
                     Email
-                  </span>
+                  </label>
                 </div>
                 </div>
                 <div className={`${style._btn_div} position-relative mb-5 mt-3`}>
