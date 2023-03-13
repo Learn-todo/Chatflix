@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../components/logo/ChatflixLogo";
 import style from "../signup/style.module.css";
 import { IoIosClose } from "react-icons/io";
@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
 const Signin = () => {
+  const [inputError, setInputError] = useState(false);
   let navigate = useNavigate();
   const handleSignin = () => {
     navigate('/dashboard');
@@ -41,7 +42,7 @@ const Signin = () => {
               <div className={`${style._form_content} mx-auto my-3 px-4`}>
                 <div className={`mb-5 text-center`}>
                   <h3 className={`text-arrow mb-2 fs-3 lh-4`}>
-                    Welcome to <span className={`text-btn-color`}>Chat</span>
+                    Welcome to <label className={`text-btn-color`}>Chat</label>
                     flix
                   </h3>
                 </div>
@@ -75,39 +76,43 @@ const Signin = () => {
                       className={`${style._input_div} position-relative mb-4`}
                     >
                       <input
-                        className={`${style._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
+                        className={`${style._input_element} position-relative w-100 bg-background border  rounded-1 p-2 ps-5 form-control shadow-none text-cancel ${inputError ? `${style._error} border-reaction` : `${style._input_element} border-cancel`}`}
                         type="email"
-                        name=""
-                        id=""
+                        // value=""
+                        id="email"
+                        placeholder=" "
                       />
                       <BsEnvelope
-                        className={`${style._input_icon} position-absolute top-50 translate-middle text-cancel`}
+                        className={`${style._input_icon} position-absolute top-50 translate-middle ${inputError ? `text-reaction` : `text-cancel`}`}
                       />
-                      <span
-                        className={`${style._input_text} text-cancel position-absolute`}
+                      <label
+                        htmlFor="email"
+                        className={`${style._input_text} ${inputError ? `${style._error}` : `text-cancel`}`}
                         tabIndex={1}
                       >
                         Email
-                      </span>
+                      </label>
                     </div>
                     <div
                       className={`${style._input_div} position-relative mb-4`}
                     >
                       <input
-                        className={`${style._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
+                        className={`${style._input_element} position-relative w-100 bg-background border  rounded-1 p-2 ps-5 form-control shadow-none text-cancel ${inputError ? `${style._error} border-reaction` : `${style._input_element} border-cancel`}`}
                         type="password"
-                        name=""
-                        id=""
+                        // value=""
+                        id="password"
+                        placeholder=" "
                       />
                       <MdOutlineLock
-                        className={`${style._input_icon} position-absolute top-50 translate-middle text-cancel`}
+                        className={`${style._input_icon} position-absolute top-50 translate-middle ${inputError ? `text-reaction` : `text-cancel`}`}
                       />
-                      <span
-                        className={`${style._input_text} text-cancel position-absolute`}
+                      <label
+                        htmlFor="password"
+                        className={`${style._input_text} ${inputError ? `${style._error}` : `text-cancel`}`}
                         tabIndex={1}
                       >
                         Password
-                      </span>
+                      </label>
                     </div>
                   </div>
                   <div

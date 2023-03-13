@@ -81,30 +81,32 @@ const Step2 = () => {
                         className={`${style._input_element} position-relative w-100 bg-background border  rounded-1 p-2 ps-5 form-control shadow-none text-cancel ${inputError ? `${style._error} border-reaction` : `${style._input_element} border-cancel`}`}
                         type="text"
                         id="name"
+                        placeholder=" "
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
                       />
                       <BsPerson
                         className={`${style._input_icon} position-absolute top-50 translate-middle ${inputError ? `text-reaction` : `text-cancel`}`}
                       />
-                      <span className={`${style._input_text} position-absolute ${inputError ? `text-reaction` : `text-cancel`}`} tabIndex={1}>
+                      <label htmlFor="name" className={`${style._input_text} ${inputError ? `${style._error}` : `text-cancel`}`} tabIndex={1}>
                         Full name
-                      </span>
+                      </label >
                     </div>
                     <div className={`${style._input_div} position-relative mb-4`}>
                       <input
                         className={`${style._input_element} position-relative w-100 bg-background border  rounded-1 p-2 ps-5 form-control shadow-none text-cancel ${inputError ? `${style._error} border-reaction` : `border-cancel`}`}
                         type="email"
                         id="email"
+                        placeholder=" "
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                       />
                       <BsEnvelope
                         className={`${style._input_icon} position-absolute top-50 translate-middle ${inputError ? `text-reaction` : `text-cancel`}`}
                       />
-                      <span className={`${style._input_text} position-absolute ${inputError ? `text-reaction` : `text-cancel`}`} tabIndex={1}>
+                      <label htmlFor="email" className={`${style._input_text} ${inputError ? `${style._error}` : `text-cancel`}`} tabIndex={1}>
                         Email
-                      </span>
+                      </label >
                     </div>
                   </div>
                   <div className={`${style._btn_div} position-relative mb-5 mt-3`}>
