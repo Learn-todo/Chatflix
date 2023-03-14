@@ -10,8 +10,8 @@ const PageNotFound = () => {
         <Logo />
       </div>
       <p className="text-btn-color my-4">404 Error</p>
-      <h1 className={`text-white`}>Ooops, page not found...</h1>
-      <p className={`${style._text} pb-3`}>
+      <h1 className={`text-arrow`}>Ooops, page not found...</h1>
+      <p className={`${style._text} pb-3 text-menu-heading`}>
         Sorry, you were not to be here. The page you're looking for doesn't
         exist or has been moved.
       </p>
@@ -20,7 +20,7 @@ const PageNotFound = () => {
       >
         <Link
           to="/"
-          className={`text-white bg-btn-color py-2 px-4 text-center text-decoration-none display-block`}
+          className={`text-arrow bg-btn-color py-2 px-4 text-center text-decoration-none display-block`}
         >
           Go home
         </Link>

@@ -27,6 +27,7 @@ $custom-theme-colors: (
    "menu-heading": #A5AEBC,
    "input": #282D34,
    "input-text": #BCC3CD,
+   "progress-bar": #C6DCFD,
    );
 
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);
