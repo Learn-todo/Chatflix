@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Dashboard from "../../components/dashboard/Dashboard";
+// import Dashboard from "../../components/dashboard/Dashboard";
 import style from "./style.module.css";
 import { Image } from "cloudinary-react";
 import { FcLike } from "react-icons/fc";
@@ -8,6 +8,8 @@ import { BsShare } from "react-icons/bs";
 import { FiDownload } from "react-icons/fi";
 import { IoStarOutline } from "react-icons/io5";
 import Img from "./images/movieImg.png";
+import MovieSuggestions from "./MovieSuggestions";
+import Comments from "./Comments/Comments";
 
 const MovieView = ({ movieName, genre }) => {
 	const stars = Array(5).fill(0);
@@ -126,8 +128,8 @@ const MovieView = ({ movieName, genre }) => {
 				</div>
 			</section>
 
-			<section className={`container border-top border-menu-heading mt-4`}>
-				<div
+			<section className={`container-lg border-top border-menu-heading mt-4 `}>
+				{/* <div
 					className={`${style._join}  py-3  d-flex justify-content-between align-items-center gap-3`}>
 					<div
 						className={`${style._profilePic} d-flex justify-content-between align-items-center `}>
@@ -140,15 +142,11 @@ const MovieView = ({ movieName, genre }) => {
 							/>
 						</div>
 					</div>
-					<div className={`${style._input_container} position-relative w-100`}>
-						<input
-							className={`text-input-text px-4 py-2 w-100 bg-input border-0`}
-							type="text"
-							placeholder="Join the discussion"
-						/>
-					</div>
-				</div>
+				</div> */}
+				<Comments currentUserId="1" />
 			</section>
+
+			<MovieSuggestions />
 		</div>
 	);
 };
