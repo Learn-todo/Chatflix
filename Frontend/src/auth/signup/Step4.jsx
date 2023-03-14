@@ -10,21 +10,34 @@ import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from 'react-hot-toast';
 import axios from "axios";
 import Progressbar from "./Progressbar";
+import imageCompression from 'browser-image-compression';
 
 const Step4 = () => {
   let navigate = useNavigate();
   const error = (message) => toast.error(message);
   const success = (message) => toast.success(message);
-  const [selectFile, setSelectFile] = useState("");
+  const [imageSrc, setImageSrc] = useState("");
   const [uploadFile, setUploadFile] = useState(false);
   const [userName, setUserName] = useState("");
   const [index, setIndex] = useState(3);
   const [inputError, setInputError] = useState(false);
 
-  const handleChange = (e) => {
-    const url = URL.createObjectURL(e.target.files[0]);
-		setSelectFile(url);
-    setUploadFile(true);
+  const handleChange = async (e) => {
+    const imageFile = (e.target.files[0]);
+    const options = {
+      maxSizeMB: 0.5,
+      maxWidthOrHeight: 800,
+      useWebWorker: true,
+    };
+    try{
+      const compressedFile = await imageCompression(imageFile, options);
+      const imageUrl = URL.createObjectURL(compressedFile);
+      setImageSrc(imageUrl);
+      setUploadFile(true);
+      return compressedFile;
+    } catch (error) {
+      console.log(error);
+    }
   };
 
    useEffect(() => {
@@ -47,14 +60,15 @@ const Step4 = () => {
         name,
         email,
         password,
-        selectFile,
+        imageSrc,
       })
         .then(res => {
           console.log(res);
           success("Congratulations! sign up successful")
           setTimeout(() => {
+            success("Redirecting in 3 seconds")
             navigate("/step5")
-          }, 2000)
+          }, 3000)
         }).catch(err => {
           console.log(err.response)
           error(err.data.email[0])
@@ -101,7 +115,7 @@ const Step4 = () => {
               <form className="mb-4" action="" onSubmit={handleSubmit}>
                 <div className={`d-flex justify-content-start align-items-center mb-4`}>
                   <div className={`${style._avatar} bg-cards rounded-circle d-flex justify-content-center align-items-center`}>
-                    { uploadFile ? <img src={selectFile} alt="" /> : <BsCamera
+                    { uploadFile ? <img src={imageSrc} alt="avatar" /> : <BsCamera
                     className={`text-cancel`}
                   />}
                   </div>
@@ -112,6 +126,7 @@ const Step4 = () => {
                   <input 
                   className={`${style._avatar_input}`}
                   type="file"
+                  accept="image/*"
                   id="file"
                   onChange={handleChange}
                   />
