@@ -46,9 +46,9 @@ const MovieView = ({ movieName, genre }) => {
 				/>
 
 				<div
-					className={`d-flex justify-content-between align-items-center gap-4 mt-3`}>
+					className={`d-flex justify-content-between align-items-center gap-2 mt-3`}>
 					<div
-						className={`d-flex justify-content-start align-items-center gap-4 mt-3`}>
+						className={`d-flex justify-content-start align-items-center gap-2 gap-lg-4 mt-3`}>
 						<div
 							className={` d-flex justify-content-start align-items-center gap-2`}>
 							<FcLike className={`${style._movieIcons}`} />
@@ -71,7 +71,7 @@ const MovieView = ({ movieName, genre }) => {
 						</div>
 					</div>
 					<div
-						className={`mt-2 d-flex justify-content-center align-items-center gap-1`}>
+						className={`mt-2 d-flex justify-content-center align-items-center`}>
 						{stars.map((_, index) => (
 							<IoStarOutline
 								key={index}
@@ -129,20 +129,7 @@ const MovieView = ({ movieName, genre }) => {
 			</section>
 
 			<section className={`container-lg border-top border-menu-heading mt-4 `}>
-				{/* <div
-					className={`${style._join}  py-3  d-flex justify-content-between align-items-center gap-3`}>
-					<div
-						className={`${style._profilePic} d-flex justify-content-between align-items-center `}>
-						<div
-							className={`bg-input rounded-circle d-flex w-10 justify-content-center align-items-center`}>
-							<img
-								src={Img}
-								alt=""
-								className="overflow-hidden rounded-circle"
-							/>
-						</div>
-					</div>
-				</div> */}
+			
 				<Comments currentUserId="1" />
 			</section>
 

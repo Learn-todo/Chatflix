@@ -20,6 +20,7 @@ import { BsBell } from "react-icons/bs";
 import { BsBoxArrowLeft } from "react-icons/bs";
 import style from "./style.module.css";
 import { useState } from "react";
+import MovieView from "../../pages/MovieView/MovieView";
 
 const Dashboard = () => {
   const [toggle, setToggle] = useState(false);
@@ -269,7 +270,7 @@ const Dashboard = () => {
             </div>
           </div>
           <div>
-            {/* CONTENT GOES HERE */}
+           <MovieView />
           </div>
         </div>
       </div>
