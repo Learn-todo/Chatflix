@@ -5,11 +5,21 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosClose } from "react-icons/io";
 import { MdOutlineLock } from "react-icons/md";
 import Slideshow from "../../components/slidesshow/Slideshow";
-import { Link } from "react-router-dom";
 import { Image } from "cloudinary-react";
-
+import { useNavigate } from "react-router-dom";
 
 const SetNewPassword = () => {
+  let navigate = useNavigate();
+  const [inputError, setInputError] = useState(false);
+  const handleSetNewPassword = () => {
+    navigate('/reset success');
+  }
+  const handlePrev = () => {
+    navigate('/reset password');
+  };
+  const handleClose = () => {
+    navigate('/');
+  };
   return (
     <section className={``}>
       <Slideshow />
@@ -22,11 +32,11 @@ const SetNewPassword = () => {
         <div className={`${style._form_container} mx-auto`}>
           {<div className={`${style._form_div} bg-background rounded`}>
             <div className="mx-3 py-3 d-flex justify-content-between align-items-center">
-              <div className="fs-5 fw-normal text-cancel cursor-pointer">
+              <div className="fs-5 fw-normal text-cancel cursor-pointer" onClick={handlePrev}>
                 <IoIosArrowBack />
               </div>
 
-              <div className="fs-2 fw-normal text-cancel cursor-pointer">
+              <div className="fs-2 fw-normal text-cancel cursor-pointer" onClick={handleClose}>
                 <IoIosClose />
               </div>
             </div>
@@ -45,23 +55,24 @@ const SetNewPassword = () => {
                 </p>
               </div>
 
-              <form className="mb-4" action="">
+              <form className="mb-4" action="" onSubmit={handleSetNewPassword}>
                 <div className={`mb-4`}>
                   <div className={`${style._input_div} position-relative mt-3 mb-1`}>
                   <input
-                    className={`${style._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
-                    type="email"
-                    name=""
-                    id=""
+                    className={`${style._input_element} position-relative w-100 bg-background border  rounded-1 p-2 ps-5 form-control shadow-none text-cancel ${inputError ? `${style._error} border-reaction` : `${style._input_element} border-cancel`}`}
+                    type="password"
+                    // value=""
+                      id="password"
+                      placeholder=" "
                   />
                     <MdOutlineLock
-                      className={`${style._input_icon} position-absolute top-50 translate-middle text-cancel`}
+                      className={`${style._input_icon} position-absolute top-50 translate-middle ${inputError ? `text-reaction` : `text-cancel`}`}
                     />
-                  <span className={`${style._input_text} text-cancel position-absolute`} tabIndex={1}>
+                  <label htmlFor="password" className={`${style._input_text} ${inputError ? `${style._error}` : `text-cancel`}`} tabIndex={1}>
                     Password
-                  </span>
+                  </label>
                   </div>
-                  <div className={`${style._password_info} mb-4 text-text-color`}>
+                  <div className={`${style._password_info} mb-4 ${inputError ? `text-reaction` : `text-text-color`}`}>
                     <p>At least 8 characters long</p>
                     <p>A mixture of both UPPERCASE and lowercase</p>
                     <p>Must contain numbers</p>
@@ -69,25 +80,25 @@ const SetNewPassword = () => {
                   </div>
                   <div className={`${style._input_div} position-relative mb-5`}>
                   <input
-                    className={`${style._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
-                    type="email"
-                    name=""
-                    id=""
+                    className={`${style._input_element} position-relative w-100 bg-background border  rounded-1 p-2 ps-5 form-control shadow-none text-cancel ${inputError ? `${style._error} border-reaction` : `${style._input_element} border-cancel`}`}
+                    type="password"
+                    // value=""
+                    id="confirmPassword"
+                    placeholder=" "
                   />
                     <MdOutlineLock
-                      className={`${style._input_icon} position-absolute top-50 translate-middle text-cancel`}
+                      className={`${style._input_icon} position-absolute top-50 translate-middle ${inputError ? `text-reaction` : `text-cancel`}`}
                     />
-                  <span className={`${style._input_text} text-cancel position-absolute`} tabIndex={1}>
+                  <label htmlFor="confirmPassword" className={`${style._input_text} ${inputError ? `${style._error}` : `text-cancel`}`} tabIndex={1}>
                     Confirm password
-                  </span>
+                  </label>
                   </div>
                   
                 </div>
                 <div className={`${style._btn_div} position-relative mb-5 mt-3`}>
                   <button
-                    className={`bg-btn-color py-2 border-0 w-100 rounded`}
-                  >
-                    <Link to="/reset success" className={`text-decoration-none text-arrow`}>Reset Password</Link>
+                    className={`bg-btn-color py-2 border-0 w-100 rounded text-arrow`}
+                  >Reset Password
                   </button>
                 </div>
               </form>

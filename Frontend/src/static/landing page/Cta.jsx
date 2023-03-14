@@ -1,9 +1,13 @@
 import React from "react";
 import Logo from "../../components/logo/ChatflixLogo";
 import style from "./style.module.css";
-import { Link } from "react-router-dom"
+import { useNavigate } from 'react-router-dom';
 
 const Cta = () => {
+  let navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/step1');
+  };
   return (
     <section>
       <div className="w-75 mx-auto">
@@ -24,8 +28,7 @@ const Cta = () => {
         </div>
 
         <div className="d-flex justify-content-center mb-5">
-          <button className="btn btn-btn-color p-2 px-3 rounded-1">
-            <Link to="/dashboard" className="text-text-color2 text-decoration-none">Get Started</Link>
+          <button className="btn btn-btn-color p-2 px-3 rounded-1 text-text-color2" onClick={handleClick}>Get Started
           </button>
         </div>
       </div>

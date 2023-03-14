@@ -2,9 +2,16 @@ import React from "react";
 import Logo from "../../components/logo/ChatflixLogo";
 import style from "../signup/style.module.css";
 import Slideshow from "../../components/slidesshow/Slideshow";
-import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const Signout = () => {
+  let navigate = useNavigate();
+  const handleSignout = () => {
+    navigate('/signin');
+  }
+  const handleClose = () => {
+    navigate('/dashboard');
+  };
   return (
     <section className={``}>
       <Slideshow />
@@ -31,29 +38,18 @@ const Signout = () => {
                     You can also switch accounts by adding an existing account.
                   </p>
                 </div>
-                <form className="mb-5" action="">
+                <form className="mb-5" action="" onSubmit={handleSignout}>
                   <div className={`${style._btn_div} position-relative mb-3`}>
                     <button
-                      className={`bg-btn-color py-2 border-0 w-100 rounded`}
-                    >
-                      <Link
-                        to="/signin"
-                        className={`text-decoration-none text-arrow`}
-                      >
-                        Logout
-                      </Link>
+                      className={`bg-btn-color py-2 border-0 w-100 rounded text-arrow`}
+                    >Logout
                     </button>
                   </div>
                   <div className={`${style._btn_div} position-relative mb-5`}>
                     <button
-                      className={`border border-btn-color bg-background py-2 w-100 rounded`}
-                    >
-                      <Link
-                        to="/"
-                        className={`text-decoration-none text-btn-color`}
-                      >
-                        Cancel
-                      </Link>
+                      className={`border border-btn-color bg-background py-2 w-100 rounded text-btn-color`}
+                      onClick={handleClose}
+                    >Cancel
                     </button>
                   </div>
                 </form>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Logo from "../../components/logo/ChatflixLogo";
 import style from "./style.module.css";
 import { IoIosArrowBack } from "react-icons/io";
@@ -6,8 +6,16 @@ import { IoIosClose } from "react-icons/io";
 import Slideshow from "../../components/slidesshow/Slideshow";
 import { Link } from "react-router-dom";
 import { Image } from "cloudinary-react";
+import { useNavigate } from 'react-router-dom';
 
 const Step5 = () => {
+  let navigate = useNavigate();
+  const handlePrev = () => {
+    navigate('/step4');
+  };
+  const handleClose = () => {
+    navigate('/');
+  };
   return (
     <section className={``}>
       <Slideshow />
@@ -20,11 +28,11 @@ const Step5 = () => {
         <div className={`${style._form_container} mx-auto`}>
           {<div className={`${style._form_div} bg-background rounded`}>
             <div className="mx-3 py-3 d-flex justify-content-between align-items-center">
-              <div className="fs-5 fw-normal text-cancel cursor-pointer">
+              <div className="fs-5 fw-normal text-cancel cursor-pointer" onClick={handlePrev}>
                 <IoIosArrowBack />
               </div>
 
-              <div className="fs-2 fw-normal text-cancel cursor-pointer">
+              <div className="fs-2 fw-normal text-cancel cursor-pointer" onClick={handleClose}>
                 <IoIosClose />
               </div>
             </div>
@@ -46,13 +54,13 @@ const Step5 = () => {
               <form className="mb-4" action="">
                 <div className={`${style._btn_div} position-relative mb-5`}>
                   <button
-                    className={`bg-btn-color py-2 border-0 w-100 rounded`}
-                  >
-                    <Link to="/verified account" className={`text-decoration-none text-arrow`}>Open your email app</Link>
+                  onClick={() => window.location = `mailto:`}
+                    className={`bg-btn-color py-2 border-0 w-100 rounded text-arrow`}
+                  >Open your mail app
                   </button>
                 </div>
                 <div className={`mb-5 text-arrow`}>
-                  <p>Didn't receive any email? <a href="." className={`text-decoration-none text-btn-color`}>Resend link.</a></p>
+                  <p>Didn't receive any email? <Link to="" className={`text-decoration-none text-btn-color`}>Resend link.</Link></p>
                 </div>
               </form>
             </div>

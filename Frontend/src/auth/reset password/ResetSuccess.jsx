@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import Logo from "../../components/logo/ChatflixLogo";
 import style from "../signup/style.module.css";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosClose } from "react-icons/io";
 import Slideshow from "../../components/slidesshow/Slideshow";
-import { Link } from "react-router-dom";
 import { Image } from "cloudinary-react";
-
+import { useNavigate } from "react-router-dom";
 
 const ResetSuccess = () => {
+   let navigate = useNavigate();
+  const handlePasswordResetSuccess = () => {
+    navigate('/signin');
+  }
+  const handlePrev = () => {
+    navigate('/new password');
+  };
+  const handleClose = () => {
+    navigate('/');
+  };
   return (
     <section className={``}>
       <Slideshow />
@@ -21,11 +30,11 @@ const ResetSuccess = () => {
         <div className={`${style._form_container} mx-auto`}>
           {<div className={`${style._form_div} bg-background rounded`}>
             <div className="mx-3 py-3 d-flex justify-content-between align-items-center">
-              <div className="fs-5 fw-normal text-cancel cursor-pointer">
+              <div className="fs-5 fw-normal text-cancel cursor-pointer" onClick={handlePrev}>
                 <IoIosArrowBack />
               </div>
 
-              <div className="fs-2 fw-normal text-cancel cursor-pointer">
+              <div className="fs-2 fw-normal text-cancel cursor-pointer" onClick={handleClose}>
                 <IoIosClose />
               </div>
             </div>
@@ -44,14 +53,13 @@ const ResetSuccess = () => {
                 </p>
               </div>
 
-              <form className="mb-4" action="">
+              <form className="mb-4" action="" onSubmit={handlePasswordResetSuccess}>
                 <div className={`mb-4`}>
                 </div>
                 <div className={`${style._btn_div} position-relative mb-5 mt-3`}>
                   <button
                     className={`bg-btn-color py-2 border-0 w-100 rounded`}
-                  >
-                    <Link to="/signin" className={`text-decoration-none text-arrow`}>Continue</Link>
+                  >Continue
                   </button>
                 </div>
               </form>
