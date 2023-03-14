@@ -15,6 +15,8 @@ import Signin from "./pages/authentication/Signin";
 import NewPassword from "./pages/reset password/NewPassword";
 import Success from "./pages/reset password/Success";
 import Signout from "./pages/authentication/Signout";
+import PageNotFound from "./static/404/PageNotFound";
+import EmailTemplate from "./static/emailtemplate/EmailTemplate";
 
 const App = () => {
   return(
@@ -32,7 +34,9 @@ const App = () => {
         <Route path="/signin" element = {<Signin />} ></Route>
         <Route path="/new password" element={<NewPassword />} ></Route>
         <Route path="/reset success" element={<Success />} ></Route>
-        <Route path="/signout" element = {<Signout />} ></Route>
+        <Route path="/signout" element={<Signout />} ></Route>
+        <Route path="/email template" element={<EmailTemplate />} ></Route>
+        <Route path="*" element = {<PageNotFound />} ></Route>
       </Routes>
   );
 };
