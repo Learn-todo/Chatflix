@@ -15,7 +15,6 @@ import Signin from "./pages/authentication/Signin";
 import NewPassword from "./pages/reset password/NewPassword";
 import Success from "./pages/reset password/Success";
 import Signout from "./pages/authentication/Signout";
-import MovieView from "./pages/MovieView/MovieView";
 
 const App = () => {
   return(
@@ -23,7 +22,6 @@ const App = () => {
         <Route exact path="/" element = {<LandingPage /> }></Route>
         <Route path="/dashboard" element = {<Dashboard />} ></Route>
         <Route path="/reset password" element = {<ResetPassword />} ></Route>
-        <Route path = "/movieview" element= {<MovieView />}></Route>
         <Route path="/forgot password" element = {<ForgotPassword />} ></Route>
         <Route path="/step1" element = {<Step1 />} ></Route>
         <Route path="/step2" element={<Step2 />} ></Route>
