@@ -144,7 +144,7 @@ if not DEBUG:
     # and creating unique names for each version so they can safely be cached forever.
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_ROOT = '/media'
-CORS_ALLOW_ALL_ORIGINS: bool
+CORS_ALLOW_ALL_ORIGINS: True
 
 
 # Default primary key field type
