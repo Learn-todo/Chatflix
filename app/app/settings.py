@@ -138,8 +138,16 @@ if not DEBUG:
     # and creating unique names for each version so they can safely be cached forever.
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_ROOT = '/media'
-CORS_ALLOW_ALL_ORIGINS: True
+CORS_ORIGIN_ALLOW_ALL: True
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
+    "http://localhost:8080",
+    "http://localhost:3000",
+    "http://127.0.0.1:9000",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:8000",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
