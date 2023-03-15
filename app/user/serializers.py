@@ -15,8 +15,14 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = get_user_model()
-        fields = ['email', 'password', 'name', 'profile_picture']
+        fields = ['email', 'password', 'name','username', 'profile_picture']
         extra_kwargs = {'password': {'write_only': True, 'min_length': 5}}
+
+    def validate_username(self, value):
+        """Checks if username exists in database"""
+        if User.objects.filter(username=value).exists():
+            raise serializers.ValidationError('Username already exists')
+        return value
 
     def create(self, validated_data):
         """Create and return a user with encrypted password."""
