@@ -268,11 +268,6 @@ const Dashboard = () => {
         <main className={`${style._main} bg-backgroundTwo ${toggle ? `${style._main_resize}` : `${style._main}`}`}>
          <div className={`bg-backgroundTwo`}>
             <MovieView />
-            <Cards />
-            <Cards />
-            <Cards />
-            <Cards />
-
           </div>
         </main>
       </div>

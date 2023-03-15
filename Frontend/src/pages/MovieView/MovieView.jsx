@@ -7,7 +7,7 @@ import { CiSaveDown2 } from "react-icons/ci";
 import { BsShare } from "react-icons/bs";
 import { FiDownload } from "react-icons/fi";
 import { IoStarOutline } from "react-icons/io5";
-import Img from "./images/movieImg.png";
+import Img from "./images/Django.png";
 import MovieSuggestions from "./MovieSuggestions";
 import Comments from "./Comments/Comments";
 
