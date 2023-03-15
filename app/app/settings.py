@@ -85,13 +85,20 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         # Feel free to alter this value to suit your needs.
+#         default='postgres://chatflix_user:mpiG6Tlz6vCqVeQjBH8hmDUFsuOQnMO4@dpg-cfskv3pa6gduqke0ul40-a.oregon-postgres.render.com/chatflix',
+#         conn_max_age=100
+#     )
+# }
 DATABASES = {
-    'default': dj_database_url.config(
-        # Feel free to alter this value to suit your needs.
-        default='postgres://chatflix_user:mpiG6Tlz6vCqVeQjBH8hmDUFsuOQnMO4@dpg-cfskv3pa6gduqke0ul40-a.oregon-postgres.render.com/chatflix',
-        conn_max_age=100
-    )
-}
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
