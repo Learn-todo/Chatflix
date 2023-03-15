@@ -21,7 +21,7 @@ def profile_image_file_path(instance, filename):
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, password=None, **extra_fields):
+    def create_user(self, request, email, password=None, **extra_fields):
         if not email:
             raise ValueError('User must have an email Address')
         user = self.model(email=self.normalize_email(email), **extra_fields)
