@@ -21,6 +21,7 @@ import { BsBell } from "react-icons/bs";
 import { BsBoxArrowLeft } from "react-icons/bs";
 import { useState } from "react";
 import Cards from "../../static/landing page/Cards"
+import MovieView from "../../pages/MovieView/MovieView";
 
 const Dashboard = () => {
    const [toggle, setToggle] = useState(false);
@@ -266,12 +267,7 @@ const Dashboard = () => {
         </div>
         <main className={`${style._main} bg-backgroundTwo ${toggle ? `${style._main_resize}` : `${style._main}`}`}>
          <div className={`bg-backgroundTwo`}>
-            {/* CONTENT GOES HERE */}
-            <Cards />
-            <Cards />
-            <Cards />
-            <Cards />
-
+            <MovieView />
           </div>
         </main>
       </div>

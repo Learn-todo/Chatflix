@@ -17,12 +17,14 @@ import Success from "./pages/reset password/Success";
 import Signout from "./pages/authentication/Signout";
 import PageNotFound from "./static/404/PageNotFound";
 import EmailTemplate from "./static/emailtemplate/EmailTemplate";
+import MovieView from "./pages/MovieView/MovieView";
 
 const App = () => {
   return(
       <Routes>
         <Route exact path="/" element = {<LandingPage /> }></Route>
         <Route path="/dashboard" element = {<Dashboard />} ></Route>
+        <Route path="/movieview" element = {<MovieView />} ></Route>
         <Route path="/reset password" element = {<ResetPassword />} ></Route>
         <Route path="/forgot password" element = {<ForgotPassword />} ></Route>
         <Route path="/step1" element = {<Step1 />} ></Route>
