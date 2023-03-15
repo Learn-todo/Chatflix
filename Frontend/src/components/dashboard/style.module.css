@@ -1,15 +1,48 @@
-._main,
-._grid_container {
-  height: 100vh;
+._header {
+  position: sticky;
+  top: 0;
+  height: 80px;
+  z-index: 10;
+  width: calc(100% - 56px);
+  margin-left: auto;
+}
+
+._header_resize {
+  width: calc(100% - 135px) !important;
 }
 
 ._sidebar {
-  border-right: 0.1rem solid #a5aebc !important;
+  border-right: 1px solid #A5AEBC !important;
+  height: 100vh;
+  position: fixed;
+  /* overflow: scroll; */
+  z-index: 99;
+  width: 56px;
+  top: 0;
+  bottom: 0;
+}
+
+._sidebar_resize {
+  width: 135px;
+}
+
+._main{
+  width: calc(100% - 56px);
+  margin-left: auto;
+  padding: 1rem .2rem;
+  position: relative;
+  z-index: 0;
+  right: 0;
+  height: 100%;
+}
+
+._main_resize {
+  width: calc(100% - 135px);
 }
 
 ._toggle {
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   cursor: pointer;
 }
 
@@ -61,8 +94,13 @@
   margin-top: auto!important;
 }
 
+._main_content{
+  height: 100vh !important;
+}
+
 ._search {
   font-size: 0.5rem;
+  height: 80px;
 }
 
 ._search input {
@@ -76,13 +114,13 @@
 }
 
 ._profile {
-  width: 45px !important;
-  height: 45px;
+  width: 50px !important;
+  height: 50px;
 }
 
 ._profile div {
-  width: 20px !important;
-  height: 20px;
+  width: 23px !important;
+  height: 23px;
   cursor: pointer;
 }
 

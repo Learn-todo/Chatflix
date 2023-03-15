@@ -1,0 +1,29 @@
+._background_image{
+     position: fixed;
+     background-image: url("https://res.cloudinary.com/dfsclcxhm/image/upload/v1675873954/Chatflix/Rectangle_75_hh0jzv.png");
+     z-index: 0;
+     height: 100%;
+     background-size: cover;
+     background-repeat: no-repeat;
+     width: 100%;
+     background-color: black;
+     padding: 2.5rem 4rem;
+}
+
+._logo{
+     margin-bottom: 8rem;
+}
+
+._text{
+     max-width: 500px;
+}
+
+._links{
+     width: 245px;
+}
+
+._links a {
+     border-radius: 4px;
+}
+
+

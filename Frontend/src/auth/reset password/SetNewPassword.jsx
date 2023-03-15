@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../../components/logo/ChatflixLogo";
 import style from "../signup/style.module.css";
 import { IoIosArrowBack } from "react-icons/io";
@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 const SetNewPassword = () => {
   let navigate = useNavigate();
+  const [inputError, setInputError] = useState(false);
   const handleSetNewPassword = () => {
     navigate('/reset success');
   }
@@ -58,19 +59,20 @@ const SetNewPassword = () => {
                 <div className={`mb-4`}>
                   <div className={`${style._input_div} position-relative mt-3 mb-1`}>
                   <input
-                    className={`${style._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
+                    className={`${style._input_element} position-relative w-100 bg-background border  rounded-1 p-2 ps-5 form-control shadow-none text-cancel ${inputError ? `${style._error} border-reaction` : `${style._input_element} border-cancel`}`}
                     type="password"
-                    name=""
-                    id=""
+                    // value=""
+                      id="password"
+                      placeholder=" "
                   />
                     <MdOutlineLock
-                      className={`${style._input_icon} position-absolute top-50 translate-middle text-cancel`}
+                      className={`${style._input_icon} position-absolute top-50 translate-middle ${inputError ? `text-reaction` : `text-cancel`}`}
                     />
-                  <span className={`${style._input_text} text-cancel position-absolute`} tabIndex={1}>
+                  <label htmlFor="password" className={`${style._input_text} ${inputError ? `${style._error}` : `text-cancel`}`} tabIndex={1}>
                     Password
-                  </span>
+                  </label>
                   </div>
-                  <div className={`${style._password_info} mb-4 text-text-color`}>
+                  <div className={`${style._password_info} mb-4 ${inputError ? `text-reaction` : `text-text-color`}`}>
                     <p>At least 8 characters long</p>
                     <p>A mixture of both UPPERCASE and lowercase</p>
                     <p>Must contain numbers</p>
@@ -78,17 +80,18 @@ const SetNewPassword = () => {
                   </div>
                   <div className={`${style._input_div} position-relative mb-5`}>
                   <input
-                    className={`${style._input_element} position-relative w-100 bg-background border border-cancel rounded-1 p-2 ps-5 text-cancel form-control shadow-none`}
+                    className={`${style._input_element} position-relative w-100 bg-background border  rounded-1 p-2 ps-5 form-control shadow-none text-cancel ${inputError ? `${style._error} border-reaction` : `${style._input_element} border-cancel`}`}
                     type="password"
-                    name=""
-                    id=""
+                    // value=""
+                    id="confirmPassword"
+                    placeholder=" "
                   />
                     <MdOutlineLock
-                      className={`${style._input_icon} position-absolute top-50 translate-middle text-cancel`}
+                      className={`${style._input_icon} position-absolute top-50 translate-middle ${inputError ? `text-reaction` : `text-cancel`}`}
                     />
-                  <span className={`${style._input_text} text-cancel position-absolute`} tabIndex={1}>
+                  <label htmlFor="confirmPassword" className={`${style._input_text} ${inputError ? `${style._error}` : `text-cancel`}`} tabIndex={1}>
                     Confirm password
-                  </span>
+                  </label>
                   </div>
                   
                 </div>

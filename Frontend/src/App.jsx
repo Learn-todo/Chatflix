@@ -15,19 +15,18 @@ import Signin from "./pages/authentication/Signin";
 import NewPassword from "./pages/reset password/NewPassword";
 import Success from "./pages/reset password/Success";
 import Signout from "./pages/authentication/Signout";
-import MovieView from "./pages/MovieView/MovieView";
+import PageNotFound from "./static/404/PageNotFound";
+import EmailTemplate from "./static/emailtemplate/EmailTemplate";
 
 const App = () => {
   return(
-    
       <Routes>
         <Route exact path="/" element = {<LandingPage /> }></Route>
         <Route path="/dashboard" element = {<Dashboard />} ></Route>
         <Route path="/reset password" element = {<ResetPassword />} ></Route>
-        <Route path = "/movieview" element= {<MovieView />}></Route>
         <Route path="/forgot password" element = {<ForgotPassword />} ></Route>
         <Route path="/step1" element = {<Step1 />} ></Route>
-        <Route path="/step2" element = {<Step2 />} ></Route>
+        <Route path="/step2" element={<Step2 />} ></Route>
         <Route path="/step3" element = {<Step3 />} ></Route>
         <Route path="/step4" element = {<Step4 />} ></Route>
         <Route path="/step5" element = {<Step5 />} ></Route>
@@ -35,7 +34,9 @@ const App = () => {
         <Route path="/signin" element = {<Signin />} ></Route>
         <Route path="/new password" element={<NewPassword />} ></Route>
         <Route path="/reset success" element={<Success />} ></Route>
-        <Route path="/signout" element = {<Signout />} ></Route>
+        <Route path="/signout" element={<Signout />} ></Route>
+        <Route path="/email template" element={<EmailTemplate />} ></Route>
+        <Route path="*" element = {<PageNotFound />} ></Route>
       </Routes>
   );
 };

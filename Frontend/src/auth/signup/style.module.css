@@ -1,3 +1,4 @@
+
 ._content {
   position: relative;
   z-index: 99;
@@ -14,6 +15,17 @@
 
 ._form_div {
   width: 320px;
+}
+
+._progressbar_num{
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+}
+
+._progressbar_num p {
+  font-size: .6rem;
+  font-weight: 500;
 }
 
 ._btn_div button {
@@ -42,23 +54,38 @@
 }
 
 ._input_text {
-  position: absolute;
+  position: absolute !important;
   pointer-events: none;
   left: 45px;
   top: 8.5px;
   transition: 0.7s;
+  transform-origin: 0 50%;
 }
 
 ._input_element:focus {
   border: 1px solid #206cdf !important;
 }
 
-._input_element:focus~._input_text {
-  color: #206cdf !important;
+._input_element:focus ~ ._input_text,
+._input_element:not(:placeholder-shown) ~ ._input_text {
   transform: translateX(-25px) translateY(-20px) !important;
   padding: 0 0.4rem;
   background-color: #030b19;
   transition: 0.7s;
+}
+
+._input_element:focus~._input_text{
+  color: #206cdf !important;
+}
+
+._error:focus{
+  border: 1px solid #FC4247 !important;
+}
+
+._input_element:focus~._error,
+._input_element:not(:placeholder-shown)~._error,
+._error {
+  color: #FC4247 !important;
 }
 
 ._password_info > p {

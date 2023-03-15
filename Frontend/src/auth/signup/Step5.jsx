@@ -10,9 +10,6 @@ import { useNavigate } from 'react-router-dom';
 
 const Step5 = () => {
   let navigate = useNavigate();
-  const handleNext = () => {
-    navigate('/verified account');
-  }
   const handlePrev = () => {
     navigate('/step4');
   };
@@ -54,11 +51,12 @@ const Step5 = () => {
                 </p>
               </div>
 
-              <form className="mb-4" action="" onSubmit={handleNext}>
+              <form className="mb-4" action="">
                 <div className={`${style._btn_div} position-relative mb-5`}>
                   <button
+                  onClick={() => window.location = `mailto:`}
                     className={`bg-btn-color py-2 border-0 w-100 rounded text-arrow`}
-                  >Open your email app
+                  >Open your mail app
                   </button>
                 </div>
                 <div className={`mb-5 text-arrow`}>
