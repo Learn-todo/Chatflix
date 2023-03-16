@@ -20,7 +20,6 @@ import { BsSearch } from "react-icons/bs";
 import { BsBell } from "react-icons/bs";
 import { BsBoxArrowLeft } from "react-icons/bs";
 import { useState } from "react";
-import Cards from "../../static/landing page/Cards"
 import Watchlist from "../../pages/watchlist/Watchlist";
 import MovieView from "../../pages/MovieView/MovieView";
 
