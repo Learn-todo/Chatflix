@@ -1,6 +1,6 @@
 import React from "react";
 import "./sass/main.scss";
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/landing page/Main";
 import ResetPassword from "./pages/reset password/Main";
 import ForgotPassword from "./pages/forgot password/Main";
@@ -18,27 +18,30 @@ import Signout from "./pages/authentication/Signout";
 import PageNotFound from "./static/404/PageNotFound";
 import EmailTemplate from "./static/emailtemplate/EmailTemplate";
 import MovieView from "./pages/MovieView/MovieView";
+import Watchlist from "./pages/watchlist/Watchlist";
 
 const App = () => {
-  return(
-      <Routes>
+  return (
+      <Routes> 
         <Route exact path="/" element = {<LandingPage /> }></Route>
         <Route path="/dashboard" element = {<Dashboard />} ></Route>
         <Route path="/movieview" element = {<MovieView />} ></Route>
-        <Route path="/reset password" element = {<ResetPassword />} ></Route>
-        <Route path="/forgot password" element = {<ForgotPassword />} ></Route>
+        <Route path="/reset-password" element = {<ResetPassword />} ></Route>
+        <Route path="/forgot-password" element = {<ForgotPassword />} ></Route>
         <Route path="/step1" element = {<Step1 />} ></Route>
         <Route path="/step2" element={<Step2 />} ></Route>
         <Route path="/step3" element = {<Step3 />} ></Route>
         <Route path="/step4" element = {<Step4 />} ></Route>
         <Route path="/step5" element = {<Step5 />} ></Route>
-        <Route path="/verified account" element={<VerifiedAccount />} ></Route>
+        <Route path="/verified-account" element={<VerifiedAccount />} ></Route>
         <Route path="/signin" element = {<Signin />} ></Route>
-        <Route path="/new password" element={<NewPassword />} ></Route>
-        <Route path="/reset success" element={<Success />} ></Route>
+        <Route path="/new-password" element={<NewPassword />} ></Route>
+        <Route path="/reset-success" element={<Success />} ></Route>
         <Route path="/signout" element={<Signout />} ></Route>
-        <Route path="/email template" element={<EmailTemplate />} ></Route>
+        <Route path="/email-template" element={<EmailTemplate />} ></Route>
         <Route path="*" element = {<PageNotFound />} ></Route>
+        <Route path="/watchlist" element={<Watchlist />}></Route>
+        
       </Routes>
   );
 };

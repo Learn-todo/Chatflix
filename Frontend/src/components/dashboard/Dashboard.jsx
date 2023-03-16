@@ -21,16 +21,24 @@ import { BsBell } from "react-icons/bs";
 import { BsBoxArrowLeft } from "react-icons/bs";
 import { useState } from "react";
 import Cards from "../../static/landing page/Cards"
+import Watchlist from "../../pages/watchlist/Watchlist";
 import MovieView from "../../pages/MovieView/MovieView";
 
 const Dashboard = () => {
    const [toggle, setToggle] = useState(false);
-
+   const [component, setComponent] = useState(<MovieView/>)
   const handleClick = () => {
     setToggle((prevState) => {
       return !prevState;
     });
+   
   };
+  const displayWatchlist = ()=>{
+    setComponent(<Watchlist/>)
+  }
+  const displayHome = ()=>{
+    setComponent(<MovieView/>)
+  }
   return (
     <section className={`bg-backgroundTwo text-white p-0 m-0`}>
       <div className="">
@@ -95,15 +103,15 @@ const Dashboard = () => {
           </div>
           <div className={`${style._menu_list}`}>
             <small className={`${style._menu_heading}`}>Menu</small>
-            <div
+            <div onClick={displayHome}
               className={
                 toggle
                   ? `${style._active} ${style._menu_list_show} d-flex justify-center align-items-center`
                   : `${style._active}`
               }
             >
-              <Link to="/" className={`d-block m-0`}><MdHomeFilled className={`${style._menu_icons}`} /></Link>
-              <Link to="/">Home</Link>
+              <Link to="" className={`d-block m-0`}><MdHomeFilled className={`${style._menu_icons}`} /></Link>
+              <Link to="">Home</Link>
             </div>
             <div
               className={
@@ -195,7 +203,7 @@ const Dashboard = () => {
               </Link>
               <Link to="">Top Rated</Link>
             </div>
-            <div
+            <div onClick={displayWatchlist}
               className={
                 toggle
                   ? `${style._active} ${style._menu_list_show} d-flex justify-center align-items-center`
@@ -267,7 +275,8 @@ const Dashboard = () => {
         </div>
         <main className={`${style._main} bg-backgroundTwo ${toggle ? `${style._main_resize}` : `${style._main}`}`}>
          <div className={`bg-backgroundTwo`}>
-            <MovieView />
+            {/* CONTENT GOES HERE */}
+            {component}
           </div>
         </main>
       </div>
