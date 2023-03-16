@@ -22,10 +22,11 @@ import { BsBoxArrowLeft } from "react-icons/bs";
 import { useState } from "react";
 import Cards from "../../static/landing page/Cards"
 import Watchlist from "../../pages/watchlist/Watchlist";
+import MovieView from "../../pages/MovieView/MovieView";
 
 const Dashboard = () => {
    const [toggle, setToggle] = useState(false);
-   const [component, setComponent] = useState(<Cards/>)
+   const [component, setComponent] = useState(<MovieView/>)
   const handleClick = () => {
     setToggle((prevState) => {
       return !prevState;
@@ -36,7 +37,7 @@ const Dashboard = () => {
     setComponent(<Watchlist/>)
   }
   const displayHome = ()=>{
-    setComponent(<Cards/>)
+    setComponent(<MovieView/>)
   }
   return (
     <section className={`bg-backgroundTwo text-white p-0 m-0`}>
@@ -276,7 +277,6 @@ const Dashboard = () => {
          <div className={`bg-backgroundTwo`}>
             {/* CONTENT GOES HERE */}
             {component}
-
           </div>
         </main>
       </div>

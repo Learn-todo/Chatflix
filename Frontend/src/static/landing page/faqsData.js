@@ -9,31 +9,31 @@ const faqsData = [
     id: 2,
     question: "Is Chatflix free?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Voluptatibus, voluptates.",
+      "Yes! It is completely free as of today.",
   },
   {
     id: 3,
     question: "What devices are compatible with Chatflix",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Voluptatibus, voluptates.",
+      "Chatflix is compatible with any device that has internet access.",
   },
   {
     id: 4,
     question: "Can I invite my friends to use Chatflix",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Voluptatibus, voluptates.",
+      "Definitely, you can refer friends as Chatflix is more fun with friends.",
   },
   {
     id: 5,
     question: "What can I watch on Chatflix",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Voluptatibus, voluptates.",
+      "You can watch any genre of movie of your choice from Chatflix diverse library.",
   },
   {
     id: 6,
     question: "Who can I chat with on Chatflix",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit.Voluptatibus, voluptates.",
+      "Chatflix allows you to chat with friends, other users, movie studios and pretty much anyone on the platform.",
   },
 ];
 
