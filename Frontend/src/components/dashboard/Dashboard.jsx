@@ -20,7 +20,6 @@ import { BsSearch } from "react-icons/bs";
 import { BsBell } from "react-icons/bs";
 import { BsBoxArrowLeft } from "react-icons/bs";
 import { useState } from "react";
-import Cards from "../../static/landing page/Cards"
 import Watchlist from "../../pages/watchlist/Watchlist";
 import MovieView from "../../pages/MovieView/MovieView";
 
@@ -40,7 +39,7 @@ const Dashboard = () => {
     setComponent(<MovieView/>)
   }
   return (
-    <section className={`bg-backgroundTwo text-white p-0 m-0`}>
+    <section className={`bg-backgroundTwo text-white p-0 m-0 `}>
       <div className="">
         <div className={`${style._header} bg-backgroundTwo ${toggle ? `${style._header_resize}` : `${style._header}`}`}>
           <div
@@ -273,8 +272,8 @@ const Dashboard = () => {
         </div>
           </aside>
         </div>
-        <main className={`${style._main} bg-backgroundTwo ${toggle ? `${style._main_resize}` : `${style._main}`}`}>
-         <div className={`bg-backgroundTwo`}>
+        <main className={`${style._main} bg-dark pb-0 ${toggle ? `${style._main_resize}` : `${style._main}`}`}>
+         <div className={`m-4 mb-0`}>
             {/* CONTENT GOES HERE */}
             {component}
           </div>
