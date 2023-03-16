@@ -1,6 +1,6 @@
 import React from "react";
 import "./sass/main.scss";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import LandingPage from "./pages/landing page/Main";
 import ResetPassword from "./pages/reset password/Main";
 import ForgotPassword from "./pages/forgot password/Main";
@@ -22,6 +22,7 @@ import Watchlist from "./pages/watchlist/Watchlist";
 
 const App = () => {
   return (
+    <BrowserRouter>
       <Routes> 
         <Route exact path="/" element = {<LandingPage /> }></Route>
         <Route path="/dashboard" element = {<Dashboard />} ></Route>
@@ -41,8 +42,9 @@ const App = () => {
         <Route path="/email-template" element={<EmailTemplate />} ></Route>
         <Route path="*" element = {<PageNotFound />} ></Route>
         <Route path="/watchlist" element={<Watchlist />}></Route>
-        
+      
       </Routes>
+      </BrowserRouter>
   );
 };
 
