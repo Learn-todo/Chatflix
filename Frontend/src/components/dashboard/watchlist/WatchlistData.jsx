@@ -51,7 +51,7 @@ const WatchlistData = [
         duration:180
       },
       {
-        image:gatsby,
+        image:joker,
         title:"Joker",
         year:2019,
         duration:122
