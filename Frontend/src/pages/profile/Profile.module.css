@@ -1,0 +1,123 @@
+.body {
+  box-sizing: border-box;
+  background-color: #000;
+  padding-top: 50px;
+  font-family: "Roboto" sans-serif;
+}
+
+.main {
+    margin-top: 50px;
+
+}
+
+.firstSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 56px;
+  padding-right: 56px;
+}
+.profileBtn {
+  border: 1px solid #206cdf;
+  border-radius: 5px;
+  width: 97px;
+  color: #206cdf;
+  padding: 8px;
+  border-color: #206cdf;
+  background: #000;
+  font-size: small;
+  font-weight: 500;
+}
+
+.secondSection {
+  background-color: #000;
+  padding-left: 56px;
+  padding-right: 56px;
+}
+.sectionTwo {
+  display: block;
+  color: #e4e7eb;
+  padding-top: 32px;
+}
+.sectionTwo > h3 {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 42px;
+}
+.sectionTwo > span {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 55px;
+  padding-bottom: 2rem;
+  color: #a5aebc;
+}
+.sectionTwo > p {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+}
+.subSectionTwo {
+  display: flex;
+  justify-content: space-between;
+  max-width: 350px;
+  padding-top: 32px;
+  color: #8e9aac;
+}
+.subSectionTwoDiv {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  color: #8e9aac;
+}
+.subSectionTwoDiv > p {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+}
+.subSectionTwoDiv > span {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  padding-bottom: 2rem;
+  color: #e4e7eb;
+}
+.sectionThree {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 56px;
+  background-color: black;
+  color: white;
+  border-bottom: 1px solid white;
+  border-bottom-width: 100%;
+  margin-bottom: 2rem;
+}
+.sectionThreeDiv {
+  display: flex;
+  gap: 10px;
+}
+.sectionThreeDiv p {
+  margin: 5px 0px;
+  color: white;
+}
+
+.sectionThreeDiv > p:hover{
+    color: #206cdf;
+}
+
+.sectionFour{
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px;
+  gap: 20px;
+ 
+    
+}
+.card{
+    width: 300px;
+    height: 250px;
+    border: gray;
+    border: 5px;
+    border-radius: 8px;
+    background-color: gray;
+}

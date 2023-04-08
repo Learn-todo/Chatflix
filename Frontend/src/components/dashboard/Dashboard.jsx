@@ -22,6 +22,7 @@ import { BsBoxArrowLeft } from "react-icons/bs";
 import { useState } from "react";
 import Watchlist from "../../pages/watchlist/Watchlist";
 import MovieView from "../../pages/MovieView/MovieView";
+import Profile from "../../pages/profile/Profile";
 
 const Dashboard = () => {
    const [toggle, setToggle] = useState(false);
@@ -36,7 +37,10 @@ const Dashboard = () => {
     setComponent(<Watchlist/>)
   }
   const displayHome = ()=>{
-    setComponent(<MovieView/>)
+    setComponent(<MovieView/>) 
+  }
+  const displayProfile=()=>{
+    setComponent(<Profile/>)
   }
   return (
     <section className={`bg-backgroundTwo text-white p-0 m-0 `}>
@@ -227,7 +231,7 @@ const Dashboard = () => {
               <Link to="">Downloads</Link>
             </div>
           </div>
-          <div className={`${style._menu_list}`}>
+          <div className={`${style._menu_list}`} onClick={displayProfile}>
             <small className={`${style._menu_heading}`}>General</small>
             <div
               className={
