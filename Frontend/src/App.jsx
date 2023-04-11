@@ -7,6 +7,7 @@ import LandingPage from "./pages/landing page/Main";
 import ResetPassword from "./pages/reset password/Main";
 import ForgotPassword from "./pages/forgot password/Main";
 import Dashboard from "./components/dashboard/Dashboard";
+import Download from "./components/download/Download";
 import Step1 from "./pages/authentication/Step1";
 import Step2 from "./pages/authentication/Step2";
 import Step3 from "./pages/authentication/Step3";
@@ -28,6 +29,7 @@ const App = () => {
       <Routes> 
         <Route exact path="/" element = {<LandingPage /> }></Route>
         <Route path="/dashboard" element = {<Dashboard />} ></Route>
+        <Route path="/download" element = {<Download />} ></Route>
         <Route path="/movieview" element = {<MovieView />} ></Route>
         <Route path="/reset-password" element = {<ResetPassword />} ></Route>
         <Route path="/forgot-password" element = {<ForgotPassword />} ></Route>
