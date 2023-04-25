@@ -15,6 +15,7 @@ const Signin = () => {
   let navigate = useNavigate();
   const handleSignin = () => {
     navigate('/dashboard');
+    console.log(setInputError);
   }
   const handleClose = () => {
     navigate('/');
@@ -130,7 +131,7 @@ const Signin = () => {
                       </label>
                     </div>
                     <Link
-                      to="/forgot password"
+                      to="/forgot-password"
                       className={`text-btn-color text-right text-decoration-none`}
                     >
                       Forgot Password?

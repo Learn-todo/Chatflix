@@ -1,10 +1,11 @@
 ._header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
   height: 80px;
   z-index: 10;
   width: calc(100% - 56px);
-  margin-left: auto;
+  margin-left: auto !important;
 }
 
 ._header_resize {
@@ -15,11 +16,25 @@
   border-right: 1px solid #A5AEBC !important;
   height: 100vh;
   position: fixed;
-  /* overflow: scroll; */
+  overflow-y: scroll;
   z-index: 99;
   width: 56px;
   top: 0;
   bottom: 0;
+}
+
+._sidebar::-webkit-scrollbar{
+  width: 2px;
+  border-radius: 50%;
+}
+
+._sidebar::-webkit-scrollbar-track {
+  background-color: #010205;
+}
+
+._sidebar::-webkit-scrollbar-thumb {
+  background-color: #010205;
+  border-radius: 50%;
 }
 
 ._sidebar_resize {

@@ -13,7 +13,7 @@ const ResetSuccess = () => {
     navigate('/signin');
   }
   const handlePrev = () => {
-    navigate('/new password');
+    navigate('/new-password');
   };
   const handleClose = () => {
     navigate('/');

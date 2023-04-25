@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import CommentForm from "./CommentForm";
-import Comment from "./Comment";
+import CommentForm from "../comments/CommentForm";
+import Comment from "../comments/Comment";
 import {
 	getComments as getCommentsApi,
 	createComment as createCommentApi,

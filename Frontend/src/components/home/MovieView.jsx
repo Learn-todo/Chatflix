@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-// import Dashboard from "../../components/dashboard/Dashboard";
+import React, { useState, useContext } from "react";
+import { ToggleContext } from "../../App";
 import style from "./style.module.css";
 import { Image } from "cloudinary-react";
 import { FcLike } from "react-icons/fc";
@@ -7,11 +7,13 @@ import { CiSaveDown2 } from "react-icons/ci";
 import { BsShare } from "react-icons/bs";
 import { FiDownload } from "react-icons/fi";
 import { IoStarOutline } from "react-icons/io5";
-import Img from "./images/Django.png";
+import Img from "./images/gatsby.png";
 import MovieSuggestions from "./MovieSuggestions";
-import Comments from "./Comments/Comments";
+import Comments from "./comments/Comments";
 
 const MovieView = ({ movieName, genre }) => {
+  const toggle = useContext(ToggleContext);
+
 	const stars = Array(5).fill(0);
 
 	const [currenRating, setCurrentRating] = useState(0);
@@ -35,10 +37,9 @@ const MovieView = ({ movieName, genre }) => {
 	};
 
 	return (
-		<div>
-			{/* <Dashboard /> */}
+		<div className={`${style._main} bg-dark pb-0 ${toggle ? `${style._main_resize}` : `${style._main}`}`}>
 			<section
-				className={`${style._movieView} container-lg w-80 border-bottom border-menu-heading`}>
+				className={`${style._movieView} container-lg border-bottom border-menu-heading`}>
 				<Image
 					className="w-100"
 					cloudName="dfsclcxhm"

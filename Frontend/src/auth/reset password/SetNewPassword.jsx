@@ -12,10 +12,10 @@ const SetNewPassword = () => {
   let navigate = useNavigate();
   const [inputError, setInputError] = useState(false);
   const handleSetNewPassword = () => {
-    navigate('/reset success');
+    navigate('/reset-success');
   }
   const handlePrev = () => {
-    navigate('/reset password');
+    navigate('/reset-password');
   };
   const handleClose = () => {
     navigate('/');

@@ -10,10 +10,10 @@ import { useNavigate } from 'react-router-dom';
 const ResetPassword = () => {
 let navigate = useNavigate();
   const handleResetPassword = () => {
-    navigate('/new password');
+    navigate('/new-password');
   }
   const handlePrev = () => {
-    navigate('/forgot password');
+    navigate('/forgot-password');
   };
   const handleClose = () => {
     navigate('/');

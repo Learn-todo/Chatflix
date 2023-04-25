@@ -11,7 +11,7 @@ const ForgotPassword = () => {
   let navigate = useNavigate();
   const [inputError, setInputError] = useState(false);
   const handleForgotPassword = () => {
-    navigate('/reset password');
+    navigate('/reset-password');
   }
   const handlePrev = () => {
     navigate('/signin');

@@ -1,6 +1,5 @@
 import React from "react";
 import MovieData from "./MovieData";
-// import style from "./style.module.css";
 
 const MovieSuggestions = () => {
 	return (
