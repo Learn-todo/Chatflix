@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Chatflix/static/css/main.e767ccea.css",
-    "main.js": "/Chatflix/static/js/main.ebdadf12.js",
+    "main.css": "/Chatflix/static/css/main.b9cf4e6f.css",
+    "main.js": "/Chatflix/static/js/main.d91d0be3.js",
     "static/js/787.cda612ba.chunk.js": "/Chatflix/static/js/787.cda612ba.chunk.js",
     "static/media/wolf.png": "/Chatflix/static/media/wolf.e66cf65a87e88eb421df.png",
     "static/media/Inception.png": "/Chatflix/static/media/Inception.d42aa311b127de1587c2.png",
@@ -9,16 +9,15 @@
     "static/media/Joker.png": "/Chatflix/static/media/Joker.96f1a909e17898b0c735.png",
     "static/media/shuttler.png": "/Chatflix/static/media/shuttler.34772b38b7ee1d9d2a35.png",
     "static/media/now.png": "/Chatflix/static/media/now.dd2e89c77260bff13cd2.png",
-    "static/media/Django.png": "/Chatflix/static/media/Django.706bd8f2ddac7dfbd7b5.png",
     "static/media/Image.jpg": "/Chatflix/static/media/Image.43d3514419574863ea9d.jpg",
     "static/media/Gloria.jpg": "/Chatflix/static/media/Gloria.737e7360559006d90dd5.jpg",
     "index.html": "/Chatflix/index.html",
-    "main.e767ccea.css.map": "/Chatflix/static/css/main.e767ccea.css.map",
-    "main.ebdadf12.js.map": "/Chatflix/static/js/main.ebdadf12.js.map",
+    "main.b9cf4e6f.css.map": "/Chatflix/static/css/main.b9cf4e6f.css.map",
+    "main.d91d0be3.js.map": "/Chatflix/static/js/main.d91d0be3.js.map",
     "787.cda612ba.chunk.js.map": "/Chatflix/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e767ccea.css",
-    "static/js/main.ebdadf12.js"
+    "static/css/main.b9cf4e6f.css",
+    "static/js/main.d91d0be3.js"
   ]
 }
