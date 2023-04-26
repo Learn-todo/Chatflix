@@ -28,6 +28,8 @@ $custom-theme-colors: (
    "input": #282D34,
    "input-text": #BCC3CD,
    "progress-bar": #C6DCFD,
+   "comments": #8F9AAC,
+   "header-border": #78869B
    );
 
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);

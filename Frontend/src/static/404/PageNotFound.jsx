@@ -1,9 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import style from "./style.module.css";
 import Logo from "../../components/logo/ChatflixLogo";
 
 const PageNotFound = () => {
+  let navigate = useNavigate();
+  const handlePrev = () => {
+    navigate(-1);
+  };
+
   return (
     <section className={`${style._background_image}`}>
       <div className={`${style._logo}`}>
@@ -24,12 +29,12 @@ const PageNotFound = () => {
         >
           Go home
         </Link>
-        <Link
-          to="/"
-          className={`text-btn-color border border-btn-color py-2 px-2 text-center text-decoration-none display-block`}
+        <button
+          onClick={handlePrev}
+          className={`text-btn-color bg-transparent border border-btn-color py-2 px-2 text-center display-block rounded`}
         >
           Take me back
-        </Link>
+        </button>
       </div>
     </section>
   );
