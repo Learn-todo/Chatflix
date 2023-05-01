@@ -92,15 +92,12 @@
   margin-left: 0.5rem;
   font-size: 0.6rem;
 }
-._active:hover,
-._active:active {
+._active {
   border-right: 5px solid blue;
 }
 
-._active:hover svg,
-._active:active,
-._menu_list_show:hover a,
-._menu_list_show:active a {
+._active svg,
+._menu_list_show_active a{
   color: blue;
   cursor: pointer;
 }
