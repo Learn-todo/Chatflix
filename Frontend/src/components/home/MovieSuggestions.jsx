@@ -1,34 +1,59 @@
 import React from "react";
-import MovieData from "./MovieData";
+import MovieData from "./Movies";
+import { Slide } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
 
 const MovieSuggestions = () => {
-	return (
-		<section>
-			<div className="mt-5">
-				<h3 className="container">You May also Like</h3>
-			</div>
+  const responsiveSettings = [
+    {
+      breakpoint: 914,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+      },
+    },
 
-			<div className="mt-5">
-				<div className={`container`}>
-					<div className="row mb-5">
-						{MovieData.map((movie, i) => {
-							return (
-								<div className={`col mb-4`} key={movie.id}>
-									<div className={`p-4 text-start rounded-1`}>
-										<img src={`${movie.img}`} className={``} alt="" />
-										<div className={` p-0 py-1`}>
-											<h5 className={`py-2 fs-5`}>{movie.title}</h5>
-											<span className="card-text">{movie.duration}</span>
-										</div>
-									</div>
-								</div>
-							);
-						})}
-					</div>
-				</div>
-			</div>
-		</section>
-	);
+    {
+      breakpoint: 650,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      },
+    },
+  ];
+
+  return (
+    <section className="mt-3">
+      <h3 className={`text-arrow fs-2 fw-bold text-center text-md-start`}>
+        You May also Like
+      </h3>
+      <div className={`mt-4`}>
+        <Slide responsive={responsiveSettings} autoplay={true} arrows={false}>
+          {MovieData.map((movie) => {
+            return (
+              <div className={`mb-4 mx-md-2`} key={movie.id}>
+                <div className={`mb-3`}>
+                  <img src={movie.url} alt="" className={`w-100 `} />
+                </div>
+                <div className={`m-0`}>
+                  <a
+                    href="#."
+                    className={`text-arrow fw-semibold fs-4 mb-0 text-decoration-none`}
+                  >
+                    {movie.title}
+                  </a>
+                  <p className={`fs-6 text-cancel mb-2`}>
+                    {movie.year} &nbsp; <span className={`fw-b fs-1`}>.</span>{" "}
+                    &nbsp; {movie.duration}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </Slide>
+      </div>
+    </section>
+  );
 };
 
 export default MovieSuggestions;
