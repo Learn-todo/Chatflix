@@ -18,6 +18,7 @@ import Signout from "./pages/authentication/Signout";
 import PageNotFound from "./static/404/PageNotFound";
 import EmailTemplate from "./static/emailtemplate/EmailTemplate";
 import Home from "./pages/home/Home";
+import ClickedMovie from "./pages/clicked movie/ClickedMovie";
 import Watchlist from "./pages/watchlist/Watchlist";
 
 export const ToggleContext = createContext(null);
@@ -109,6 +110,10 @@ const router = createHashRouter([
       {
         path: "watchlist",
         element: <Watchlist />
+      },
+      {
+        path: "clicked-movie",
+        element: <ClickedMovie />
       },
     ]
   },

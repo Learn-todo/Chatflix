@@ -7,9 +7,9 @@ import { BsShare } from "react-icons/bs";
 import { FiDownload } from "react-icons/fi";
 import Img from "./images/gatsby.png";
 import Movies from "./Movies";
+import MovieSuggestions from "./MovieSuggestions";
 // import { Image } from "cloudinary-react";
 // import { IoStarOutline } from "react-icons/io5";
-// import MovieSuggestions from "./MovieSuggestions";
 // import Comments from "./comments/Comments";
 
 const MovieView = ({ movieName, genre }) => {
@@ -47,7 +47,7 @@ const MovieView = ({ movieName, genre }) => {
         <div className={`row`}>
           {Movies.map((movie) => {
             return (
-              <div key={movie.id} className={`mb-4 col-md-6`}>
+              <div key={movie.id} className={`col-md-6`}>
                 <div className={`px-lg-3 pt-lg-3`}>
                   <img src={movie.url} alt="" className={`w-100 h-100`} />
                   <div className={`${style._header_card} p-3 mb-3`}>
@@ -186,6 +186,7 @@ const MovieView = ({ movieName, genre }) => {
             );
           })}
         </div>
+        <MovieSuggestions />
       </div>
     </section>
   );

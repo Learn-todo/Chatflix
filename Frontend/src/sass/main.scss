@@ -29,7 +29,9 @@ $custom-theme-colors: (
    "input-text": #BCC3CD,
    "progress-bar": #C6DCFD,
    "comments": #8F9AAC,
-   "header-border": #78869B
+   "header-border": #78869B,
+   "clicked-movie-heading": #E0ECFE,
+
    );
 
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);
