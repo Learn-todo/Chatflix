@@ -23,7 +23,7 @@ const MovieSuggestions = () => {
   ];
 
   return (
-    <section className="mt-3">
+    <section className="mt-4">
       <h3 className={`text-arrow fs-2 fw-bold text-center text-md-start`}>
         You May also Like
       </h3>

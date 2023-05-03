@@ -123,8 +123,12 @@ const ClickedMovie = () => {
                 </p>
               </div>
               <div className={`my-4`}>
-                <p className={`text-faq fs-5 fw-lighter`}>
-                  Two years before the civil war pits brother against brother, German-born bounty-hunter Dr King Schultz (Academy Award-winnier Christoph Waltz) arrives in America determined to capture the outlaw Brittle brothers dead or alive. In the midst of his search, Dr. Schultz crosses path...{" "}
+                <p className={`text-faq fs-5 fw-light`}>
+                  Two years before the civil war pits brother against brother,
+                  German-born bounty-hunter Dr King Schultz (Academy
+                  Award-winnier Christoph Waltz) arrives in America determined
+                  to capture the outlaw Brittle brothers dead or alive. In the
+                  midst of his search, Dr. Schultz crosses path...{" "}
                   <span>
                     <a href="#." className={`text-btn-color fs-6`}>
                       More
