@@ -6,7 +6,7 @@ from django.contrib.auth import (
     authenticate,
 )
 from django.utils.translation import gettext as _
-from core.models import User
+from app.user.models import User
 from rest_framework import serializers
 
 

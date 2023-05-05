@@ -19,7 +19,7 @@ from rest_framework.settings import api_settings
 from rest_framework.views import APIView
 from user.serializers import (UserSerializer, AuthTokenSerializer, UserImageSerializer, PasswordResetSerializer,
                               PasswordResetConfirmSerializer, ResendActivationSerializer)
-from core.models import User
+from app.user.models import User
 from rest_framework.decorators import action
 
 
