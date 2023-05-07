@@ -3,7 +3,7 @@ import secrets
 import uuid
 
 from django.contrib.sites.shortcuts import get_current_site
-from django.core.mail import EmailMessage
+from django.core.mail import send_mail
 from django.db import models
 from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager, PermissionsMixin)
 from django.urls import reverse
@@ -29,19 +29,17 @@ class UserManager(BaseUserManager):
         user.is_active = False
         # Generate a unique activation token
         token = secrets.token_hex(16)
-
+        
         # Save the token with the user's email address
         user.activation_token = token
         user.save(using=self._db)
         activation_link = reverse('user:activate', kwargs={'token': token})
         email_subject = 'Activate your account'
         # current_site = get_current_site(request)
-        email_body = f'Please click the following link to activate your account: http://{activation_link}'
-        email = EmailMessage(subject=email_subject, body=email_body, to=[email],
+        email_body = f'Hello Please click the following link to activate your account: http://{activation_link}'
+        send_mail(subject=email_subject, message=email_body, recipient_list = [email],
                              from_email='landingpage@jaromtravels.com')
-        print(activation_link)
-        email.send()
-
+        print(email)
         return user
 
     def create_super_user(self, email, password=None, **extra_fields):

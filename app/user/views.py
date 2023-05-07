@@ -25,7 +25,11 @@ from rest_framework.decorators import action
 
 class CreateUserView(generics.CreateAPIView):
     """Create a new user in the system."""
+    queryset = User.objects.all()
     serializer_class = UserSerializer
+    
+    def perform_create(self, serializer):
+        serializer.save()
 
 
 class CreateTokenView(ObtainAuthToken):
