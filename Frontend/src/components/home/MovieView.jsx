@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ToggleContext } from "../../App";
 import style from "./style.module.css";
-import { BsHeart, BsMic, BsPaperclip } from "react-icons/bs";
+import { BsHeartFill, BsMic, BsPaperclip } from "react-icons/bs";
 import { CiSaveDown2 } from "react-icons/ci";
 import { BsShare } from "react-icons/bs";
 import { FiDownload } from "react-icons/fi";
@@ -14,6 +14,8 @@ import MovieSuggestions from "./MovieSuggestions";
 
 const MovieView = ({ movieName, genre }) => {
   const toggle = useContext(ToggleContext);
+  const [likes, setLikes] = useState(false);
+
 
   // const stars = Array(5).fill(0);
 
@@ -45,9 +47,13 @@ const MovieView = ({ movieName, genre }) => {
     >
       <div className={`mx-2 mt-2 bg-backgroundTwo rounded p-3`}>
         <div className={`row`}>
-          {Movies.map((movie) => {
+          {Movies.map((movie, index) => {
             return (
-              <div key={movie.id} className={`col-md-6`}>
+              <div 
+                key={movie.id}
+                id={movie.id}
+                className={`col-md-6`}
+              >
                 <div className={`px-lg-3 pt-lg-3`}>
                   <img src={movie.url} alt="" className={`w-100 h-100`} />
                   <div className={`${style._header_card} p-3 mb-3`}>
@@ -57,7 +63,11 @@ const MovieView = ({ movieName, genre }) => {
                       <div
                         className={`${style._icon_div} text-arrow d-flex justify-content-between align-items-center`}
                       >
-                        <BsHeart className={`${style._header_icons}`} />
+                        <BsHeartFill
+                          id={movie.id}
+                          className={`${style._header_icons} ${likes ? `text-reaction ` : `text-arrow`}`}
+                          onClick={(e) => e.currentTarget.id.includes(e.currentTarget.parentElement.parentElement.parentElement.parentElement.parentElement.id) ? setLikes(prevLike => !prevLike) : setLikes(false)} 
+                          />
                         <BsShare className={`${style._header_icons}`} />
                         <CiSaveDown2 className={`${style._header_icons}`} />
                         <FiDownload className={`${style._header_icons}`} />
@@ -130,7 +140,7 @@ const MovieView = ({ movieName, genre }) => {
                           </span>
                           Dope movie. Ya'll should...
                         </p>
-                        <BsHeart
+                        <BsHeartFill
                           className={`${style._header_icons} text-arrow`}
                         />
                       </div>

@@ -11,7 +11,7 @@ const Comments = () => {
           <div className={`${style._comment_profile_avatar}`}>
             <img src={Img2} alt="" className={``} />
           </div>
-          <div className={`position-relative w-100 ms-4`}>
+          <div className={`position-relative w-100 ms-2 ms-md-4`}>
             <input
               type="text"
               placeholder="Join the discussion"
@@ -26,16 +26,16 @@ const Comments = () => {
             return (
               <div key={comment.id}>
                 <div className={`d-flex align-items-start mb-4`}>
-                  <div className={`${style._comment_profile_avatar} mt-3`}>
+                  <div className={`${style._comment_profile_avatar}`}>
                     <img src={comment.img} alt="" className={``} />
                   </div>
 
-                  <div className={`ms-4`}>
+                  <div className={`ms-2 ms-md-4`}>
                     <div className={`d-flex align-items-center`}>
                       <p className={`fw-medium fs-6 text-signin mb-0`}>
                         {comment.name}
                       </p>
-                      <p className={`ms-2 mb-2 fw-bold fs-1 text-text-color`}>
+                      <p className={`ms-2 mb-0 fw-bold fs-6 text-text-color`}>
                         .
                       </p>
                       <p className={`fs-6 ms-2 mb-0 text-text-color`}>
