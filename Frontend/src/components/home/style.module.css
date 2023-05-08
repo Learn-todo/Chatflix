@@ -13,6 +13,11 @@
   width: calc(100% - 135px);
 }
 
+._card:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+}
+
 ._header_card {
   background-color: #020711;
 }

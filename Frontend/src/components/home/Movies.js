@@ -1,7 +1,7 @@
 const fadeImages = [
   {
     id: "1",
-    url: "https://res.cloudinary.com/dfsclcxhm/image/upload/v1675873945/Chatflix/Movie_Thumnails_2_y4acjl.png",
+    url: "https://res.cloudinary.com/dfsclcxhm/image/upload/v1675873921/Chatflix/Movie_Thumnails_1_ytpxys.png",
     title: "Now you see me",
     year: "2013",
     duration: 115

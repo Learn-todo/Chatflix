@@ -2,6 +2,7 @@ import React from "react";
 import MovieData from "./Movies";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
+import style from "./style.module.css";
 
 const MovieSuggestions = () => {
   const responsiveSettings = [
@@ -31,7 +32,7 @@ const MovieSuggestions = () => {
         <Slide responsive={responsiveSettings} autoplay={true} arrows={false}>
           {MovieData.map((movie) => {
             return (
-              <div className={`mb-4 mx-md-2`} key={movie.id}>
+              <div className={`${style._card} mb-4 mx-md-2`} key={movie.id}>
                 <div className={`mb-3`}>
                   <img src={movie.url} alt="" className={`w-100 `} />
                 </div>
