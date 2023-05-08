@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ToggleContext } from "../../App";
 import style from "./style.module.css";
-import { BsHeartFill, BsMic, BsPaperclip } from "react-icons/bs";
-import { CiSaveDown2 } from "react-icons/ci";
-import { BsShare } from "react-icons/bs";
-import { FiDownload } from "react-icons/fi";
+import { BsHeartFill, BsHeart, BsMic, BsPaperclip, BsBookmark, BsBookmarkFill } from "react-icons/bs";
+import { RiSendPlaneLine } from "react-icons/ri";
+import { MdOutlineShare } from "react-icons/md";
 import Img from "./images/gatsby.png";
 import Movies from "./Movies";
 import MovieSuggestions from "./MovieSuggestions";
@@ -14,7 +14,29 @@ import MovieSuggestions from "./MovieSuggestions";
 
 const MovieView = ({ movieName, genre }) => {
   const toggle = useContext(ToggleContext);
-  const [likes, setLikes] = useState(false);
+  const navigate = useNavigate();
+  const [likes, setLikes] = useState([]);
+  const [bookmarks, setBookmarks] = useState([])
+
+  const handleLike = (movie) => {
+    if (likes.includes(movie)){
+      setLikes(likes.filter(id => id !== movie))
+    } else {
+      setLikes([...likes, movie]);
+    }
+  }
+
+  const handleBookmark = (movie) => {
+    if (bookmarks.includes(movie)){
+      setBookmarks(bookmarks.filter(id => id !== movie))
+    } else {
+      setBookmarks([...bookmarks, movie]);
+    }
+  }
+
+  const handleClickedMovie = () => {
+    navigate("/dashboard/clicked-movie")
+  }
 
 
   // const stars = Array(5).fill(0);
@@ -47,15 +69,21 @@ const MovieView = ({ movieName, genre }) => {
     >
       <div className={`mx-2 mt-2 bg-backgroundTwo rounded p-3`}>
         <div className={`row`}>
-          {Movies.map((movie, index) => {
+          {Movies.map(movie => {
             return (
               <div 
                 key={movie.id}
                 id={movie.id}
                 className={`col-md-6`}
               >
-                <div className={`px-lg-3 pt-lg-3`}>
-                  <img src={movie.url} alt="" className={`w-100 h-100`} />
+                <div
+                  className={`${style._card} px-lg-3 pt-lg-3`}>
+                  <img
+                    src={movie.url}
+                    alt=""
+                    className={`w-100 h-100`}
+                    onClick={handleClickedMovie}
+                  />
                   <div className={`${style._header_card} p-3 mb-3`}>
                     <div
                       className={`d-flex justify-content-between align-items-center mb-3`}
@@ -63,14 +91,32 @@ const MovieView = ({ movieName, genre }) => {
                       <div
                         className={`${style._icon_div} text-arrow d-flex justify-content-between align-items-center`}
                       >
-                        <BsHeartFill
+                        {likes.includes(movie.id) ? <BsHeartFill
                           id={movie.id}
-                          className={`${style._header_icons} ${likes ? `text-reaction ` : `text-arrow`}`}
-                          onClick={(e) => e.currentTarget.id.includes(e.currentTarget.parentElement.parentElement.parentElement.parentElement.parentElement.id) ? setLikes(prevLike => !prevLike) : setLikes(false)} 
+                          className={`${style._header_icons} text-reaction`}
+                          onClick={() => handleLike(movie.id)} 
+                          /> : 
+                          <BsHeart
+                          id={movie.id}
+                          className={`${style._header_icons} text-arrow`}
+                          onClick={() => handleLike(movie.id)} 
                           />
-                        <BsShare className={`${style._header_icons}`} />
-                        <CiSaveDown2 className={`${style._header_icons}`} />
-                        <FiDownload className={`${style._header_icons}`} />
+                        }
+                        
+                        <RiSendPlaneLine className={`${style._header_icons}`} />
+
+                        {bookmarks.includes(movie.id) ? <BsBookmarkFill
+                          id={movie.id}
+                          className={`${style._header_icons} text-btn-color`}
+                          onClick={() => handleBookmark(movie.id)} 
+                          /> : 
+                          <BsBookmark
+                          id={movie.id}
+                          className={`${style._header_icons} text-arrow`}
+                          onClick={() => handleBookmark(movie.id)} 
+                          />
+                          }
+                        <MdOutlineShare className={`${style._header_icons}`} />
                       </div>
                       <div
                         className={`d-none ms-3 d-md-flex justify-content-end align-items-center w-75`}
@@ -139,10 +185,12 @@ const MovieView = ({ movieName, genre }) => {
                             Toluwa &nbsp;
                           </span>
                           Dope movie. Ya'll should...
-                        </p>
-                        <BsHeartFill
+                        </p> 
+                          <BsHeart
+                          id={movie.id}
                           className={`${style._header_icons} text-arrow`}
-                        />
+                          
+                          />
                       </div>
                       <p
                         className={`${style._header_text_size} text-comments mb-1`}

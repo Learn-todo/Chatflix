@@ -1,20 +1,25 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ToggleContext } from "../../App";
 import Img1 from "./img/Inception.png";
 import style from "./style.module.css";
-import {
-  BsHeart,
-  BsBookmark,
-  BsShare,
-  BsStar,
-  BsPlayFill,
-} from "react-icons/bs";
+import { BsHeart, BsHeartFill, BsBookmark, BsBookmarkFill, BsShare, BsStar, BsStarFill, BsPlayFill } from "react-icons/bs";
 import { FiDownload } from "react-icons/fi";
 import MovieSuggestions from "../home/MovieSuggestions";
 import Comment from "./Comment";
 
 const ClickedMovie = () => {
   const toggle = useContext(ToggleContext);
+  const [likes, setLikes] = useState(false);
+  const [save, setSave] = useState(false);
+  const [rating, setRating] = useState([]);
+  
+  const handleRating = (e) => {
+    if (rating.includes(e)) {
+      setRating(rating.filter(id => id !== e))
+    } else {
+      setRating([...rating, e])
+    }
+  }
 
   return (
     <section
@@ -34,18 +39,25 @@ const ClickedMovie = () => {
           </div>
           <div
             className={`d-md-flex justify-content-between align-items-center`}
+            id="1"
           >
             <div
               className={`${style._icon_text} ${style._icon_div} d-flex justify-content-between align-items-center text-arrow mb-3 mb-md-0`}
             >
-              <div className={`d-flex align-items-center`}>
-                <BsHeart />
+              <div className={`d-flex align-items-center`} onClick={() => setLikes(prevLike => !prevLike)}>
+                {likes ? <BsHeartFill
+                          className={`${style._header_icons} text-reaction`}/> : 
+                          <BsHeart
+                          className={`${style._header_icons} text-arrow`}/>
+                }
                 <div className={`${style._icon_text} text-arrow ms-1 ms-md-2`}>
                   Like
                 </div>
               </div>
-              <div className={`d-flex align-items-center`}>
-                <BsBookmark />
+              <div className={`d-flex align-items-center`} onClick={() => setSave(prevSave => !prevSave)}>
+                {save ? <BsBookmarkFill className={`${style._header_icons} text-btn-color`} /> : 
+                          <BsBookmark className={`${style._header_icons} text-arrow`}/>
+                }
                 <div className={`${style._icon_text} text-arrow ms-1 ms-md-2`}>
                   Save
                 </div>
@@ -64,13 +76,22 @@ const ClickedMovie = () => {
               </div>
             </div>
             <div
-              className={`${style._icon_text} ${style._rating_icon} text-arrow d-flex align-items-center justify-content-between`}
+              className={`${style._icon_text} ${style._rating_icon} d-flex align-items-center justify-content-between ${rating? `text-chat` : `text-arrow`}`}
+               onClick={(id) => handleRating(id)}
             >
-              <BsStar />
-              <BsStar />
-              <BsStar />
-              <BsStar />
-              <BsStar />
+              {rating ? <div className={`w-100 d-flex align-items-center justify-content-between`}>
+                <BsStarFill />
+                <BsStarFill />
+                <BsStarFill />
+                <BsStarFill />
+                <BsStarFill />
+              </div> : <div className={`w-100 d-flex align-items-center justify-content-between`}>
+                <BsStar/>
+                <BsStar />
+                <BsStar />
+                <BsStar />
+                <BsStar />
+              </div>}
               <div className={`${style._icon_text} text-arrow ms-2`}>Rate</div>
             </div>
           </div>
