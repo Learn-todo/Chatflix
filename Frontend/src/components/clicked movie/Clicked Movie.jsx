@@ -11,15 +11,12 @@ const ClickedMovie = () => {
   const toggle = useContext(ToggleContext);
   const [likes, setLikes] = useState(false);
   const [save, setSave] = useState(false);
-  const [rating, setRating] = useState([]);
-  
-  const handleRating = (e) => {
-    if (rating.includes(e)) {
-      setRating(rating.filter(id => id !== e))
-    } else {
-      setRating([...rating, e])
-    }
-  }
+  const [currentValue, setCurrentValue] = useState(0);
+  const stars = Array(5).fill(0);
+
+  const handleClick = (value) => {
+    setCurrentValue(value);
+  };
 
   return (
     <section
@@ -76,22 +73,22 @@ const ClickedMovie = () => {
               </div>
             </div>
             <div
-              className={`${style._icon_text} ${style._rating_icon} d-flex align-items-center justify-content-between ${rating? `text-chat` : `text-arrow`}`}
-               onClick={(id) => handleRating(id)}
+              className={`${style._icon_text} ${style._rating_icon} d-flex align-items-center justify-content-between`}
             >
-              {rating ? <div className={`w-100 d-flex align-items-center justify-content-between`}>
-                <BsStarFill />
-                <BsStarFill />
-                <BsStarFill />
-                <BsStarFill />
-                <BsStarFill />
-              </div> : <div className={`w-100 d-flex align-items-center justify-content-between`}>
-                <BsStar/>
-                <BsStar />
-                <BsStar />
-                <BsStar />
-                <BsStar />
-              </div>}
+              {stars.map((_, index ) => {
+                return (
+                  currentValue > index ?
+                    <BsStarFill
+                      key={index}
+                      onClick={() => handleClick(index)}
+                      className={`text-chat`} /> :
+                    <BsStar
+                      key={index}
+                      onClick={() => handleClick(index + 1)}
+                      className={`text-arrow`}
+                    />
+                )
+              })}
               <div className={`${style._icon_text} text-arrow ms-2`}>Rate</div>
             </div>
           </div>
@@ -120,7 +117,7 @@ const ClickedMovie = () => {
                   </p>
                 </div>
               </div>
-              <div className={`d-flex align-items-center my-2 mb-3`}>
+              <div className={`d-flex align-items-center my-4 mb-3`}>
                 <div
                   className={`border border-arrow rounded-pill bg-transparent text-arrow p-2 px-3 px-md-4 text-center`}
                 >
@@ -133,13 +130,13 @@ const ClickedMovie = () => {
                 </div>
               </div>
               <div className={`d-flex align-items-center my-2`}>
-                <BsStar className={`text-text-color fs-3`} />
-                <p className={` text-text-color ms-3 mb-2`}>
-                  8.4/10 &nbsp;<span className={`fs-1 fw-bold`}>.</span>&nbsp;
+                <BsStar className={`text-text-color fs-4`} />
+                <p className={` text-text-color ms-3 mb-0`}>
+                  8.4/10 &nbsp;<span className={`fs-6 fw-bold`}>.</span>&nbsp;
                   1.5M
                 </p>
-                <p className={` text-text-color ms-3 mb-2`}>
-                  165 min &nbsp;<span className={`fs-1 fw-bold`}>.</span>&nbsp;
+                <p className={` text-text-color ms-3 mb-0`}>
+                  165 min &nbsp;<span className={`fs-6 fw-bold`}>.</span>&nbsp;
                   R
                 </p>
               </div>

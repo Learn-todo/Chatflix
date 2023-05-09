@@ -1,7 +1,7 @@
 ._main {
   width: calc(100% - 56px);
   margin-left: auto;
-  padding: 1rem .2rem;
+  padding: 1rem 0.2rem;
   position: relative;
   z-index: 0;
   right: 0;
@@ -14,7 +14,6 @@
 }
 
 ._card:hover {
-  transform: scale(1.01);
   cursor: pointer;
 }
 
@@ -46,11 +45,11 @@
   height: 30px;
 }
 
-._profile_avatar{
+._profile_avatar {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 1px solid #7841f8
+  border: 1px solid #7841f8;
 }
 
 ._profile_avatar2 {
@@ -68,12 +67,12 @@
 }
 
 ._header_text_size {
-  font-size: .7rem;
+  font-size: 0.7rem;
 }
 
 ._input {
   outline: none;
-  font-size: .7rem;
+  font-size: 0.7rem;
 }
 
 ._input_icon {
@@ -85,42 +84,3 @@
   right: 10px;
   top: 9px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
