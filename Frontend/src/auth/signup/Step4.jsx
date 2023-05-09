@@ -71,7 +71,7 @@ const Step4 = () => {
           }, 3000)
         }).catch(err => {
           console.log(err.response)
-          error(err.data.email[0])
+          error(err.data.message)
         })
     }
   }
