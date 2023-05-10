@@ -85,19 +85,19 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-DATABASES = {
-    'default': dj_database_url.config(
-        # Feel free to alter this value to suit your needs.
-        default='postgres://chatflix_user:mpiG6Tlz6vCqVeQjBH8hmDUFsuOQnMO4@dpg-cfskv3pa6gduqke0ul40-a.oregon-postgres.render.com/chatflix',
-        conn_max_age=100
-    )
-}
 # DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+#     'default': dj_database_url.config(
+#         # Feel free to alter this value to suit your needs.
+#         default='postgres://chatflix_user:mpiG6Tlz6vCqVeQjBH8hmDUFsuOQnMO4@dpg-cfskv3pa6gduqke0ul40-a.oregon-postgres.render.com/chatflix',
+#         conn_max_age=100
+#     )
+#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 
@@ -166,12 +166,18 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = "core.User"
 
 # SMTP Email Settings
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = '78.142.47.33'  # replace with your Scala SMTP server hostname
-EMAIL_PORT = 465  # replace with your Scala SMTP server port number
-EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'landingpage@jaromtravels.com'  # replace with your Scala SMTP server username
-EMAIL_HOST_PASSWORD = 'ilovejaromtravels'  # replace with your Scala SMTP server password
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = '78.142.47.33'  # replace with your Scala SMTP server hostname
+# EMAIL_PORT = 465  # replace with your Scala SMTP server port number
+# EMAIL_USE_SSL = True
+# EMAIL_HOST_USER = 'landingpage@jaromtravels.com'  # replace with your Scala SMTP server username
+# EMAIL_HOST_PASSWORD = 'ilovejaromtravels'  # replace with your Scala SMTP server password
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'activation.django@gmail.com'
+EMAIL_HOST_PASSWORD = 'mijgmeaumygfelzz'
+
 
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': "drf_spectacular.openapi.AutoSchema",
