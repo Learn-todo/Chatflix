@@ -41,15 +41,15 @@ class UserManager(BaseUserManager):
                              from_email='landingpage@jaromtravels.com')
         return user
 
-    # def create_super_user(self, email, password=None, **extra_fields):
+    def create_super_user(self, email, password=None, **extra_fields):
 
-    #     if not email:
-    #         raise ValueError('User must have an email Address')
-    #     user = self.model(email=self.normalize_email(email), **extra_fields)
-    #     user.set_password(password)
-    #     user.is_active = True
-    #     user.save(using=self._db)
-    #     return user
+        if not email:
+            raise ValueError('User must have an email Address')
+        user = self.model(email=self.normalize_email(email), **extra_fields)
+        user.set_password(password)
+        user.is_active = True
+        user.save(using=self._db)
+        return user
 
     def activate(self, token):
         try:
@@ -63,7 +63,7 @@ class UserManager(BaseUserManager):
         return user
 
     def create_superuser(self, email, password):
-        user = self.create_user(email=email, password=password)
+        user = self.create_super_user(email=email, password=password)
         user.is_superuser = True
         user.is_active = True
         user.is_staff = True
