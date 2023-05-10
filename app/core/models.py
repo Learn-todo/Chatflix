@@ -1,6 +1,7 @@
 import os
 import secrets
-import uuid
+from uuid import uuid4
+from datetime import datetime
 
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import send_mail
@@ -11,13 +12,12 @@ from django.urls import reverse
 
 # Create your models here.
 
-
 def profile_image_file_path(instance, filename):
     """Generate file path for new profile image."""
     ext = os.path.splitext(filename)[1]
-    filename = f'{uuid.uuid4()}{ext}'
-
+    filename = f'{uuid4().hex}_{datetime.now().strftime("%Y%m%d%H%M%S")}{ext}'
     return os.path.join('uploads', 'profile', filename)
+
 
 
 class UserManager(BaseUserManager):
@@ -39,18 +39,17 @@ class UserManager(BaseUserManager):
         email_body = f'Hello Please click the following link to activate your account: http://{activation_link}'
         send_mail(subject=email_subject, message=email_body, recipient_list = [email],
                              from_email='landingpage@jaromtravels.com')
-        print(email)
         return user
 
-    def create_super_user(self, email, password=None, **extra_fields):
+    # def create_super_user(self, email, password=None, **extra_fields):
 
-        if not email:
-            raise ValueError('User must have an email Address')
-        user = self.model(email=self.normalize_email(email), **extra_fields)
-        user.set_password(password)
-        user.is_active = True
-        user.save(using=self._db)
-        return user
+    #     if not email:
+    #         raise ValueError('User must have an email Address')
+    #     user = self.model(email=self.normalize_email(email), **extra_fields)
+    #     user.set_password(password)
+    #     user.is_active = True
+    #     user.save(using=self._db)
+    #     return user
 
     def activate(self, token):
         try:
@@ -64,7 +63,7 @@ class UserManager(BaseUserManager):
         return user
 
     def create_superuser(self, email, password):
-        user = self.create_super_user(email=email, password=password)
+        user = self.create_user(email=email, password=password)
         user.is_superuser = True
         user.is_active = True
         user.is_staff = True
@@ -76,7 +75,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=255, unique=True)
     name = models.CharField(max_length=255)
     activation_token = models.CharField(max_length=32, null=True, blank=True)
-    is_active = models.BooleanField(default=None)
+    is_active = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     profile_picture = models.ImageField(upload_to=profile_image_file_path, null=True)
 

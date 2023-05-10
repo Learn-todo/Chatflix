@@ -29,6 +29,7 @@ class UserSerializer(serializers.ModelSerializer):
         """Update and return user."""
         password = validated_data.pop('password', None)
         profile_picture = validated_data.pop('profile_picture', None)
+        email = validated_data.pop("email",None)
         user = super().update(instance, validated_data)
 
         if password:

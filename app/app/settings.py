@@ -92,6 +92,12 @@ DATABASES = {
         conn_max_age=100
     )
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 
@@ -129,8 +135,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/static/'
-MEDIA_URL = '/static/media/'
+STATIC_URL = os.path.join(BASE_DIR,'/static/static/')
+MEDIA_URL = os.path.join(BASE_DIR,'/static/media/')
 if not DEBUG:
     # Tell Django to copy statics to the `staticfiles` directory
     # in your application directory on Render.
@@ -139,7 +145,8 @@ if not DEBUG:
     # Turn on WhiteNoise storage backend that takes care of compressing static files
     # and creating unique names for each version so they can safely be cached forever.
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-MEDIA_ROOT = '/media'
+    
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 CORS_ORIGIN_ALLOW_ALL: True
 
 CORS_ALLOWED_ORIGINS = [
@@ -159,7 +166,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = "core.User"
 
 # SMTP Email Settings
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.ConsoleBackend'
 EMAIL_HOST = '78.142.47.33'  # replace with your Scala SMTP server hostname
 EMAIL_PORT = 465  # replace with your Scala SMTP server port number
 EMAIL_USE_SSL = True
