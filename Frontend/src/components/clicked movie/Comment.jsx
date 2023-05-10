@@ -31,14 +31,14 @@ const Comments = () => {
                   </div>
 
                   <div className={`ms-2 ms-md-4`}>
-                    <div className={`d-flex align-items-center`}>
-                      <p className={`fw-medium fs-6 text-signin mb-0`}>
+                    <div className={`${style._username} d-flex align-items-center mb-2`}>
+                      <p className={`fw-medium text-signin mb-0`}>
                         {comment.name}
                       </p>
-                      <p className={`ms-2 mb-0 fw-bold fs-6 text-text-color`}>
+                      <p className={`ms-2 mb-0 fw-bold text-text-color`}>
                         .
                       </p>
-                      <p className={`fs-6 ms-2 mb-0 text-text-color`}>
+                      <p className={`ms-2 mb-0 text-text-color`}>
                         {comment.time}
                       </p>
                     </div>
@@ -47,14 +47,14 @@ const Comments = () => {
                         {comment.comment}
                       </p>
                     </div>
-                    <div className={`d-flex align-items-center`}>
-                      <span className={`fs-6 text-text-color fw-light`}>
+                    <div className={`${style._comments_action} d-flex align-items-center`}>
+                      <span className={`text-text-color fw-light`}>
                         {comment.likes} Likes
                       </span>
-                      <span className={`fs-6 text-text-color ms-2 fw-light`}>
+                      <span className={`text-text-color ms-2 fw-light`}>
                         {comment.reply} Reply
                       </span>
-                      <span className={`fs-6 text-text-color ms-2 fw-light`}>Share</span>
+                      <span className={`text-text-color ms-2 fw-light`}>Share</span>
                     </div>
                   </div>
                 </div>

@@ -77,11 +77,11 @@ const MovieView = ({ movieName, genre }) => {
                 className={`col-md-6`}
               >
                 <div
-                  className={`${style._card} px-lg-3 pt-lg-3`}>
+                  className={`px-lg-3 pt-lg-3`}>
                   <img
                     src={movie.url}
                     alt=""
-                    className={`w-100 h-100`}
+                    className={`${style._card} w-100 h-100`}
                     onClick={handleClickedMovie}
                   />
                   <div className={`${style._header_card} p-3 mb-3`}>

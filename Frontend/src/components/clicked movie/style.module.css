@@ -62,6 +62,14 @@
   font-size: 0.7rem;
 }
 
+._username {
+  font-size: .8rem;
+}
+
+._comments_action {
+  font-size: .7rem;
+}
+
 /* MEDIA QUERIES AND RESPONSIVENESS */
 
 @media screen and (min-width: 768px) {
