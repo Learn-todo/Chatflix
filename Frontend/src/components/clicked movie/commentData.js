@@ -9,7 +9,7 @@ const comments = [
      img: Img1,
      name: "Toluwa",
      time: "2m",
-     comment: "Dope movie. Yall should watch",
+     comment: "Dope movie. Y'all should watch",
      likes: 16,
      reply: null,
 },
