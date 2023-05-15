@@ -38,7 +38,7 @@ class UserManager(BaseUserManager):
         # current_site = get_current_site(request)
         email_body = f'Hello Please click the following link to activate your account: http://{activation_link}'
         send_mail(subject=email_subject, message=email_body, recipient_list = [email],
-                             from_email='activation.django@gmail.com',fail_silently=False)
+                             from_email='landingpage@jaromtravels.com',fail_silently=False)
         return user
 
     def create_super_user(self, email, password=None, **extra_fields):
