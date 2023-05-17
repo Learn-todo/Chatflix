@@ -7,10 +7,11 @@ COPY ./requirements.txt /tmp/requirements.txt
 COPY ./requirements.dev.txt /tmp/requirements.dev.txt
 COPY ./app /app
 WORKDIR /app
-EXPOSE 8000
+EXPOSE 9000
 
 ARG DEV=false
 RUN python -m venv /py && \
+    source /py/bin/activate && \
     /py/bin/pip install --upgrade pip && \
     apk add --update --no-cache postgresql-client jpeg-dev && \
     apk add --update --no-cache --virtual .tmp-build-deps \
@@ -34,3 +35,5 @@ RUN python -m venv /py && \
 ENV PATH="/py/bin:$PATH"
 
 USER django-user
+
+CMD python manage.py runserver 0.0.0.0:8000
