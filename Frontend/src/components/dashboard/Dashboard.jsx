@@ -106,37 +106,37 @@ const Dashboard = ({handleClick}) => {
               className={
                 `${toggle
                   ? ` ${style._menu_list_show} d-flex justify-center align-items-center`
-                  : ``} ${splitLocation === "categories" ? `${style._active} ${style._menu_list_show_active}` : `` }`
+                  : ``} ${splitLocation === "/dashboard/categories" ? `${style._active} ${style._menu_list_show_active}` : `` }`
               }
             >
-              <Link to="/categories" className={`d-block m-0`}>
+              <Link to="categories" className={`d-block m-0`}>
                 <BsUiChecksGrid className={`${style._menu_icons}`} />
               </Link>
-              <Link to="/categories">Categories</Link>
+              <Link to="categories">Categories</Link>
             </div>
             <div
               className={
                 `${toggle
                   ? `${style._menu_list_show} d-flex justify-center align-items-center`
-                  : ``} ${splitLocation === "upcoming-movies" ? `${style._active} ${style._menu_list_show_active}` : `` }`
+                  : ``} ${splitLocation === "/dashboard/upcoming-movies" ? `${style._active} ${style._menu_list_show_active}` : `` }`
               }
             >
-                <Link to="/upcoming-movies" className={`d-block m-0`}>
+                <Link to="upcoming-movies" className={`d-block m-0`}>
                   <BiMoviePlay className={`${style._menu_icons}`} />
                 </Link>
-              <Link to="/upcoming-movies" className={``}>Upcoming Movies</Link>
+              <Link to="upcoming-movies" className={``}>Upcoming Movies</Link>
             </div>
             <div
               className={`${
                 toggle
                   ? `${style._menu_list_show} d-flex justify-center align-items-center`
                   : ``
-              } mb-3  ${splitLocation === "watch-history" ? `${style._active} ${style._menu_list_show_active}` : `` }`}
+              } mb-3  ${splitLocation === "/dashboard/watch-history" ? `${style._active} ${style._menu_list_show_active}` : `` }`}
             >
-                <Link to="/watch-history" className={`d-block m-0`}>
+                <Link to="watch-history" className={`d-block m-0`}>
                   <BsClock className={`${style._menu_icons}`} />
                 </Link>
-              <Link to="/watch-history">Watch History</Link>
+              <Link to="watch-history">Watch History</Link>
             </div>
           </div>
           <div className={`${style._menu_list}`}>
@@ -145,25 +145,25 @@ const Dashboard = ({handleClick}) => {
               className={
                 `${toggle
                   ? `${style._menu_list_show} d-flex justify-center align-items-center`
-                  : ``} ${splitLocation === "chat" ? `${style._active} ${style._menu_list_show_active}` : `` }`
+                  : ``} ${splitLocation === "/dashboard/chat" ? `${style._active} ${style._menu_list_show_active}` : `` }`
               }
             >
-                <Link to="/chat" className={`d-block m-0`}>
+                <Link to="chat" className={`d-block m-0`}>
                   <IoChatbubblesOutline className={`${style._menu_icons}`} />
                 </Link>
-              <Link to="/chat">Chat</Link>
+              <Link to="chat">Chat</Link>
             </div>
             <div
               className={`${
                 toggle
                   ? `${style._menu_list_show} d-flex justify-center align-items-center`
                   : ``
-              } mb-3 ${splitLocation === "community" ? `${style._active} ${style._menu_list_show_active}` : `` }`}
+              } mb-3 ${splitLocation === "/dashboard/community" ? `${style._active} ${style._menu_list_show_active}` : `` }`}
             >
-                <Link to="/community" className={`d-block m-0`}>
+                <Link to="community" className={`d-block m-0`}>
                   <HiOutlineUsers className={`${style._menu_icons}`} />
                 </Link>
-              <Link to="/community">Community</Link>
+              <Link to="community">Community</Link>
             </div>
           </div>
           <div className={`${style._menu_list}`}>
@@ -172,25 +172,25 @@ const Dashboard = ({handleClick}) => {
               className={
                 `${toggle
                   ? `${style._menu_list_show} d-flex justify-center align-items-center`
-                  : ``} ${splitLocation === "activity" ? `${style._active} ${style._menu_list_show_active}` : `` }`
+                  : ``} ${splitLocation === "/dashboard/activity" ? `${style._active} ${style._menu_list_show_active}` : `` }`
               }
             >
-                <Link to="/activity" className={`d-block m-0`}>
+                <Link to="activity" className={`d-block m-0`}>
                   <TbActivity className={`${style._menu_icons}`} />
               </Link>
-              <Link to="/activity">Activity</Link>
+              <Link to="activity">Activity</Link>
             </div>
             <div
               className={
                 `${toggle
                   ? `${style._menu_list_show} d-flex justify-center align-items-center`
-                  : ``} ${splitLocation === "top-rated" ? `${style._active} ${style._menu_list_show_active}` : `` }`
+                  : ``} ${splitLocation === "/dashboard/top-rated" ? `${style._active} ${style._menu_list_show_active}` : `` }`
               }
             >
-              <Link to="/top-rated" className={`d-block m-0`}>
+              <Link to="top-rated" className={`d-block m-0`}>
                 <HiOutlineSparkles className={`${style._menu_icons}`} />
               </Link>
-              <Link to="/top-rated">Top Rated</Link>
+              <Link to="top-rated">Top Rated</Link>
             </div>
             <div 
               className={
@@ -209,12 +209,12 @@ const Dashboard = ({handleClick}) => {
                 toggle
                   ? `${style._menu_list_show} d-flex justify-center align-items-center`
                   : ``
-              } mb-3 ${splitLocation === "downloads" ? `${style._active} ${style._menu_list_show_active}` : `` }`}
+              } mb-3 ${splitLocation === "/dashboard/downloads" ? `${style._active} ${style._menu_list_show_active}` : `` }`}
             >
-                <Link to="/downloads" className={`d-block m-0`}>
+                <Link to="downloads" className={`d-block m-0`}>
                   <BsBoxArrowInDown className={`${style._menu_icons}`} />
                 </Link>
-              <Link to="/downloads">Downloads</Link>
+              <Link to="downloads">Downloads</Link>
             </div>
           </div>
           <div className={`${style._menu_list}`}>
@@ -223,25 +223,25 @@ const Dashboard = ({handleClick}) => {
               className={
                 `${toggle
                   ? `${style._menu_list_show} d-flex justify-center align-items-center`
-                  : ``} ${splitLocation === "profile" ? `${style._active} ${style._menu_list_show_active}` : `` }`
+                  : ``} ${splitLocation === "/dashboard/profile" ? `${style._active} ${style._menu_list_show_active}` : `` }`
               }
             >
-                <Link to="/profile" className={`d-block m-0`}>
+                <Link to="profile" className={`d-block m-0`}>
                   <CiUser className={`${style._menu_icons}`} />
               </Link>
-              <Link to="/profile">Profile</Link>
+              <Link to="profile">Profile</Link>
             </div>
             <div
               className={`${
                 toggle
                   ? `${style._menu_list_show} d-flex justify-center align-items-center`
                   : ``
-              } mb-3 ${splitLocation === "settings" ? `${style._active} ${style._menu_list_show_active}` : `` }`}
+              } mb-3 ${splitLocation === "/dashboard/settings" ? `${style._active} ${style._menu_list_show_active}` : `` }`}
             >
-              <Link to="/settings" className={`d-block m-0`}>
+              <Link to="settings" className={`d-block m-0`}>
                 <BsGear className={`${style._menu_icons}`} />
               </Link>
-              <Link to="/settings">Settings</Link>
+              <Link to="settings">Settings</Link>
             </div>
           </div>
           <div className={`${style._menu_list} ${style._logout}`}>
@@ -249,7 +249,7 @@ const Dashboard = ({handleClick}) => {
               className={
                 `${toggle
                   ? `${style._menu_list_show} d-flex justify-center align-items-center`
-                  : ``} ${splitLocation === "signout" ? `${style._active} ${style._menu_list_show_active}` : `` }`
+                  : ``} ${splitLocation === "/signout" ? `${style._active} ${style._menu_list_show_active}` : `` }`
               }
             >
               <Link to="/signout" className={`d-block m-0`}>
