@@ -20,6 +20,7 @@ import EmailTemplate from "./static/emailtemplate/EmailTemplate";
 import Home from "./pages/home/Home";
 import ClickedMovie from "./pages/clicked movie/ClickedMovie";
 import Watchlist from "./pages/watchlist/Watchlist";
+import Chats from "./pages/chats/Chats";
 
 export const ToggleContext = createContext(null);
 
@@ -115,6 +116,10 @@ const router = createHashRouter([
         path: "clicked-movie",
         element: <ClickedMovie />
       },
+      {
+        path: "chat",
+        element: <Chats />
+      }
     ]
   },
 ])
