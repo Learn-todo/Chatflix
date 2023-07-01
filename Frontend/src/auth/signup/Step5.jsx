@@ -4,18 +4,42 @@ import style from "./style.module.css";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosClose } from "react-icons/io";
 import Slideshow from "../../components/slidesshow/Slideshow";
-import { Link } from "react-router-dom";
 import { Image } from "cloudinary-react";
 import { useNavigate } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
+import axios from "axios";
 
 const Step5 = () => {
+  const email = localStorage.getItem("email");
+  const error = (message) => toast.error(message);
+  const success = (message) => toast.success(message);
   let navigate = useNavigate();
+
   const handlePrev = () => {
     navigate('/step4');
   };
   const handleClose = () => {
     navigate('/');
   };
+
+  const handleResendActivationEmail = (e) => {
+    e.preventDefault();
+    if(!email){
+      error("Email does not exist!")
+    } else {
+      axios.post(`http://ec2-18-222-214-188.us-east-2.compute.amazonaws.com/api/user/resend_activation/`,
+        {
+          email
+        }).then(res => {
+          console.log(res);
+          success("Activation email resent!");
+        }).catch(err => {
+          console.log(err);
+          error(`try again!`);
+        });
+    }
+  }
+
   return (
     <section className={``}>
       <Slideshow />
@@ -59,14 +83,16 @@ const Step5 = () => {
                   >Open your mail app
                   </button>
                 </div>
-                <div className={`mb-5 text-arrow`}>
-                  <p>Didn't receive any email? <Link to="" className={`text-decoration-none text-btn-color`}>Resend link.</Link></p>
+                <div className={`mb-5 text-arrow d-flex align-items-center`}>
+                  <p className={`mb-0`}>Didn't receive any email?</p>
+                  <button className={`text-btn-color bg-transparent border-0 ms-2 p-0`} onClick={handleResendActivationEmail}>Resend link.</button>
                 </div>
               </form>
             </div>
           </div>}
         </div>
       </div>
+      <Toaster />
     </section>
   );
 };

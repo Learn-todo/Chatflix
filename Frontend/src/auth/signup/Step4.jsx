@@ -41,11 +41,12 @@ const Step4 = () => {
   };
 
    useEffect(() => {
-    localStorage.setItem('username', JSON.stringify(userName));
+    localStorage.setItem('username', userName);
   }, [userName]);
   const name = localStorage.getItem("fullName");
   const email = localStorage.getItem("email");
   const password = localStorage.getItem("password");
+  const username = localStorage.getItem("username");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -56,22 +57,24 @@ const Step4 = () => {
       error("Username must be greater than 5 characters");
       setInputError(prevState => !prevState);
     } else {
-      axios.post(`https://chatflix-service.onrender.com/api/user/create/`, {
+      axios.post(`http://ec2-18-222-214-188.us-east-2.compute.amazonaws.com/api/user/create/`, {
         name,
         email,
         password,
+        username,
         imageSrc,
       })
         .then(res => {
           console.log(res);
-          success("Congratulations! sign up successful")
+          success("Redirecting in 3 seconds");
+          success("Congratulations! sign up successful");
           setTimeout(() => {
-            success("Redirecting in 3 seconds")
             navigate("/step5")
-          }, 3000)
-        }).catch(err => {
-          console.log(err.response)
-          error(err.data.message)
+        }, 3000)
+        })
+        .catch(err => {
+          console.log(err?.message)
+          error(err?.message)
         })
     }
   }
