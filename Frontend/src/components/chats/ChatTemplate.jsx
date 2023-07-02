@@ -11,8 +11,7 @@ const ChatTemplate = () => {
                }`}
           >
                <div className={`mx-2 mt-2 bg-backgroundTwo rounded p-3`}>
-                    Chat box!!
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum voluptas ad voluptatum. Autem temporibus illum, nesciunt cumque, assumenda aspernatur vel corrupti aut expedita esse libero, recusandae exercitationem cum quidem quibusdam.
+                    Chat box!
                </div>
                
           </section>
