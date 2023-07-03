@@ -21,6 +21,7 @@ import Home from "./pages/home/Home";
 import ClickedMovie from "./pages/clicked movie/ClickedMovie";
 import Watchlist from "./pages/watchlist/Watchlist";
 import Chats from "./pages/chats/Chats";
+import Chatroom from "./pages/chats/Chatroom";
 
 export const ToggleContext = createContext(null);
 
@@ -118,7 +119,7 @@ const router = createHashRouter([
       },
       {
         path: "chat",
-        element: <Chats />
+        element: <Chatroom />
       }
     ]
   },
