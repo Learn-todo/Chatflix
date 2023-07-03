@@ -25,7 +25,7 @@ const Step5 = () => {
   const handleResendActivationEmail = (e) => {
     e.preventDefault();
     if(!email){
-      error("Email does not exist!")
+      error("Email does not exist!");
     } else {
       axios.post(`http://ec2-18-222-214-188.us-east-2.compute.amazonaws.com/api/user/resend_activation/`,
         {
