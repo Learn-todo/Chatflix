@@ -17,8 +17,10 @@ const ChatRooms = () => {
         toggle ? `${style._main_resize}` : `${style._main}`
       }`}
     >
-      <div className={`d-md-flex h-100`}>
-        <div className={`${style._chat_rooms} bg-background p-3 pt-5`}>
+      {/* encryption */}
+      <div className={`d-md-flex`}>
+      <div className={`${style._friends_list} bg-background` }>
+        <div className={`${style._chat_rooms} p-3 pt-5`}>
           <h1 className={`text-arrow fs-3 fw-semibold lh-base mb-4`}>
            Chats Room <span className={`text-btn-color`}>({friends.length})</span>
           </h1>
@@ -70,6 +72,7 @@ const ChatRooms = () => {
             })}
           </div>
         </div>
+        </div>
 
         {openChat ? <ChatTemplate /> : <div className={`${style._room} bg-backgroundTwo text-center p-3 py-5 d-flex justify-content-center align-items-center`}>
           <div>
@@ -84,7 +87,7 @@ const ChatRooms = () => {
                </button>
           </div>
         </div>}
-      </div>
+        </div>
     </section>
   );
 };

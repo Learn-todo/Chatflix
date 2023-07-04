@@ -262,11 +262,6 @@ const Dashboard = ({handleClick}) => {
         </div>
           </aside>
         </div>
-        <main className={`${style._main} bg-dark pb-0 ${toggle ? `${style._main_resize}` : `${style._main}`}`}>
-         <div className={`m-4 mb-0`}>
-            {/* CONTENT GOES HERE */}
-          </div>
-        </main>
       </div>
     </section>
   )
