@@ -51,49 +51,7 @@ const ChatTemplate = () => {
 
       
       <div className={`${style._chats_div} bg-backgroundTwo position-relative py-3 py-md-1 px-md-3 py-md-3`}>
-        <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet culpa iure totam soluta magnam sunt, recusandae fugiat. Illo, corrupti. Eos tempora voluptatibus ipsam aperiam nesciunt doloremque est ullam officia illum?
-        </div>
-        <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet culpa iure totam soluta magnam sunt, recusandae fugiat. Illo, corrupti. Eos tempora voluptatibus ipsam aperiam nesciunt doloremque est ullam officia illum?
-        </div>
-        <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet culpa iure totam soluta magnam sunt, recusandae fugiat. Illo, corrupti. Eos tempora voluptatibus ipsam aperiam nesciunt doloremque est ullam officia illum?
-        </div>
-        <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet culpa iure totam soluta magnam sunt, recusandae fugiat. Illo, corrupti. Eos tempora voluptatibus ipsam aperiam nesciunt doloremque est ullam officia illum?
-        </div>
-        <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet culpa iure totam soluta magnam sunt, recusandae fugiat. Illo, corrupti. Eos tempora voluptatibus ipsam aperiam nesciunt doloremque est ullam officia illum?
-        </div>
-        <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet culpa iure totam soluta magnam sunt, recusandae fugiat. Illo, corrupti. Eos tempora voluptatibus ipsam aperiam nesciunt doloremque est ullam officia illum?
-        </div>
-        <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet culpa iure totam soluta magnam sunt, recusandae fugiat. Illo, corrupti. Eos tempora voluptatibus ipsam aperiam nesciunt doloremque est ullam officia illum?
-        </div>
-        <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet culpa iure totam soluta magnam sunt, recusandae fugiat. Illo, corrupti. Eos tempora voluptatibus ipsam aperiam nesciunt doloremque est ullam officia illum?
-        </div>
-        <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet culpa iure totam soluta magnam sunt, recusandae fugiat. Illo, corrupti. Eos tempora voluptatibus ipsam aperiam nesciunt doloremque est ullam officia illum?
-        </div>
-        <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet culpa iure totam soluta magnam sunt, recusandae fugiat. Illo, corrupti. Eos tempora voluptatibus ipsam aperiam nesciunt doloremque est ullam officia illum?
-        </div>
-        <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet culpa iure totam soluta magnam sunt, recusandae fugiat. Illo, corrupti. Eos tempora voluptatibus ipsam aperiam nesciunt doloremque est ullam officia illum?
-        </div>
-        <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet culpa iure totam soluta magnam sunt, recusandae fugiat. Illo, corrupti. Eos tempora voluptatibus ipsam aperiam nesciunt doloremque est ullam officia illum?
-        </div>
-        <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet culpa iure totam soluta magnam sunt, recusandae fugiat. Illo, corrupti. Eos tempora voluptatibus ipsam aperiam nesciunt doloremque est ullam officia illum?
-        </div>
-        <div>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet culpa iure totam soluta magnam sunt, recusandae fugiat. Illo, corrupti. Eos tempora voluptatibus ipsam aperiam nesciunt doloremque est ullam officia illum?
-        </div>
-
+        
         </div>
     </section>
   );

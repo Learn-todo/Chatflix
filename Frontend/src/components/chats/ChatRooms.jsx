@@ -17,7 +17,6 @@ const ChatRooms = () => {
         toggle ? `${style._main_resize}` : `${style._main}`
       }`}
     >
-      {/* encryption */}
       <div className={`d-md-flex`}>
       <div className={`${style._friends_list} bg-background` }>
         <div className={`${style._chat_rooms} p-3 pt-5`}>

@@ -12,7 +12,6 @@ const Logo = () => {
         publicId="Chatflix/State_Full_Logo_jv2vdv.png"
       />
     </Link>
-      
   );
 };
 
