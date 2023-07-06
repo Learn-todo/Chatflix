@@ -13,11 +13,11 @@ const ChatTemplate = () => {
 
   return (
     <section
-      className={`${style._room} bg-backgroundTwo position-relative p-3 py-5 py-md-0 px-md-0`}
+      className={`${style._room} bg-backgroundTwo position-relative p-3 py-md-0 px-md-0`}
     >
         <div className={``}>
           <div
-            className={`${toggle ? `${style._chat_header_resize}`: `${style._chat_header}`}  bg-backgroundTwo d-flex justify-content-between align-items-center pb-4 pt-md-5 py-md-4 border-bottom border-faq`}
+            className={`${toggle ? `${style._chat_header_resize}`: `${style._chat_header}`} bg-backgroundTwo d-flex justify-content-between align-items-center pb-4 pt-md-5 py-md-4 border-bottom border-faq`}
           >
             <div className={`${style._friends_div} d-flex align-items-center`}>
               <div className={`${style._user_img_div} position-relative`}>
@@ -52,7 +52,7 @@ const ChatTemplate = () => {
         </div>
 
       
-      <div className={`${style._chats_div} bg-backgroundTwo position-relative py-3 py-md-0 px-md-3 `}>
+      <div className={`${toggle ? `${style._chats_div_resize}` : `${style._chats_div}`}  bg-backgroundTwo position-relative py-3 py-md-0 px-md-3`}>
         <div className={`d-flex justify-content-between align-items-center mb-4`}>
           <div className={`border-bottom border-secondary-subtle w-50`}></div>
            <p className={`${style._friends} text-faq mb-0 mx-3`}>Today</p>
@@ -60,7 +60,12 @@ const ChatTemplate = () => {
         </div>
 
         <div>
-          <div></div>
+          <div className={`position-fixed bottom-0`}>
+            <div className={`position-relative bg-input p-3 border-rounded`}>
+              <img src={Img1} alt="user"  className={`${style._friends_img}`} />
+              <input type="text" name="" id="" placeholder="Write a message..." className={`bg-transparent text-cancel border-0`} />
+            </div>
+          </div>
           {/* <div className={`d-flex justify-content-end align-items-end`}>
             <div className={`${style._chats} p-3 bg-chat-bg text-clicked-movie-heading fs-6 position-relative`}>
               <p className={`mb-2`}>HELLO</p>

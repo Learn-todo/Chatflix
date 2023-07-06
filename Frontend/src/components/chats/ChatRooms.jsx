@@ -18,7 +18,7 @@ const ChatRooms = () => {
       }`}
     >
       <div className={`d-md-flex`}>
-      <div className={`${style._friends_list} bg-background` }>
+     {<div className={`${openChat ? `d-none d-md-block` : ` d-block`} ${style._friends_list} bg-background`}>
         <div className={`${style._chat_rooms} p-3 pt-5`}>
           <h1 className={`text-arrow fs-3 fw-semibold lh-base mb-4`}>
            Chats Room <span className={`text-btn-color`}>({friends.length})</span>
@@ -45,10 +45,10 @@ const ChatRooms = () => {
             </div>
           </div>
           <div>
-            {friends.map((friend) => {
+            {friends.map((friend, index) => {
               return (
                 <div
-                  key={friend.name}
+                  key={index}
                   id={friend.name}
                   className={`${style._friends_div} d-flex align-items-center mb-4`}
                   onClick={() => setOpenChat(true)}
@@ -71,9 +71,9 @@ const ChatRooms = () => {
             })}
           </div>
         </div>
-        </div>
+        </div>}
 
-        {openChat ? <ChatTemplate /> : <div className={`${style._room} bg-backgroundTwo text-center p-3 py-5 d-flex justify-content-center align-items-center`}>
+        {openChat ? <ChatTemplate /> : <div className={`${openChat ? `d-none` : `d-block`} ${style._room} bg-backgroundTwo text-center p-3 py-5 d-flex justify-content-center align-items-center`}>
           <div>
                <h2 className={`text-cancel fs-3 fw-semibold mb-3 lh-base`}>
                Welcome to your chat room!
