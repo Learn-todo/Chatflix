@@ -75,7 +75,7 @@ const ChatRooms = () => {
 
         {openChat ? <ChatTemplate /> : <div className={`${style._room} bg-backgroundTwo text-center p-3 py-5 d-flex justify-content-center align-items-center`}>
           <div>
-               <h2 className={`text-cancel fs-6 fw-semibold mb-3 lh-base`}>
+               <h2 className={`text-cancel fs-3 fw-semibold mb-3 lh-base`}>
                Welcome to your chat room!
                </h2>
                <p className={`${style._friend_name} text-faq mb-4`}>

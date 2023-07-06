@@ -31,7 +31,8 @@ $custom-theme-colors: (
    "comments": #8F9AAC,
    "header-border": #78869B,
    "clicked-movie-heading": #E0ECFE,
-
+   "chat-bg": #0F479B,
+   "chat-reply-bg": #3C434E,
    );
 
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);

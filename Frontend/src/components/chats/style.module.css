@@ -5,7 +5,6 @@
      top: 80px;
      z-index: 0;
      right: 0;
-     /* height: 100%; */
 }
 
 ._main_resize {
@@ -76,6 +75,33 @@ input[placeholder|="Search name, messages"],
           right: 16px;
           left: 430px;
           z-index: 20;
+ }
+
+ ._friends_list::-webkit-scrollbar {
+      width: 0px;
+      border-radius: 50%;
+ }
+
+ ._friends_list::-webkit-scrollbar-track {
+      background-color: #010205;
+ }
+
+ ._friends_list::-webkit-scrollbar-thumb {
+      background-color: #010205;
+      border-radius: 50%;
+ }
+
+ ._chats {
+     border-radius: 18px 18px 4px 18px;
+ }
+
+ ._timestamp {
+     bottom: 6px;
+     right: 12px;
+ }
+
+ ._chats_reply{
+     border-radius: 18px 18px 18px 4px;
  }
 
  /* Responsiveness */
