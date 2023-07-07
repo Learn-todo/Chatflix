@@ -131,5 +131,4 @@ const ChatTemplate = () => {
     </section>
   );
 };
-
 export default ChatTemplate;
