@@ -3,8 +3,10 @@ import { ToggleContext } from "../../App";
 import Img1 from "./img/man1.jpg";
 import Img2 from "./img/man2.jpg";
 import { AiOutlineVideoCameraAdd, AiOutlineInfoCircle } from "react-icons/ai";
-import { BsTelephone } from "react-icons/bs";
+import { BsTelephone, BsSend } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
+import { CiMicrophoneOn } from "react-icons/ci";
+import { MdOutlineAttachment } from "react-icons/md";
 import style from "./style.module.css";
 import Chat from "./Chat";
 
@@ -13,11 +15,11 @@ const ChatTemplate = () => {
 
   return (
     <section
-      className={`${style._room} bg-backgroundTwo position-relative p-3 py-md-0 px-md-0`}
+      className={`${style._room} bg-backgroundTwo position-relative px-3 py-md-0 px-md-0`}
     >
         <div className={``}>
           <div
-            className={`${toggle ? `${style._chat_header_resize}`: `${style._chat_header}`} bg-backgroundTwo d-flex justify-content-between align-items-center pb-4 pt-md-5 py-md-4 border-bottom border-faq`}
+            className={`${toggle ? `${style._chat_header_resize}`: `${style._chat_header}`} bg-backgroundTwo d-flex justify-content-between align-items-center py-4 border-bottom border-faq`}
           >
             <div className={`${style._friends_div} d-flex align-items-center`}>
               <div className={`${style._user_img_div} position-relative`}>
@@ -60,10 +62,16 @@ const ChatTemplate = () => {
         </div>
 
         <div>
-          <div className={`position-fixed bottom-0`}>
-            <div className={`position-relative bg-input p-3 border-rounded`}>
+          <div className={`${style._chat_input_div} position-fixed`}>
+            <div className={`position-relative bg-input p-3 rounded`}>
               <img src={Img1} alt="user"  className={`${style._friends_img}`} />
-              <input type="text" name="" id="" placeholder="Write a message..." className={`bg-transparent text-cancel border-0`} />
+              <input type="text" name="" id="" placeholder="Write a message..." className={`${style._chat_input} bg-transparent text-cancel border-0 px-2 pe-6`} />
+              <div className={`${style._chat_control} position-absolute text-cancel d-flex justify-content-between align-items-center w-25 fs-5`}>
+                <CiMicrophoneOn />
+                <MdOutlineAttachment className={`${style._attachment}`} />
+                <p className={`mb-0`}>|</p>
+                <BsSend className={`text-btn-color`} />
+              </div>
             </div>
           </div>
           {/* <div className={`d-flex justify-content-end align-items-end`}>

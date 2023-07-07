@@ -71,9 +71,13 @@ input[placeholder|="Search name, messages"],
  }
 
  ._room {
-     /* width: calc(100% - 280px);
-     margin-left: auto; */
      height: 100vh;
+ }
+
+ ._chat_header{
+     position: fixed;
+     width: calc(100% - 90px);
+     z-index: 20;
  }
 
  ._chat_header_resize {
@@ -82,8 +86,12 @@ input[placeholder|="Search name, messages"],
      z-index: 20;
  }
 
+  ._chats_div {
+     top: 90px;
+  }
+
  ._chats_div_resize {
-     top: 60px;
+     top: 85px;
  }
 
  ._friends_list::-webkit-scrollbar {
@@ -98,6 +106,23 @@ input[placeholder|="Search name, messages"],
  ._friends_list::-webkit-scrollbar-thumb {
      background-color: #010205;
      border-radius: 50%;
+ }
+
+ ._chat_input_div {
+     bottom: 10px;
+ }
+
+ ._chat_input{
+     outline: none;
+ }
+
+ ._chat_control {
+     right: 10px !important;
+     bottom: 15px;
+ }
+
+ ._attachment {
+     transform: rotate(45deg);
  }
 
  ._chats {
@@ -134,20 +159,27 @@ input[placeholder|="Search name, messages"],
           height: 100vh;
      }
 
+ ._chat_header {
+      width: calc(100% - 365px);
+      right: 15px;
+ }
      ._chat_header_resize {
-          width: calc(100% - 350px);
+          width: calc(100% - 445px);
+          right: 16px;
      }
 
-     /* ._chat_header {
-          position: fixed;
-          right: 16px;
-          left: 350px;
-          z-index: 20;
-     } */
+     ._chat_header {
+          width: calc(100% - 365px);
+          right: 15px;
+     }
+     ._chat_header {
+          width: calc(100% - 365px);
+          right: 15px;
+     }
 
      ._chats_div,
      ._chats_div_resize {
-          top: 130px;
+          top: 100px;
      }
 
 
