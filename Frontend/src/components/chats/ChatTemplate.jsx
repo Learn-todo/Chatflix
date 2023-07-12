@@ -1,17 +1,28 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { ToggleContext } from "../../App";
 import Img1 from "./img/man1.jpg";
 import Img2 from "./img/man2.jpg";
 import { AiOutlineVideoCameraAdd, AiOutlineInfoCircle } from "react-icons/ai";
-import { BsTelephone, BsSend } from "react-icons/bs";
+import { BsTelephone } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
 import { CiMicrophoneOn } from "react-icons/ci";
+import { TbSend } from "react-icons/tb";
 import { MdOutlineAttachment } from "react-icons/md";
 import style from "./style.module.css";
 import Chat from "./Chat";
 
 const ChatTemplate = () => {
   const toggle = useContext(ToggleContext);
+  const [text, setText] = useState("");
+  const [sendText, setSendText] = useState(false);
+  const texts = useRef("");
+  console.log(texts)
+  console.log(texts.current.value)
+  // const [chatInputText, setChatInputText] = useSta
+
+  const sendChat = () => {
+    setSendText(true);
+  }
 
   return (
     <section
@@ -62,18 +73,19 @@ const ChatTemplate = () => {
         </div>
 
         <div>
-          <div className={`${style._chat_input_div} position-fixed`}>
-            <div className={`position-relative bg-input p-3 rounded`}>
-              <img src={Img1} alt="user"  className={`${style._friends_img}`} />
-              <input type="text" name="" id="" placeholder="Write a message..." className={`${style._chat_input} bg-transparent text-cancel border-0 px-2 pe-6`} />
-              <div className={`${style._chat_control} position-absolute text-cancel d-flex justify-content-between align-items-center w-25 fs-5`}>
+          <div className={`${toggle ? `${style._chat_input_div_resize}` : `${style._chat_input_div}`} position-fixed`}>
+            <div className={`position-relative bg-input p-3 pb-4 rounded d-flex align-items-center`}>
+              <img src={Img1} alt="user"  className={`${style._chat_img}`} />
+              <textarea name="" id="" cols="20" rows={text.length > 18 ? `3` : `1`} placeholder="Write a message..." className={`${style._chat_input} bg-transparent text-cancel border-0 ps-2 py-0 mt-2`} onChange={(e) => setText(e.target.value)} ref={texts}></textarea>
+              <div className={`${style._chat_control} position-absolute text-arrow d-flex justify-content-between align-items-center fs-5`}>
                 <CiMicrophoneOn />
                 <MdOutlineAttachment className={`${style._attachment}`} />
-                <p className={`mb-0`}>|</p>
-                <BsSend className={`text-btn-color`} />
+                <p className={`mb-0 text-chat-divider fw-lighter px-1 fs-6`}>|</p>
+                <TbSend className={`text-chat-send`} onClick={sendChat} />
               </div>
             </div>
           </div>
+          {sendText ? <Chat textInput={text} /> : null}
           {/* <div className={`d-flex justify-content-end align-items-end`}>
             <div className={`${style._chats} p-3 bg-chat-bg text-clicked-movie-heading fs-6 position-relative`}>
               <p className={`mb-2`}>HELLO</p>
@@ -109,7 +121,7 @@ const ChatTemplate = () => {
               </div>
             </div>
             <div className={`me-2 order-1`}>
-              <img src={Img2} alt="user" className={`${style._friends_img}`} />
+              <img src={Img2} alt="user" className={`${style._chat_img}`} />
             </div>
           </div>
           <div className={`d-flex justify-content-start mt-1 align-items-end`}>
@@ -121,7 +133,7 @@ const ChatTemplate = () => {
               </div>
             </div>
             <div className={`me-2 order-1`}>
-              <img src={Img2} alt="user" className={`${style._friends_img}`} />
+              <img src={Img2} alt="user" className={`${style._chat_img}`} />
             </div>
           </div>
 

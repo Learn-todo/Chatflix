@@ -22,16 +22,23 @@
      padding: .5rem 2.5rem;
 }
 
-input[placeholder|="Search name, messages"],
+input::placeholder,
 ._friends {
      color: #BBC2CD !important;
 }
 
-input[placeholder|="Search name, messages"],
+input::placeholder,
 ._friend_name,
 ._friends,
 ._search_input {
-     font-size: .8rem;
+     font-size: .6rem;
+     font-weight: 400;
+}
+
+textarea::placeholder {
+     color: #BBC2CD !important;
+     font-size: .7rem;
+     font-weight: 400;
 }
 
 ._friends_menu,
@@ -76,7 +83,7 @@ input[placeholder|="Search name, messages"],
 
  ._chat_header{
      position: fixed;
-     width: calc(100% - 90px);
+     width: calc(100% - 88px);
      z-index: 20;
  }
 
@@ -110,15 +117,35 @@ input[placeholder|="Search name, messages"],
 
  ._chat_input_div {
      bottom: 10px;
+     width: calc(100% - 88px);
+     z-index: 20;
+ }
+
+ ._chat_input_div_resize {
+     width: calc(100% - 167px);
+     z-index: 20;
+     bottom: 10px;
+ }
+
+ ._chat_input_resize {
+     height: 50px;
  }
 
  ._chat_input{
      outline: none;
  }
 
+ ._chat_img {
+     width: 25px;
+     height: 25px;
+     border-radius: 50%;
+     object-fit: cover;
+ }
+
  ._chat_control {
-     right: 10px !important;
-     bottom: 15px;
+     right: 15px !important;
+     bottom: 10px;
+     width: 80px;
  }
 
  ._attachment {
