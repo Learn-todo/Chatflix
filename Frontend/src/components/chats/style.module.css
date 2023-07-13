@@ -85,6 +85,7 @@ textarea::placeholder {
      position: fixed;
      width: calc(100% - 88px);
      z-index: 20;
+     right: 16px;
  }
 
  ._chat_header_resize {
@@ -144,7 +145,7 @@ textarea::placeholder {
 
  ._chat_control {
      right: 15px !important;
-     bottom: 10px;
+     bottom: 5px;
      width: 80px;
  }
 
@@ -190,16 +191,14 @@ textarea::placeholder {
       width: calc(100% - 365px);
       right: 15px;
  }
-     ._chat_header_resize {
+     ._chat_header_resize ,
+     ._chat_input_div_resize{
           width: calc(100% - 445px);
           right: 16px;
      }
 
-     ._chat_header {
-          width: calc(100% - 365px);
-          right: 15px;
-     }
-     ._chat_header {
+     ._chat_header,
+     ._chat_input_div {
           width: calc(100% - 365px);
           right: 15px;
      }
