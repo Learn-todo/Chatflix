@@ -13,7 +13,7 @@
 
 ._search_icon {
      left: 14px;
-     top: 12px;
+     top: 8px;
      font-size: .8rem;
 }
 
@@ -39,6 +39,12 @@ textarea::placeholder {
      color: #BBC2CD !important;
      font-size: .7rem;
      font-weight: 400;
+     resize: none;
+}
+
+textarea::-webkit-resizer {
+    border-width: 0px;
+    border-color: transparent;
 }
 
 ._friends_menu,
@@ -92,15 +98,13 @@ textarea::placeholder {
      position: fixed;
      width: calc(100% - 167px);
      z-index: 20;
+    right: 16px;
  }
 
-  ._chats_div {
-     top: 90px;
+  ._chats_div,
+  ._chats_div_resize {
+     top: 120px;
   }
-
- ._chats_div_resize {
-     top: 85px;
- }
 
  ._friends_list::-webkit-scrollbar {
      width: 0px;
@@ -158,8 +162,7 @@ textarea::placeholder {
  }
 
  ._timestamp {
-     bottom: 6px;
-     right: 12px;
+     bottom: -8px;
  }
 
  ._chats_reply{

@@ -11,6 +11,19 @@ const ChatRooms = () => {
   const [friends, setFriends] = useState(friendsData);
   const [openChat, setOpenChat] = useState(false);
 
+  const closeChat = () => {
+    setOpenChat(false);
+  };
+
+  const handleOpenChat = () => {
+    setOpenChat(true);
+    friends.filter(friend => {
+      console.log(friend)
+      console.log(!friend)
+    })
+
+  }
+
   return (
     <section
       className={`${style._main} ${
@@ -30,7 +43,7 @@ const ChatRooms = () => {
             <input
               type="text"
               placeholder="Search name, messages"
-              className={`${style._search_input} bg-input fw-normal lh-base border border-0 rounded w-100`}
+              className={`${style._search_input} bg-input fw-normal lh-base border border-0 rounded w-100 text-cancel`}
             />
           </div>
           <div
@@ -51,8 +64,8 @@ const ChatRooms = () => {
                   key={index}
                   id={friend.name}
                   className={`${style._friends_div} d-flex align-items-center mb-4`}
-                  onClick={() => setOpenChat(true)}
-                >
+                onClick={handleOpenChat}>
+                
                   <div className={`position-relative`}>
                     <img
                       src={friend.img}
@@ -73,7 +86,7 @@ const ChatRooms = () => {
         </div>
         </div>}
 
-        {openChat ? <ChatTemplate /> : <div className={`${openChat ? `d-none` : `d-block`} ${style._room} bg-backgroundTwo text-center p-3 py-5 d-flex justify-content-center align-items-center`}>
+        {openChat ? <ChatTemplate closeChat={closeChat} /> : <div className={`${openChat ? `d-none` : `d-block`} ${style._room} bg-backgroundTwo text-center p-3 py-5 d-flex justify-content-center align-items-center`}>
           <div>
                <h2 className={`text-cancel fs-3 fw-semibold mb-3 lh-base`}>
                Welcome to your chat room!
