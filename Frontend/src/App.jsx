@@ -27,6 +27,7 @@ export const ToggleContext = createContext(null);
 
 const Layout = () => {
  const [toggle, setToggle] = useState(false);
+
   const handleClick = () => {
     setToggle((prevState) => {
       return !prevState;
@@ -34,7 +35,7 @@ const Layout = () => {
   };
   return (
     <ToggleContext.Provider value={toggle}>
-      <Dashboard handleClick={handleClick} />
+      <Dashboard handleClick={handleClick}  />
       <Outlet />
     </ToggleContext.Provider>
   )

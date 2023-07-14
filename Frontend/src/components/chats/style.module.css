@@ -13,7 +13,7 @@
 
 ._search_icon {
      left: 14px;
-     top: 12px;
+     top: 8px;
      font-size: .8rem;
 }
 
@@ -22,16 +22,29 @@
      padding: .5rem 2.5rem;
 }
 
-input[placeholder|="Search name, messages"],
+input::placeholder,
 ._friends {
      color: #BBC2CD !important;
 }
 
-input[placeholder|="Search name, messages"],
+input::placeholder,
 ._friend_name,
 ._friends,
 ._search_input {
-     font-size: .8rem;
+     font-size: .6rem;
+     font-weight: 400;
+}
+
+textarea::placeholder {
+     color: #BBC2CD !important;
+     font-size: .7rem;
+     font-weight: 400;
+     resize: none;
+}
+
+textarea::-webkit-resizer {
+    border-width: 0px;
+    border-color: transparent;
 }
 
 ._friends_menu,
@@ -76,23 +89,22 @@ input[placeholder|="Search name, messages"],
 
  ._chat_header{
      position: fixed;
-     width: calc(100% - 90px);
+     width: calc(100% - 88px);
      z-index: 20;
+     right: 16px;
  }
 
  ._chat_header_resize {
      position: fixed;
      width: calc(100% - 167px);
      z-index: 20;
+    right: 16px;
  }
 
-  ._chats_div {
-     top: 90px;
+  ._chats_div,
+  ._chats_div_resize {
+     top: 120px;
   }
-
- ._chats_div_resize {
-     top: 85px;
- }
 
  ._friends_list::-webkit-scrollbar {
      width: 0px;
@@ -110,15 +122,35 @@ input[placeholder|="Search name, messages"],
 
  ._chat_input_div {
      bottom: 10px;
+     width: calc(100% - 88px);
+     z-index: 20;
+ }
+
+ ._chat_input_div_resize {
+     width: calc(100% - 167px);
+     z-index: 20;
+     bottom: 10px;
+ }
+
+ ._chat_input_resize {
+     height: 50px;
  }
 
  ._chat_input{
      outline: none;
  }
 
+ ._chat_img {
+     width: 25px;
+     height: 25px;
+     border-radius: 50%;
+     object-fit: cover;
+ }
+
  ._chat_control {
-     right: 10px !important;
-     bottom: 15px;
+     right: 15px !important;
+     bottom: 5px;
+     width: 80px;
  }
 
  ._attachment {
@@ -130,8 +162,7 @@ input[placeholder|="Search name, messages"],
  }
 
  ._timestamp {
-     bottom: 6px;
-     right: 12px;
+     bottom: -8px;
  }
 
  ._chats_reply{
@@ -163,16 +194,14 @@ input[placeholder|="Search name, messages"],
       width: calc(100% - 365px);
       right: 15px;
  }
-     ._chat_header_resize {
+     ._chat_header_resize ,
+     ._chat_input_div_resize{
           width: calc(100% - 445px);
           right: 16px;
      }
 
-     ._chat_header {
-          width: calc(100% - 365px);
-          right: 15px;
-     }
-     ._chat_header {
+     ._chat_header,
+     ._chat_input_div {
           width: calc(100% - 365px);
           right: 15px;
      }
