@@ -1,14 +1,19 @@
 ._main {
      width: calc(100% - 56px);
      margin-left: auto;
-     position: relative;
+     position: fixed;
      top: 80px;
      z-index: 0;
      right: 0;
+     overflow: hidden;
+     height: 100vh;
 }
 
 ._main_resize {
      width: calc(100% - 135px);
+     overflow: hidden;
+     height: 100vh;
+     position: fixed;
 }
 
 ._search_icon {
@@ -84,7 +89,8 @@ textarea::-webkit-resizer {
  }
 
  ._room {
-     height: 100vh;
+     /* height: 100vh; */
+     overflow-y:hidden !important;
  }
 
  ._chat_header{
@@ -104,6 +110,8 @@ textarea::-webkit-resizer {
   ._chats_div,
   ._chats_div_resize {
      top: 120px;
+     height: 65vh;
+     overflow-y: scroll;
   }
 
  ._friends_list::-webkit-scrollbar {
@@ -187,7 +195,8 @@ textarea::-webkit-resizer {
      ._room {
           width: calc(100% - 280px);
           margin-left: auto;
-          height: 100vh;
+          height: 100%;
+          overflow: hidden !important;
      }
 
  ._chat_header {

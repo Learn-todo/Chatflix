@@ -1,8 +1,7 @@
 import React from "react";
-import Img2 from "./img/man2.jpg";
 import style from "./style.module.css";
 
-const Reply = ({ textInput}) => {
+const Reply = ({ textInput, friendsImage }) => {
   const date = new Date();
   let hours = date.getHours();
   let minutes = date.getMinutes();
@@ -18,7 +17,7 @@ const Reply = ({ textInput}) => {
               </div>
             </div>
             <div className={`me-2 order-1`}>
-              <img src={Img2} alt="user" className={`${style._chat_img}`} />
+              <img src={friendsImage} alt="user" className={`${style._chat_img}`} />
             </div>
           </div>
     </section>

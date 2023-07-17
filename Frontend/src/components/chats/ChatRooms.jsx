@@ -10,27 +10,26 @@ const ChatRooms = () => {
   const toggle = useContext(ToggleContext);
   const [friends, setFriends] = useState(friendsData);
   const [openChat, setOpenChat] = useState(false);
+  const [friendsDetails, setFriendsDetails] = useState(friends)
 
   const closeChat = () => {
     setOpenChat(false);
   };
 
-  const handleOpenChat = () => {
+  const handleOpenChat = (e) => {
     setOpenChat(true);
-    friends.filter(friend => {
-      console.log(friend)
-      console.log(!friend)
+    friends.filter((friend) => {
+      return e.target.id === friend.name ? setFriendsDetails([friend]) : null;
     })
-
   }
 
   return (
     <section
-      className={`${style._main} ${
+      className={`bg-background ${style._main} ${
         toggle ? `${style._main_resize}` : `${style._main}`
       }`}
     >
-      <div className={`d-md-flex`}>
+      <div className={`d-md-flex bg-background`}>
      {<div className={`${openChat ? `d-none d-md-block` : ` d-block`} ${style._friends_list} bg-background`}>
         <div className={`${style._chat_rooms} p-3 pt-5`}>
           <h1 className={`text-arrow fs-3 fw-semibold lh-base mb-4`}>
@@ -64,18 +63,20 @@ const ChatRooms = () => {
                   key={index}
                   id={friend.name}
                   className={`${style._friends_div} d-flex align-items-center mb-4`}
-                onClick={handleOpenChat}>
+                  onClick={handleOpenChat}>
                 
                   <div className={`position-relative`}>
                     <img
                       src={friend.img}
                       alt={friend.name}
+                      id={friend.name}
                       className={`${style._friends_img}`}
                     />
                     <div className={`${style._online_indicator}`}></div>
                   </div>
                   <p
                     className={`${style._friend_name} ms-2 text-arrow fw-normal lh-base mb-0`}
+                    id={friend.name}
                   >
                     {friend.name}
                   </p>
@@ -86,7 +87,7 @@ const ChatRooms = () => {
         </div>
         </div>}
 
-        {openChat ? <ChatTemplate closeChat={closeChat} /> : <div className={`${openChat ? `d-none` : `d-block`} ${style._room} bg-backgroundTwo text-center p-3 py-5 d-flex justify-content-center align-items-center`}>
+        {openChat ? <ChatTemplate closeChat={closeChat} friendsDetails={friendsDetails} /> : <div className={`${openChat ? `d-none` : `d-block`} ${style._room} bg-backgroundTwo text-center p-3 py-5 d-flex justify-content-center align-items-center`}>
           <div>
                <h2 className={`text-cancel fs-3 fw-semibold mb-3 lh-base`}>
                Welcome to your chat room!

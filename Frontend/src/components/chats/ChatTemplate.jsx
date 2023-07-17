@@ -11,7 +11,7 @@ import style from "./style.module.css";
 import Chat from "./Chat";
 import Reply from "./Reply";
 
-const ChatTemplate = ({ closeChat }) => {
+const ChatTemplate = ({ closeChat, friendsDetails }) => {
   const toggle = useContext(ToggleContext);
   const [isTyping, setIsTyping] = useState(false);
   const [sendText, setSendText] = useState(false);
@@ -20,6 +20,12 @@ const ChatTemplate = ({ closeChat }) => {
   const [chats, setChats] = useState([]);
   const [chatsReply, setChatsReply] = useState([]);
   const texts = useRef("");
+  let friendsName = "";
+  let friendsImage = "";
+  friendsDetails.map(detail => {
+    friendsName = detail.name
+    friendsImage = detail.img
+  })
 
   const sendChat = () => {
     setSendText(true);    
@@ -34,10 +40,10 @@ const ChatTemplate = ({ closeChat }) => {
     }
 
     if(chats.length > 1){
-      setReply(true)
+      setReply(true);
     }
-    else if(chatsReply.length === 1) {
-      setReply(false)
+    else if(chats.length > 2 && chatsReply.length > 2) {
+      setReply(false);
     }
 
     setText(prevState => prevState = "");
@@ -45,7 +51,7 @@ const ChatTemplate = ({ closeChat }) => {
   }
 
   useEffect(() => {
-    if (text.length < 4 && text === "") {
+    if (text.length < 1 && text === "") {
       setIsTyping(false);
     } else {
       setIsTyping(true);
@@ -64,8 +70,8 @@ const ChatTemplate = ({ closeChat }) => {
             <div className={`${style._friends_div} d-flex align-items-center`}>
               <div className={`${style._user_img_div} position-relative`}>
                 <img
-                  src={Img1}
-                  alt={Img1}
+                  src={friendsImage}
+                  alt={friendsName}
                   className={`${style._friends_img}`}
                 />
                 <div className={`${style._online_indicator}`}></div>
@@ -74,10 +80,10 @@ const ChatTemplate = ({ closeChat }) => {
                 <p
                   className={`${style._friend_name} text-arrow fw-normal lh-base mb-0`}
                 >
-                  Toluwa
+                  {friendsName}
                 </p>
                 <p className={`${style._typing} text-btn-color mb-0`}>
-                 {isTyping && `Toluwa is typing...`}
+                 {isTyping && reply ?  `Toluwa is typing...` : null}
                 </p>
               </div>
             </div>
@@ -97,9 +103,8 @@ const ChatTemplate = ({ closeChat }) => {
             </div>
           </div>
         </div>
-
       
-      <div className={`${toggle ? `${style._chats_div_resize}` : `${style._chats_div}`}  bg-backgroundTwo position-relative py-md-0 px-3`}>
+      <div className={`${toggle ? `${style._chats_div_resize}` : `${style._chats_div}`} bg-backgroundTwo position-relative py-md-0 px-3`}>
         <div className={`d-flex justify-content-between align-items-center mb-4`}>
           <div className={`border-bottom border-secondary-subtle w-50`}></div>
            <p className={`${style._friends} text-faq mb-0 mx-3`}>Today</p>
@@ -123,7 +128,7 @@ const ChatTemplate = ({ closeChat }) => {
             return <Chat textInput={chat} key={index} />
           })}
           {sendText && chatsReply.map((chat, index) => {
-            return reply && <Reply textInput={chat} key={index} />
+            return reply && <Reply textInput={chat} key={index} friendsImage={friendsImage} />
           })}
         </div>
       </div>
