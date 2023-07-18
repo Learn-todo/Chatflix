@@ -7,7 +7,7 @@ const Chat = ({ textInput }) => {
   const date = new Date();
   let hours = date.getHours();
   let minutes = date.getMinutes();
-  const timeFormat = hours >= 12 ? "pm" : "am"
+  const timeFormat = hours >= 12 ? "pm" : "am";
 
   return (
     <section>

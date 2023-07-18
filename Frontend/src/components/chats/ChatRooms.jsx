@@ -10,7 +10,7 @@ const ChatRooms = () => {
   const toggle = useContext(ToggleContext);
   const [friends, setFriends] = useState(friendsData);
   const [openChat, setOpenChat] = useState(false);
-  const [friendsDetails, setFriendsDetails] = useState(friends)
+  const [friendsDetails, setFriendsDetails] = useState(friends);
 
   const closeChat = () => {
     setOpenChat(false);
@@ -25,11 +25,11 @@ const ChatRooms = () => {
 
   return (
     <section
-      className={`bg-background ${style._main} ${
+      className={`bg-backgroundTwo ${style._main} ${
         toggle ? `${style._main_resize}` : `${style._main}`
-      }`}
+      } ${openChat ? `${style._main_height}` : ``}`}
     >
-      <div className={`d-md-flex bg-background`}>
+      <div className={`d-md-flex bg-backgroundTwo`}>
      {<div className={`${openChat ? `d-none d-md-block` : ` d-block`} ${style._friends_list} bg-background`}>
         <div className={`${style._chat_rooms} p-3 pt-5`}>
           <h1 className={`text-arrow fs-3 fw-semibold lh-base mb-4`}>
@@ -37,7 +37,7 @@ const ChatRooms = () => {
           </h1>
           <div className={`position-relative mb-4`}>
             <BsSearch
-              className={`${style._search_icon} text-cancel position-absolute `}
+              className={`${style._search_icon} text-cancel position-absolute`}
             />
             <input
               type="text"

@@ -1,12 +1,11 @@
 ._main {
      width: calc(100% - 56px);
      margin-left: auto;
-     position: fixed;
+     position: relative;
      top: 80px;
      z-index: 0;
      right: 0;
-     overflow: hidden;
-     height: 100vh;
+     
 }
 
 ._main_resize {
@@ -14,6 +13,12 @@
      overflow: hidden;
      height: 100vh;
      position: fixed;
+}
+
+._main_height {
+    position: fixed;
+    overflow: hidden;
+    height: 100vh;
 }
 
 ._search_icon {
@@ -110,20 +115,27 @@ textarea::-webkit-resizer {
   ._chats_div,
   ._chats_div_resize {
      top: 120px;
-     height: 65vh;
+     height: 75vh;
      overflow-y: scroll;
   }
 
- ._friends_list::-webkit-scrollbar {
+ ._friends_list::-webkit-scrollbar,
+ ._chats_div::-webkit-scrollbar,
+ ._chats_div_resize::-webkit-scrollbar,
+ textarea::-webkit-scrollbar {
      width: 0px;
      border-radius: 50%;
  }
 
- ._friends_list::-webkit-scrollbar-track {
+ ._friends_list::-webkit-scrollbar-track,
+._chats_div::-webkit-scrollbar,
+._chats_div_resize::-webkit-scrollbar {
      background-color: #010205;
  }
 
- ._friends_list::-webkit-scrollbar-thumb {
+ ._friends_list::-webkit-scrollbar-thumb,
+._chats_div::-webkit-scrollbar,
+._chats_div_resize::-webkit-scrollbar {
      background-color: #010205;
      border-radius: 50%;
  }
@@ -132,6 +144,10 @@ textarea::-webkit-resizer {
      bottom: 10px;
      width: calc(100% - 88px);
      z-index: 20;
+ }
+
+ ._chat_input_container {
+    margin-bottom: 8rem;
  }
 
  ._chat_input_div_resize {
@@ -218,7 +234,17 @@ textarea::-webkit-resizer {
      ._chats_div,
      ._chats_div_resize {
           top: 100px;
+          height: 75vh;
+          overflow-y: scroll;
      }
 
 
 }
+
+ @media screen and (min-width: 1024px) {
+     
+     ._chats_div,
+     ._chats_div_resize {
+         height: 65vh;
+     }
+ }

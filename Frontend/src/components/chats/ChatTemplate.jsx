@@ -23,9 +23,9 @@ const ChatTemplate = ({ closeChat, friendsDetails }) => {
   let friendsName = "";
   let friendsImage = "";
   friendsDetails.map(detail => {
-    friendsName = detail.name
-    friendsImage = detail.img
-  })
+    friendsName = detail.name;
+    friendsImage = detail.img;
+  });
 
   const sendChat = () => {
     setSendText(true);    
@@ -57,7 +57,6 @@ const ChatTemplate = ({ closeChat, friendsDetails }) => {
       setIsTyping(true);
     }
   }, [text.length, text])
-
 
   return (
     <section
@@ -111,7 +110,7 @@ const ChatTemplate = ({ closeChat, friendsDetails }) => {
           <div className={`border-bottom border-secondary-subtle w-50`}></div>
         </div>
 
-        <div className={``}>
+        <div className={`${style._chat_input_container}`}>
           <div className={`${toggle ? `${style._chat_input_div_resize}` : `${style._chat_input_div}`} position-fixed`}>
             <div className={`position-relative bg-input px-3 pt-3 pb-4 rounded d-flex align-items-center`}>
               <img src={Img1} alt="user"  className={`${style._chat_img}`} />
