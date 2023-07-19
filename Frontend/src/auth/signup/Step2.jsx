@@ -26,13 +26,13 @@ const Step2 = () => {
     } else if (email === ""){
       error("Email is required!");
       setInputError(prevState => !prevState);
-    } else if (fullName.length < 5) {
-      error("Name must be greater than 5 characters");
+    } else if (fullName.length < 3) {
+      error("Name must be greater than 3 characters");
       setInputError(prevState => !prevState);
     } else {
       localStorage.setItem("fullName", fullName);
       localStorage.setItem("email", email);
-      navigate("/step3")
+      navigate("/step3");
     }
   }
 
@@ -42,7 +42,6 @@ const Step2 = () => {
     const handleClose = () => {
       navigate('/');
   };
-  
   
     return (
       <section className={``}>

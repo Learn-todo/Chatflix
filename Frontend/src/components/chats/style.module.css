@@ -5,10 +5,20 @@
      top: 80px;
      z-index: 0;
      right: 0;
+     
 }
 
 ._main_resize {
      width: calc(100% - 135px);
+     overflow: hidden;
+     height: 100vh;
+     position: fixed;
+}
+
+._main_height {
+    position: fixed;
+    overflow: hidden;
+    height: 100vh;
 }
 
 ._search_icon {
@@ -84,7 +94,12 @@ textarea::-webkit-resizer {
  }
 
  ._room {
-     height: 100vh;
+     /* height: 100vh; */
+     overflow-y:hidden !important;
+ }
+
+ ._chat_profile {
+    overflow-y: scroll !important;
  }
 
  ._chat_header{
@@ -104,18 +119,27 @@ textarea::-webkit-resizer {
   ._chats_div,
   ._chats_div_resize {
      top: 120px;
+     height: 75vh;
+     overflow-y: scroll;
   }
 
- ._friends_list::-webkit-scrollbar {
+ ._friends_list::-webkit-scrollbar,
+ ._chats_div::-webkit-scrollbar,
+ ._chats_div_resize::-webkit-scrollbar,
+ textarea::-webkit-scrollbar {
      width: 0px;
      border-radius: 50%;
  }
 
- ._friends_list::-webkit-scrollbar-track {
+ ._friends_list::-webkit-scrollbar-track,
+._chats_div::-webkit-scrollbar,
+._chats_div_resize::-webkit-scrollbar {
      background-color: #010205;
  }
 
- ._friends_list::-webkit-scrollbar-thumb {
+ ._friends_list::-webkit-scrollbar-thumb,
+._chats_div::-webkit-scrollbar,
+._chats_div_resize::-webkit-scrollbar {
      background-color: #010205;
      border-radius: 50%;
  }
@@ -124,6 +148,10 @@ textarea::-webkit-resizer {
      bottom: 10px;
      width: calc(100% - 88px);
      z-index: 20;
+ }
+
+ ._chat_input_container {
+    margin-bottom: 8rem;
  }
 
  ._chat_input_div_resize {
@@ -169,6 +197,13 @@ textarea::-webkit-resizer {
      border-radius: 18px 18px 18px 4px;
  }
 
+ ._profile_pic {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+ }
+
  /* Responsiveness */
 
 @media screen and (min-width: 768px) {
@@ -188,6 +223,7 @@ textarea::-webkit-resizer {
           width: calc(100% - 280px);
           margin-left: auto;
           height: 100vh;
+          overflow: hidden !important;
      }
 
  ._chat_header {
@@ -209,7 +245,25 @@ textarea::-webkit-resizer {
      ._chats_div,
      ._chats_div_resize {
           top: 100px;
+          height: 73vh;
+          overflow-y: scroll;
      }
 
 
 }
+
+/* @media screen and (min-height: 600px) {
+
+    ._chats_div,
+    ._chats_div_resize {
+        height: 72vh;
+    }
+} */
+
+ @media screen and (min-width: 1024px) {
+     
+     ._chats_div,
+     ._chats_div_resize {
+         height: 55vh;
+     }
+ }

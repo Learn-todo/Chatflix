@@ -11,8 +11,13 @@ import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
 const Signin = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [userId, setUserId] = useState("");
+  const [userToken, setUserToken] = useState("");
   const [inputError, setInputError] = useState(false);
   let navigate = useNavigate();
+
   const handleSignin = () => {
     navigate('/dashboard');
     console.log(setInputError);
@@ -20,6 +25,7 @@ const Signin = () => {
   const handleClose = () => {
     navigate('/');
   };
+  
   return (
     <section className={``}>
       <Slideshow />
