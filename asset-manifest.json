@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Chatflix/static/css/main.9f86b643.css",
-    "main.js": "/Chatflix/static/js/main.9a584cab.js",
+    "main.css": "/Chatflix/static/css/main.64e6404a.css",
+    "main.js": "/Chatflix/static/js/main.e4bbcee5.js",
     "static/js/787.cda612ba.chunk.js": "/Chatflix/static/js/787.cda612ba.chunk.js",
     "static/media/wolf.png": "/Chatflix/static/media/wolf.e66cf65a87e88eb421df.png",
     "static/media/Inception.png": "/Chatflix/static/media/Inception.d42aa311b127de1587c2.png",
@@ -12,12 +12,12 @@
     "static/media/Image.jpg": "/Chatflix/static/media/Image.43d3514419574863ea9d.jpg",
     "static/media/Gloria.jpg": "/Chatflix/static/media/Gloria.737e7360559006d90dd5.jpg",
     "index.html": "/Chatflix/index.html",
-    "main.9f86b643.css.map": "/Chatflix/static/css/main.9f86b643.css.map",
-    "main.9a584cab.js.map": "/Chatflix/static/js/main.9a584cab.js.map",
+    "main.64e6404a.css.map": "/Chatflix/static/css/main.64e6404a.css.map",
+    "main.e4bbcee5.js.map": "/Chatflix/static/js/main.e4bbcee5.js.map",
     "787.cda612ba.chunk.js.map": "/Chatflix/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9f86b643.css",
-    "static/js/main.9a584cab.js"
+    "static/css/main.64e6404a.css",
+    "static/js/main.e4bbcee5.js"
   ]
 }
