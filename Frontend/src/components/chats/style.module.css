@@ -193,6 +193,13 @@ textarea::-webkit-resizer {
      border-radius: 18px 18px 18px 4px;
  }
 
+ ._profile_pic {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+ }
+
  /* Responsiveness */
 
 @media screen and (min-width: 768px) {
@@ -211,7 +218,7 @@ textarea::-webkit-resizer {
      ._room {
           width: calc(100% - 280px);
           margin-left: auto;
-          height: 100%;
+          height: 100vh;
           overflow: hidden !important;
      }
 
@@ -234,17 +241,25 @@ textarea::-webkit-resizer {
      ._chats_div,
      ._chats_div_resize {
           top: 100px;
-          height: 75vh;
+          height: 73vh;
           overflow-y: scroll;
      }
 
 
 }
 
+/* @media screen and (min-height: 600px) {
+
+    ._chats_div,
+    ._chats_div_resize {
+        height: 72vh;
+    }
+} */
+
  @media screen and (min-width: 1024px) {
      
      ._chats_div,
      ._chats_div_resize {
-         height: 65vh;
+         height: 55vh;
      }
  }

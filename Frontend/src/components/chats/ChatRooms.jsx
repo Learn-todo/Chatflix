@@ -30,7 +30,7 @@ const ChatRooms = () => {
       } ${openChat ? `${style._main_height}` : ``}`}
     >
       <div className={`d-md-flex bg-backgroundTwo`}>
-     {<div className={`${openChat ? `d-none d-md-block` : ` d-block`} ${style._friends_list} bg-background`}>
+     {<div className={`${openChat ? `d-none d-md-block` : `d-block`} ${style._friends_list} bg-background`}>
         <div className={`${style._chat_rooms} p-3 pt-5`}>
           <h1 className={`text-arrow fs-3 fw-semibold lh-base mb-4`}>
            Chats Room <span className={`text-btn-color`}>({friends.length})</span>

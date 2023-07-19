@@ -4,7 +4,6 @@ import { IoClose } from "react-icons/io5";
 
 
 const ChatProfile = ({ friendsImage, friendsName, handleCloseChatProfile }) => {
-  
 
   return (
     <section>

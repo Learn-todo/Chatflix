@@ -37,6 +37,7 @@ const Step4 = () => {
       return compressedFile;
     } catch (error) {
       console.log(error);
+      error(error);
     }
   };
 
@@ -53,8 +54,8 @@ const Step4 = () => {
     if (userName === ""){
       error("Username cannot be empty");
       setInputError(prevState => !prevState);
-    } else if (userName.length < 5 ){
-      error("Username must be greater than 5 characters");
+    } else if (userName.length < 3 ){
+      error("Username must be greater than 3 characters");
       setInputError(prevState => !prevState);
     } else {
       axios.post(`http://ec2-18-222-214-188.us-east-2.compute.amazonaws.com/api/user/create/`, {
@@ -66,11 +67,11 @@ const Step4 = () => {
       })
         .then(res => {
           console.log(res);
-          success("Redirecting in 3 seconds");
-          success("Congratulations! sign up successful");
+          // success("Redirecting in 3 seconds");
+          success("Congratulations! sign up successful, redirecting in 3 seconds");
           setTimeout(() => {
-            navigate("/step5")
-        }, 3000)
+            navigate("/step5");
+          }, 3000);
         })
         .catch(err => {
           console.log(err?.message)

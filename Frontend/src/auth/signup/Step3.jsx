@@ -35,7 +35,7 @@ const Step3 = () => {
     } else {
       localStorage.setItem("password", password);
       localStorage.setItem("confirmPassword", confirmPassword);
-      navigate("/step4")
+      navigate("/step4");
     }
   }
   const handlePrev = () => {
