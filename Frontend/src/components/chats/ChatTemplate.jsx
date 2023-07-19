@@ -22,7 +22,6 @@ const ChatTemplate = ({ closeChat, friendsDetails }) => {
   const [chatsReply, setChatsReply] = useState([]);
   const [openChatProfile, setOpenChatProfile] = useState(false);
   const texts = useRef("");
-  console.log(openChatProfile)
   let friendsName = "";
   let friendsImage = "";
   friendsDetails.map(detail => {

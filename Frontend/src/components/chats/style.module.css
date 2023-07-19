@@ -98,6 +98,10 @@ textarea::-webkit-resizer {
      overflow-y:hidden !important;
  }
 
+ ._chat_profile {
+    overflow-y: scroll !important;
+ }
+
  ._chat_header{
      position: fixed;
      width: calc(100% - 88px);

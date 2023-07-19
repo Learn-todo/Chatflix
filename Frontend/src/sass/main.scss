@@ -36,6 +36,7 @@ $custom-theme-colors: (
    "chat-send": #3D83FD,
    "chat-divider": #647081,
    "online": #01C9A0,
+   "block": #FC4E52,
    );
 
 $theme-colors: map-merge($custom-theme-colors, $theme-colors);
