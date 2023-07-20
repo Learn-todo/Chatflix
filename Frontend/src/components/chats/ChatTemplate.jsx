@@ -93,7 +93,7 @@ const ChatTemplate = ({ closeChat, friendsDetails }) => {
                   {friendsName}
                 </p>
                 <p className={`${style._typing} text-btn-color mb-0`}>
-                 {isTyping && reply ?  `Toluwa is typing...` : null}
+                 {isTyping && reply ?  `${friendsName} is typing...` : null}
                 </p>
               </div>
             </div>
