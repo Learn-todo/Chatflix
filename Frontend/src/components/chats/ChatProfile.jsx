@@ -18,7 +18,7 @@ const ChatProfile = ({ friendsImage, friendsName, handleCloseChatProfile }) => {
 
   return (
     <section className={`${style._chat_profile}`}>
-     <div className={`p-3 p-md-4`}>
+     <div className={`p-3 p-md-5`}>
           <div className={`${style._friends_div} d-flex justify-content-end text-arrow fs-3`} onClick={handleCloseChatProfile}>
                <IoClose className={`text-arrow`} />
           </div>
@@ -35,17 +35,17 @@ const ChatProfile = ({ friendsImage, friendsName, handleCloseChatProfile }) => {
                          setLinkClicked(false);
                          setDocumentClicked(false);
                          setImageClicked(true);
-                           }} className={`${imageClicked ? `text-btn-color` : `text-arrow`}`}>Image</div>
+                           }} className={`${style._friends_div} ${imageClicked ? `text-btn-color` : `text-arrow`}`}>Image</div>
                            <div onClick={() => {
                                 setImageClicked(false);
                                 setLinkClicked(false);
                                 setDocumentClicked(true);
-                           }} className={`${documentClicked ? `text-btn-color` : `text-arrow`}`}>Document</div>
+                           }} className={`${style._friends_div} ${documentClicked ? `text-btn-color` : `text-arrow`}`}>Document</div>
                     <div onClick={() => {
                                 setDocumentClicked(false);
                                 setImageClicked(false);
                                 setLinkClicked(true);
-                           }} className={`${linkClicked ? `text-btn-color` : `text-arrow`}`}>Link</div>
+                           }} className={`${style._friends_div} ${linkClicked ? `text-btn-color` : `text-arrow`}`}>Link</div>
                </div>
           </div>
           <div className={`mb-4 border-bottom border-header-border mx-auto py-5`}>
@@ -71,25 +71,25 @@ const ChatProfile = ({ friendsImage, friendsName, handleCloseChatProfile }) => {
           <div className={`border-bottom border-header-border py-3 text-arrow mx-auto fs-6 lh-base mb-4`}>
                <div className={`d-flex align-items-center mb-3`}>
                     <BsBell className={`me-2 fs-5`} />
-                    <p className={`mb-0`}>Notification</p>
-                    {<div className={`ms-auto`} onClick={() => setNotification(prevState => !prevState)}>{notification ? <BsToggleOn className={`text-btn-color fs-5`} /> : <BsToggleOff className={`text-arrow fs-5`} />}</div>}
+                    <p className={`${style._friends_div} mb-0`}>Notification</p>
+                    {<div className={`${style._friends_div} ms-auto`} onClick={() => setNotification(prevState => !prevState)}>{notification ? <BsToggleOn className={`text-btn-color fs-5`} /> : <BsToggleOff className={`text-arrow fs-5`} />}</div>}
                </div>
-               <div className={`d-flex align-items-center mb-3`}>
+               <div className={`${style._friends_div} w-25 d-flex align-items-center mb-3`}>
                     <MdOutlineReport className={`me-2 fs-5`} />
                     <p className={`mb-0`}>Report</p>
                </div>
-               <div className={`d-flex align-items-center mb-3 text-block`}>
+               <div className={`${style._friends_div} w-25 d-flex align-items-center mb-3 text-block`}>
                     <MdBlock className={`me-2 fs-5`} />
                     <p className={`mb-0`}>Block</p>
                </div>
           </div>
           
           <div className={`pb-5 py-3 text-arrow fs-6 lh-base mb-5 mx-auto `}>
-               <div className={`d-flex align-items-center mb-3`}>
+               <div className={`${style._friends_div} w-25 d-flex align-items-center mb-3`}>
                     <TbArchive className={`me-2 fs-5`} />
                     <p className={`mb-0`}>Archive</p>
                </div>
-               <div className={`d-flex align-items-center mb-3 text-block`}>
+               <div className={`${style._friends_div} w-25 d-flex align-items-center mb-3 text-block`}>
                     <TbArchive className={`me-2 fs-5`} />
                     <p className={`mb-0`}>Delete</p>
                </div>
