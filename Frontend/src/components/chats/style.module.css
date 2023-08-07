@@ -274,3 +274,25 @@ textarea::-webkit-resizer {
          height: 52vh;
      }
  }
+
+@media screen and (min-width: 1024px) {
+     
+     ._chats_div,
+     ._chats_div_resize {
+         height: 50vh;
+     }
+ }
+ @media screen and (min-width: 1280px) {
+     
+     ._chats_div,
+     ._chats_div_resize {
+         height: 65vh;
+     }
+ }
+ @media screen and (max-height: 600px) {
+
+     ._chats_div,
+     ._chats_div_resize {
+         height: 52vh;
+     }
+          }
