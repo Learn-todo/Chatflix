@@ -7,11 +7,14 @@ COPY ./requirements.txt /tmp/requirements.txt
 COPY ./requirements.dev.txt /tmp/requirements.dev.txt
 COPY ./app /app
 WORKDIR /app
-EXPOSE 8000
+EXPOSE 9000
 
 ARG DEV=false
+
 RUN python -m venv /py && \
+    source /py/bin/activate && \
     /py/bin/pip install --upgrade pip && \
+    /py/bin/pip install --upgrade pip setuptools && \ 
     apk add --update --no-cache postgresql-client jpeg-dev && \
     apk add --update --no-cache --virtual .tmp-build-deps \
         build-base postgresql-dev musl-dev zlib zlib-dev && \
@@ -34,3 +37,5 @@ RUN python -m venv /py && \
 ENV PATH="/py/bin:$PATH"
 
 USER django-user
+
+CMD ["gunicorn", "app.wsgi:application", "--bind", "0.0.0.0:9000"]

@@ -25,7 +25,10 @@ from rest_framework.decorators import action
 
 class CreateUserView(generics.CreateAPIView):
     """Create a new user in the system."""
+    queryset = User.objects.all()
     serializer_class = UserSerializer
+    
+    
 
 
 class CreateTokenView(ObtainAuthToken):
@@ -161,7 +164,7 @@ class ResendActivationView(APIView):
         current_site = get_current_site(request)
         email_body = f'Please click the following link to activate your account: http://{current_site.domain}{activation_link}'
         email = EmailMessage(subject=email_subject, body=email_body, to=[email],
-                             from_email='landingpage@jaromtravels.com')
+                             from_email='activation.django@gmail.com')
         email.send()
 
         return Response({'detail': 'Activation email sent.'}, status=status.HTTP_200_OK)
