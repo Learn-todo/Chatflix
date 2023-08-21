@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-9r2gvtnv!u*6-2aej1iw+572f8ftxz(=)z++2eex)@gxp(^&8+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','chatflixservice.onrender.com']
 
 # Application definition
 

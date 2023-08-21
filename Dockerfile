@@ -10,9 +10,11 @@ WORKDIR /app
 EXPOSE 9000
 
 ARG DEV=false
+
 RUN python -m venv /py && \
     source /py/bin/activate && \
     /py/bin/pip install --upgrade pip && \
+    /py/bin/pip install --upgrade pip setuptools && \ 
     apk add --update --no-cache postgresql-client jpeg-dev && \
     apk add --update --no-cache --virtual .tmp-build-deps \
         build-base postgresql-dev musl-dev zlib zlib-dev && \
@@ -36,4 +38,4 @@ ENV PATH="/py/bin:$PATH"
 
 USER django-user
 
-CMD gunicorn app.wsgi:application
+CMD ["gunicorn", "app.wsgi:application", "--bind", "0.0.0.0:9000"]
